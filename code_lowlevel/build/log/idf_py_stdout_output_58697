@@ -1,0 +1,1411 @@
+ cpu_start: Compi�ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x1 (POWERON),boot:0xf (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (30) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Dec 21 2023 04:19:22[0m
+[0;32mI (31) boot: chip revision: v0.4[0m
+[0;32mI (35) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (40) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (58) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (73) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c568h ( 50536) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0001c590 vaddr=3fc8c800 size=01354h (  4948) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001d8ec vaddr=40380000 size=0272ch ( 10028) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1eee4h (126692) map[0m
+[0;32mI (146) esp_image: segment 4: paddr=0003ef0c vaddr=4038272c size=09fcch ( 40908) load[0m
+[0;32mI (158) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (158) boot: Disabling RNG early entropy source...[0m
+[0;32mI (169) cpu_start: Unicore app[0m
+[0;32mI (178) cpu_start: Pro cpu start user code[0m
+[0;32mI (178) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (178) cpu_start: Application information:[0m
+[0;32mI (181) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (186) cpu_start: App version:      ec20f92-dirty[0m
+[0;32mI (192) cpu_start: Compile time:     Dec 21 2023 04:22:37[0m
+[0;32mI (198) cpu_start: ELF file SHA256:  15c466aaa...[0m
+[0;32mI (203) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (210) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (214) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (219) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (224) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (231) heap_init: At 3FC8EB60 len 000314A0 (197 KiB): RAM[0m
+[0;32mI (237) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (244) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (251) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (262) spi_flash: flash io: dio[0m
+[0;33mW (266) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (279) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (290) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (297) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (304) main_task: Started on CPU0[0m
+[0;32mI (304) main_task: Calling app_main()[0m
+[0;32mI (304) mpu9250: Initializating MPU9250[0m
+[0;32mI (464) mpu9250: Enabling magnetometer[0m
+[0;32mI (694) mpu9250: Magnetometer enabled[0m
+[0;32mI (694) mpu9250: MPU9250:[0m
+[0;32mI (694) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (694) mpu9250: --> Device address: 0x69[0m
+[0;32mI (694) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (694) mpu9250: --> initialised: Yes[0m
+[0;32mI (704) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (704) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (714) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (714) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (724) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (734) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (734) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (744) mpu9250: Accelerometer:[0m
+[0;32mI (744) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (754) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (764) mpu9250: --> Calibration:[0m
+[0;32mI (764) mpu9250:   --> Offset: [0m
+[0;32mI (764) mpu9250:     --> x: 0.020900[0m
+[0;32mI (774) mpu9250:     --> y: 0.014688[0m
+[0;32mI (774) mpu9250:     --> z: -0.002580[0m
+[0;32mI (784) mpu9250:   --> Scale: [0m
+[0;32mI (784) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (794) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (794) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (804) mpu9250: Gyroscope:[0m
+[0;32mI (804) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (814) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (814) mpu9250: --> Bias Offset:[0m
+[0;32mI (814) mpu9250:   --> x: 0.303956[0m
+[0;32mI (824) mpu9250:   --> y: -1.049768[0m
+[0;32mI (824) mpu9250:   --> z: -0.403782[0m
+[0;32mI (834) ak8963: Magnetometer (Compass):[0m
+[0;32mI (834) ak8963: --> i2c address: 0x00[0m
+[0;32mI (844) ak8963: --> initialised: true[0m
+[0;32mI (844) ak8963: --> Device ID: 0x48[0m
+[0;32mI (844) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (854) ak8963: --> ASA Scalars:[0m
+[0;32mI (864) ak8963:   --> x: 1.175781[0m
+[0;32mI (864) ak8963:   --> y: 1.187500[0m
+[0;32mI (864) ak8963:   --> z: 1.136719[0m
+[0;32mI (874) ak8963: --> Offset:[0m
+[0;32mI (874) ak8963:   --> x: 25.183594[0m
+[0;32mI (874) ak8963:   --> y: 57.519531[0m
+[0;32mI (884) ak8963:   --> z: -62.648438[0m
+[0;32mI (884) ak8963: --> Scale:[0m
+[0;32mI (894) ak8963:   --> x: 1.513449[0m
+[0;32mI (894) ak8963:   --> y: 1.557811[0m
+[0;32mI (894) ak8963:   --> z: 1.434039[0m
+Starting main loop
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+37
+145
+306
+507
+714
+891
+1031
+1156
+1277
+1390
+1504
+1614
+1714
+1798
+1874
+1940
+1993
+2057
+2139
+2228
+2309
+2376
+2432
+2487
+2549
+2596
+2639
+2682
+2729
+2777
+2822
+2887
+2965
+3051
+3144
+3243
+3340
+3436
+3529
+3629
+3722
+3812
+3906
+4007
+4114
+4228
+4342
+4453
+4563
+4669
+4769
+4855
+4940
+5035
+5133
+5240
+5350
+5446
+5537
+5623
+5712
+5804
+5894
+5966
+6026
+6081
+6143
+6202
+6266
+6330
+6390
+6443
+6493
+6549
+6612
+6681
+6749
+6812
+6852
+6866
+6882
+6898
+6914
+6934
+6954
+6963
+6975
+6997
+7023
+7040
+7065
+7075
+7090
+7107
+7112
+7123
+7123
+7123
+7126
+7126
+7126
+7126
+7126
+7126
+7126
+7126
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7125
+7123
+7121
+7115
+7115
+7115
+7115
+7115
+7115
+7115
+7115
+7115
+7118
+7126
+7126
+7136
+7136
+7136
+7136
+7138
+7141
+7146
+7146
+7146
+7146
+7146
+7141
+7135
+7127
+7125
+7103
+7081
+7069
+7027
+7001
+7015
+7053
+7051
+7038
+7037
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7038
+7016
+6969
+6888
+6768
+6610
+6424
+6213
+6031
+5842
+5660
+5476
+5285
+5115
+4939
+4746
+4555
+4369
+4203
+4085
+4044
+4056
+4076
+4076
+4075
+4060
+4031
+4012
+4007
+3906
+3732
+3508
+3192
+2838
+2479
+2111
+1745
+1419
+1177
+1021
+954
+871
+670
+481
+337
+157
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+7
+22
+70
+211
+393
+631
+950
+1269
+1563
+1835
+2042
+2260
+2481
+2704
+2950
+3202
+3441
+3664
+3873
+4051
+4229
+4421
+4599
+4694
+4704
+4542
+4174
+3733
+3174
+2597
+1993
+1428
+910
+476
+148
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x1 (POWERON),boot:0xf (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (30) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Dec 21 2023 04:19:22[0m
+[0;32mI (31) boot: chip revision: v0.4[0m
+[0;32mI (35) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (40) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (58) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (73) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c568h ( 50536) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0001c590 vaddr=3fc8c800 size=01354h (  4948) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001d8ec vaddr=40380000 size=0272ch ( 10028) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1eee4h (126692) map[0m
+[0;32mI (146) esp_image: segment 4: paddr=0003ef0c vaddr=4038272c size=09fcch ( 40908) load[0m
+[0;32mI (158) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (158) boot: Disabling RNG early entropy source...[0m
+[0;32mI (169) cpu_start: Unicore app[0m
+[0;32mI (178) cpu_start: Pro cpu start user code[0m
+[0;32mI (178) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (178) cpu_start: Application information:[0m
+[0;32mI (181) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (186) cpu_start: App version:      ec20f92-dirty[0m
+[0;32mI (192) cpu_start: Compile time:     Dec 21 2023 04:22:37[0m
+[0;32mI (198) cpu_start: ELF file SHA256:  15c466aaa...[0m
+[0;32mI (203) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (210) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (214) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (219) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (224) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (231) heap_init: At 3FC8EB60 len 000314A0 (197 KiB): RAM[0m
+[0;32mI (237) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (244) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (251) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (262) spi_flash: flash io: dio[0m
+[0;33mW (266) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (279) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (290) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (297) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (304) main_task: Started on CPU0[0m
+[0;32mI (304) main_task: Calling app_main()[0m
+[0;32mI (304) mpu9250: Initializating MPU9250[0m
+[0;32mI (464) mpu9250: Enabling magnetometer[0m
+[0;32mI (694) mpu9250: Magnetometer enabled[0m
+[0;32mI (694) mpu9250: MPU9250:[0m
+[0;32mI (694) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (694) mpu9250: --> Device address: 0x69[0m
+[0;32mI (694) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (694) mpu9250: --> initialised: Yes[0m
+[0;32mI (704) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (704) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (714) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (714) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (724) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (734) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (734) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (744) mpu9250: Accelerometer:[0m
+[0;32mI (744) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (754) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (764) mpu9250: --> Calibration:[0m
+[0;32mI (764) mpu9250:   --> Offset: [0m
+[0;32mI (764) mpu9250:     --> x: 0.020900[0m
+[0;32mI (774) mpu9250:     --> y: 0.014688[0m
+[0;32mI (774) mpu9250:     --> z: -0.002580[0m
+[0;32mI (784) mpu9250:   --> Scale: [0m
+[0;32mI (784) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (794) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (794) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (804) mpu9250: Gyroscope:[0m
+[0;32mI (804) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (814) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (814) mpu9250: --> Bias Offset:[0m
+[0;32mI (814) mpu9250:   --> x: 0.303956[0m
+[0;32mI (824) mpu9250:   --> y: -1.049768[0m
+[0;32mI (824) mpu9250:   --> z: -0.403782[0m
+[0;32mI (834) ak8963: Magnetometer (Compass):[0m
+[0;32mI (834) ak8963: --> i2c address: 0x00[0m
+[0;32mI (844) ak8963: --> initialised: true[0m
+[0;32mI (844) ak8963: --> Device ID: 0x48[0m
+[0;32mI (844) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (854) ak8963: --> ASA Scalars:[0m
+[0;32mI (864) ak8963:   --> x: 1.175781[0m
+[0;32mI (864) ak8963:   --> y: 1.187500[0m
+[0;32mI (864) ak8963:   --> z: 1.136719[0m
+[0;32mI (874) ak8963: --> Offset:[0m
+[0;32mI (874) ak8963:   --> x: 25.183594[0m
+[0;32mI (874) ak8963:   --> y: 57.519531[0m
+[0;32mI (884) ak8963:   --> z: -62.648438[0m
+[0;32mI (884) ak8963: --> Scale:[0m
+[0;32mI (894) ak8963:   --> x: 1.513449[0m
+[0;32mI (894) ak8963:   --> y: 1.557811[0m
+[0;32mI (894) ak8963:   --> z: 1.434039[0m
+Starting main loop
+0
+-1
+-1
+-1
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x1 (POWERON),boot:0xf (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (30) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Dec 21 2023 04:19:22[0m
+[0;32mI (31) boot: chip revision: v0.4[0m
+[0;32mI (35) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (40) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (58) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (73) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c568h ( 50536) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0001c590 vaddr=3fc8c800 size=01354h (  4948) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001d8ec vaddr=40380000 size=0272ch ( 10028) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1eee4h (126692) map[0m
+[0;32mI (146) esp_image: segment 4: paddr=0003ef0c vaddr=4038272c size=09fcch ( 40908) load[0m
+[0;32mI (158) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (158) boot: Disabling RNG early entropy source...[0m
+[0;32mI (169) cpu_start: Unicore app[0m
+[0;32mI (178) cpu_start: Pro cpu start user code[0m
+[0;32mI (178) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (178) cpu_start: Application information:[0m
+[0;32mI (181) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (186) cpu_start: App version:      ec20f92-dirty[0m
+[0;32mI (192) cpu_start: Compile time:     Dec 21 2023 04:22:37[0m
+[0;32mI (198) cpu_start: ELF file SHA256:  15c466aaa...[0m
+[0;32mI (203) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (210) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (214) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (219) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (224) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (231) heap_init: At 3FC8EB60 len 000314A0 (197 KiB): RAM[0m
+[0;32mI (237) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (244) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (251) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (262) spi_flash: flash io: dio[0m
+[0;33mW (266) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (279) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (290) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (297) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (304) main_task: Started on CPU0[0m
+[0;32mI (304) main_task: Calling app_main()[0m
+[0;32mI (304) mpu9250: Initializating MPU9250[0m
+[0;32mI (464) mpu9250: Enabling magnetometer[0m
+[0;32mI (694) mpu9250: Magnetometer enabled[0m
+[0;32mI (694) mpu9250: MPU9250:[0m
+[0;32mI (694) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (694) mpu9250: --> Device address: 0x69[0m
+[0;32mI (694) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (694) mpu9250: --> initialised: Yes[0m
+[0;32mI (704) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (704) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (714) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (714) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (724) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (734) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (734) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (744) mpu9250: Accelerometer:[0m
+[0;32mI (744) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (754) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (764) mpu9250: --> Calibration:[0m
+[0;32mI (764) mpu9250:   --> Offset: [0m
+[0;32mI (764) mpu9250:     --> x: 0.020900[0m
+[0;32mI (774) mpu9250:     --> y: 0.014688[0m
+[0;32mI (774) mpu9250:     --> z: -0.002580[0m
+[0;32mI (784) mpu9250:   --> Scale: [0m
+[0;32mI (784) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (794) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (794) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (804) mpu9250: Gyroscope:[0m
+[0;32mI (804) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (814) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (814) mpu9250: --> Bias Offset:[0m
+[0;32mI (814) mpu9250:   --> x: 0.303956[0m
+[0;32mI (824) mpu9250:   --> y: -1.049768[0m
+[0;32mI (824) mpu9250:   --> z: -0.403782[0m
+[0;32mI (834) ak8963: Magnetometer (Compass):[0m
+[0;32mI (834) ak8963: --> i2c address: 0x00[0m
+[0;32mI (844) ak8963: --> initialised: true[0m
+[0;32mI (844) ak8963: --> Device ID: 0x48[0m
+[0;32mI (844) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (854) ak8963: --> ASA Scalars:[0m
+[0;32mI (864) ak8963:   --> x: 1.175781[0m
+[0;32mI (864) ak8963:   --> y: 1.187500[0m
+[0;32mI (864) ak8963:   --> z: 1.136719[0m
+[0;32mI (874) ak8963: --> Offset:[0m
+[0;32mI (874) ak8963:   --> x: 25.183594[0m
+[0;32mI (874) ak8963:   --> y: 57.519531[0m
+[0;32mI (884) ak8963:   --> z: -62.648438[0m
+[0;32mI (884) ak8963: --> Scale:[0m
+[0;32mI (894) ak8963:   --> x: 1.513449[0m
+[0;32mI (894) ak8963:   --> y: 1.557811[0m
+[0;32mI (894) ak8963:   --> z: 1.434039[0m
+Starting main loop
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+137
+582
+1181
+1889
+2692
+3545
+4411
+5347
+6318
+7428
+8519
+9581
+10689
+11888
+12997
+14093
+15162
+16072
+16886
+17680
+18443
+19234
+19950
+20623
+21317
+21973
+22637
+23355
+24012
+24608
+25173
+25648
+26077
+26492
+26897
+27203
+27457
+27638
+27738
+27774
+27835
+27966
+28052
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x42008de0
+file: "./main/accel.c" line 89
+func: accel_update
+expression: get_accel_gyro_mag(&va, &vg, &vm)
+
+abort() was called at PC 0x40384f47 on core 0
+Core  0 register dump:
+MEPC    : 0x4038078e  RA      : 0x40384f52  SP      : 0x3fc93570  GP      : 0x3fc8d000  
+TP      : 0x3fc87ca0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fc935d4  A0      : 0x3fc9359c  A1      : 0x3fc935d2  
+A2      : 0x00000000  A3      : 0x3fc935c9  A4      : 0x00000001  A5      : 0x3fc8f000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc9359c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+472	    *((volatile int *) 0) = 0; // NOLINT(clang-analyzer-core.NullDereference) should be an invalid operation on targets
+#0  panic_abort (details=details@entry=0x3fc9359c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+#1  0x40384f52 in esp_system_abort (details=details@entry=0x3fc9359c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+#2  0x4038b052 in abort () at /Users/naichenzhao/esp/esp-idf/components/newlib/abort.c:38
+#3  0x40384f4a in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x3c024b24 "", line=line@entry=89, function=function@entry=0x3c029c38 <__func__.0> "", expression=expression@entry=0x3c024b00 "") at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+#4  0x42008de4 in accel_update () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:89
+#5  0x42008dec in imu_task (arg=<error reading variable: value has been optimized out>) at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:70
+#6  0x40385eea in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+ELF file SHA256: 15c466aaa
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380746
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Dec 21 2023 04:19:22[0m
+[0;32mI (36) boot: chip revision: v0.4[0m
+[0;32mI (40) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (45) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c568h ( 50536) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001c590 vaddr=3fc8c800 size=01354h (  4948) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=0001d8ec vaddr=40380000 size=0272ch ( 10028) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1eee4h (126692) map[0m
+[0;32mI (151) esp_image: segment 4: paddr=0003ef0c vaddr=4038272c size=09fcch ( 40908) load[0m
+[0;32mI (163) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (163) boot: Disabling RNG early entropy source...[0m
+[0;32mI (174) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (183) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (183) cpu_start: Application information:[0m
+[0;32mI (186) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (191) cpu_start: App version:      ec20f92-dirty[0m
+[0;32mI (197) cpu_start: Compile time:     Dec 21 2023 04:22:37[0m
+[0;32mI (203) cpu_start: ELF file SHA256:  15c466aaa...[0m
+[0;32mI (208) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (215) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (219) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (224) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (229) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (236) heap_init: At 3FC8EB60 len 000314A0 (197 KiB): RAM[0m
+[0;32mI (242) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (249) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (256) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (263) spi_flash: detected chip: generic[0m
+[0;32mI (267) spi_flash: flash io: dio[0m
+[0;33mW (271) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (284) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (295) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (302) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (309) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) mpu9250: Initializating MPU9250[0m
+[0;32mI (649) mpu9250: Enabling magnetometer[0m
+[0;32mI (879) mpu9250: Magnetometer enabled[0m
+[0;32mI (879) mpu9250: MPU9250:[0m
+[0;32mI (879) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (879) mpu9250: --> Device address: 0x69[0m
+[0;32mI (879) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (879) mpu9250: --> initialised: Yes[0m
+[0;32mI (889) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (889) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (899) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (899) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (909) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (919) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (919) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (929) mpu9250: Accelerometer:[0m
+[0;32mI (929) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (939) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (949) mpu9250: --> Calibration:[0m
+[0;32mI (949) mpu9250:   --> Offset: [0m
+[0;32mI (949) mpu9250:     --> x: 0.020900[0m
+[0;32mI (959) mpu9250:     --> y: 0.014688[0m
+[0;32mI (959) mpu9250:     --> z: -0.002580[0m
+[0;32mI (969) mpu9250:   --> Scale: [0m
+[0;32mI (969) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (979) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (979) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (989) mpu9250: Gyroscope:[0m
+[0;32mI (989) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (999) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (999) mpu9250: --> Bias Offset:[0m
+[0;32mI (999) mpu9250:   --> x: 0.303956[0m
+[0;32mI (1009) mpu9250:   --> y: -1.049768[0m
+[0;32mI (1009) mpu9250:   --> z: -0.403782[0m
+[0;32mI (1019) ak8963: Magnetometer (Compass):[0m
+[0;32mI (1019) ak8963: --> i2c address: 0x00[0m
+[0;32mI (1029) ak8963: --> initialised: true[0m
+[0;32mI (1029) ak8963: --> Device ID: 0x48[0m
+[0;32mI (1029) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (1039) ak8963: --> ASA Scalars:[0m
+[0;32mI (1049) ak8963:   --> x: 1.175781[0m
+[0;32mI (1049) ak8963:   --> y: 1.187500[0m
+[0;32mI (1049) ak8963:   --> z: 1.136719[0m
+[0;32mI (1059) ak8963: --> Offset:[0m
+[0;32mI (1059) ak8963:   --> x: 25.183594[0m
+[0;32mI (1069) ak8963:   --> y: 57.519531[0m
+[0;32mI (1069) ak8963:   --> z: -62.648438[0m
+[0;32mI (1069) ak8963: --> Scale:[0m
+[0;32mI (1079) ak8963:   --> x: 1.513449[0m
+[0;32mI (1079) ak8963:   --> y: 1.557811[0m
+[0;32mI (1089) ak8963:   --> z: 1.434039[0m
+Starting main loop
+1
+2
+1
+0
+-33
+-79
+-79
+-79
+-93
+-123
+-121
+-108
+-82
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x42008de0
+file: "./main/accel.c" line 89
+func: accel_update
+expression: get_accel_gyro_mag(&va, &vg, &vm)
+
+abort() was called at PC 0x40384f47 on core 0
+Core  0 register dump:
+MEPC    : 0x4038078e  RA      : 0x40384f52  SP      : 0x3fc93570  GP      : 0x3fc8d000  
+TP      : 0x3fc87ca0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fc935d4  A0      : 0x3fc9359c  A1      : 0x3fc935d2  
+A2      : 0x00000000  A3      : 0x3fc935c9  A4      : 0x00000001  A5      : 0x3fc8f000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc9359c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+472	    *((volatile int *) 0) = 0; // NOLINT(clang-analyzer-core.NullDereference) should be an invalid operation on targets
+#0  panic_abort (details=details@entry=0x3fc9359c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+#1  0x40384f52 in esp_system_abort (details=details@entry=0x3fc9359c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+#2  0x4038b052 in abort () at /Users/naichenzhao/esp/esp-idf/components/newlib/abort.c:38
+#3  0x40384f4a in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x3c024b24 "", line=line@entry=89, function=function@entry=0x3c029c38 <__func__.0> "", expression=expression@entry=0x3c024b00 "") at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+#4  0x42008de4 in accel_update () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:89
+#5  0x42008dec in imu_task (arg=<error reading variable: value has been optimized out>) at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:70
+#6  0x40385eea in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+ELF file SHA256: 15c466aaa
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380746
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Dec 21 2023 04:19:22[0m
+[0;32mI (36) boot: chip revision: v0.4[0m
+[0;32mI (40) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (45) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c568h ( 50536) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001c590 vaddr=3fc8c800 size=01354h (  4948) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=0001d8ec vaddr=40380000 size=0272ch ( 10028) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1eee4h (126692) map[0m
+[0;32mI (151) esp_image: segment 4: paddr=0003ef0c vaddr=4038272c size=09fcch ( 40908) load[0m
+[0;32mI (163) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (163) boot: Disabling RNG early entropy source...[0m
+[0;32mI (174) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (183) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (183) cpu_start: Application information:[0m
+[0;32mI (186) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (191) cpu_start: App version:      ec20f92-dirty[0m
+[0;32mI (197) cpu_start: Compile time:     Dec 21 2023 04:22:37[0m
+[0;32mI (203) cpu_start: ELF file SHA256:  15c466aaa...[0m
+[0;32mI (208) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (215) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (219) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (224) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (229) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (236) heap_init: At 3FC8EB60 len 000314A0 (197 KiB): RAM[0m
+[0;32mI (242) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (249) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (256) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (263) spi_flash: detected chip: generic[0m
+[0;32mI (267) spi_flash: flash io: dio[0m
+[0;33mW (271) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (284) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (295) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (302) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (309) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x4200bd2c
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40384f47 on core 0
+Core  0 register dump:
+MEPC    : 0x4038078e  RA      : 0x40384f52  SP      : 0x3fc91930  GP      : 0x3fc8d000  
+TP      : 0x3fc86040  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fc91994  A0      : 0x3fc9195c  A1      : 0x3fc91992  
+A2      : 0x00000000  A3      : 0x3fc91989  A4      : 0x00000001  A5      : 0x3fc8f000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc9195c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+472	    *((volatile int *) 0) = 0; // NOLINT(clang-analyzer-core.NullDereference) should be an invalid operation on targets
+#0  panic_abort (details=details@entry=0x3fc9195c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+#1  0x40384f52 in esp_system_abort (details=details@entry=0x3fc9195c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+#2  0x4038b052 in abort () at /Users/naichenzhao/esp/esp-idf/components/newlib/abort.c:38
+#3  0x40384f4a in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x3c024d10 "", line=line@entry=64, function=function@entry=0x3c029ecc <__func__.4> "", expression=expression@entry=0x3c02552c "") at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+#4  0x4200bd30 in i2c_mpu9250_init (c=c@entry=0x3fc8ca58 <cal>) at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/components/mpu9250/mpu9250.c:64
+#5  0x42008c5c in accel_init () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:81
+#6  0x42008bc6 in app_main () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/main.c:22
+#7  0x4201e406 in main_task (args=<error reading variable: value has been optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/app_startup.c:208
+#8  0x40385eea in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+ELF file SHA256: 15c466aaa
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380746
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Dec 21 2023 04:19:22[0m
+[0;32mI (36) boot: chip revision: v0.4[0m
+[0;32mI (40) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (45) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c568h ( 50536) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001c590 vaddr=3fc8c800 size=01354h (  4948) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=0001d8ec vaddr=40380000 size=0272ch ( 10028) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1eee4h (126692) map[0m
+[0;32mI (151) esp_image: segment 4: paddr=0003ef0c vaddr=4038272c size=09fcch ( 40908) load[0m
+[0;32mI (163) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (163) boot: Disabling RNG early entropy source...[0m
+[0;32mI (174) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (183) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (183) cpu_start: Application information:[0m
+[0;32mI (186) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (191) cpu_start: App version:      ec20f92-dirty[0m
+[0;32mI (197) cpu_start: Compile time:     Dec 21 2023 04:22:37[0m
+[0;32mI (203) cpu_start: ELF file SHA256:  15c466aaa...[0m
+[0;32mI (208) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (215) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (219) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (224) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (229) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (236) heap_init: At 3FC8EB60 len 000314A0 (197 KiB): RAM[0m
+[0;32mI (242) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (249) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (256) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (263) spi_flash: detected chip: generic[0m
+[0;32mI (267) spi_flash: flash io: dio[0m
+[0;33mW (271) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (284) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (295) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (302) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (309) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) mpu9250: Initializating MPU9250[0m
+[0;32mI (469) mpu9250: Enabling magnetometer[0m
+[0;32mI (699) mpu9250: Magnetometer enabled[0m
+[0;32mI (699) mpu9250: MPU9250:[0m
+[0;32mI (699) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (699) mpu9250: --> Device address: 0x69[0m
+[0;32mI (699) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (699) mpu9250: --> initialised: Yes[0m
+[0;32mI (709) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (709) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (719) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (719) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (729) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (739) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (739) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (749) mpu9250: Accelerometer:[0m
+[0;32mI (749) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (759) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (769) mpu9250: --> Calibration:[0m
+[0;32mI (769) mpu9250:   --> Offset: [0m
+[0;32mI (769) mpu9250:     --> x: 0.020900[0m
+[0;32mI (779) mpu9250:     --> y: 0.014688[0m
+[0;32mI (779) mpu9250:     --> z: -0.002580[0m
+[0;32mI (789) mpu9250:   --> Scale: [0m
+[0;32mI (789) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (799) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (799) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (809) mpu9250: Gyroscope:[0m
+[0;32mI (809) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (819) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (819) mpu9250: --> Bias Offset:[0m
+[0;32mI (819) mpu9250:   --> x: 0.303956[0m
+[0;32mI (829) mpu9250:   --> y: -1.049768[0m
+[0;32mI (829) mpu9250:   --> z: -0.403782[0m
+[0;32mI (839) ak8963: Magnetometer (Compass):[0m
+[0;32mI (839) ak8963: --> i2c address: 0x00[0m
+[0;32mI (849) ak8963: --> initialised: true[0m
+[0;32mI (849) ak8963: --> Device ID: 0x48[0m
+[0;32mI (849) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (859) ak8963: --> ASA Scalars:[0m
+[0;32mI (869) ak8963:   --> x: 1.175781[0m
+[0;32mI (869) ak8963:   --> y: 1.187500[0m
+[0;32mI (869) ak8963:   --> z: 1.136719[0m
+[0;32mI (879) ak8963: --> Offset:[0m
+[0;32mI (879) ak8963:   --> x: 25.183594[0m
+[0;32mI (879) ak8963:   --> y: 57.519531[0m
+[0;32mI (889) ak8963:   --> z: -62.648438[0m
+[0;32mI (889) ak8963: --> Scale:[0m
+[0;32mI (899) ak8963:   --> x: 1.513449[0m
+[0;32mI (899) ak8963:   --> y: 1.557811[0m
+[0;32mI (899) ak8963:   --> z: 1.434039[0m
+Starting main loop
+0
+0
+0
+0
+0
+0
+0
+0
+0
+27
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x42008de0
+file: "./main/accel.c" line 89
+func: accel_update
+expression: get_accel_gyro_mag(&va, &vg, &vm)
+
+abort() was called at PC 0x40384f47 on core 0
+Core  0 register dump:
+MEPC    : 0x4038078e  RA      : 0x40384f52  SP      : 0x3fc93570  GP      : 0x3fc8d000  
+TP      : 0x3fc87ca0  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fc935d4  A0      : 0x3fc9359c  A1      : 0x3fc935d2  
+A2      : 0x00000000  A3      : 0x3fc935c9  A4      : 0x00000001  A5      : 0x3fc8f000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc9359c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+472	    *((volatile int *) 0) = 0; // NOLINT(clang-analyzer-core.NullDereference) should be an invalid operation on targets
+#0  panic_abort (details=details@entry=0x3fc9359c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+#1  0x40384f52 in esp_system_abort (details=details@entry=0x3fc9359c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+#2  0x4038b052 in abort () at /Users/naichenzhao/esp/esp-idf/components/newlib/abort.c:38
+#3  0x40384f4a in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x3c024b24 "", line=line@entry=89, function=function@entry=0x3c029c38 <__func__.0> "", expression=expression@entry=0x3c024b00 "") at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+#4  0x42008de4 in accel_update () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:89
+#5  0x42008dec in imu_task (arg=<error reading variable: value has been optimized out>) at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:70
+#6  0x40385eea in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+ELF file SHA256: 15c466aaa
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380746
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Dec 21 2023 04:19:22[0m
+[0;32mI (36) boot: chip revision: v0.4[0m
+[0;32mI (40) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (45) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c568h ( 50536) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001c590 vaddr=3fc8c800 size=01354h (  4948) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=0001d8ec vaddr=40380000 size=0272ch ( 10028) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1eee4h (126692) map[0m
+[0;32mI (151) esp_image: segment 4: paddr=0003ef0c vaddr=4038272c size=09fcch ( 40908) load[0m
+[0;32mI (163) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (163) boot: Disabling RNG early entropy source...[0m
+[0;32mI (174) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (183) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (183) cpu_start: Application information:[0m
+[0;32mI (186) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (191) cpu_start: App version:      ec20f92-dirty[0m
+[0;32mI (197) cpu_start: Compile time:     Dec 21 2023 04:22:37[0m
+[0;32mI (203) cpu_start: ELF file SHA256:  15c466aaa...[0m
+[0;32mI (208) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (215) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (219) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (224) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (229) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (236) heap_init: At 3FC8EB60 len 000314A0 (197 KiB): RAM[0m
+[0;32mI (242) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (249) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (256) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (263) spi_flash: detected chip: generic[0m
+[0;32mI (267) spi_flash: flash io: dio[0m
+[0;33mW (271) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (284) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (295) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (302) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (309) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x4200bd98
+file: "./components/mpu9250/mpu9250.c" line 76
+func: i2c_mpu9250_init
+expression: set_full_scale_accel_range(MPU9250_ACCEL_FS_4)
+
+abort() was called at PC 0x40384f47 on core 0
+Core  0 register dump:
+MEPC    : 0x4038078e  RA      : 0x40384f52  SP      : 0x3fc91930  GP      : 0x3fc8d000  
+TP      : 0x3fc86040  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fc91994  A0      : 0x3fc9195c  A1      : 0x3fc91992  
+A2      : 0x00000000  A3      : 0x3fc91989  A4      : 0x00000001  A5      : 0x3fc8f000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc9195c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+472	    *((volatile int *) 0) = 0; // NOLINT(clang-analyzer-core.NullDereference) should be an invalid operation on targets
+#0  panic_abort (details=details@entry=0x3fc9195c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+#1  0x40384f52 in esp_system_abort (details=details@entry=0x3fc9195c "abort() was called at PC 0x40384f47 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+#2  0x4038b052 in abort () at /Users/naichenzhao/esp/esp-idf/components/newlib/abort.c:38
+#3  0x40384f4a in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x3c024d10 "", line=line@entry=76, function=function@entry=0x3c029ecc <__func__.4> "", expression=expression@entry=0x3c0255f4 "") at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+#4  0x4200bd9c in i2c_mpu9250_init (c=c@entry=0x3fc8ca58 <cal>) at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/components/mpu9250/mpu9250.c:76
+#5  0x42008c5c in accel_init () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:81
+#6  0x42008bc6 in app_main () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/main.c:22
+#7  0x4201e406 in main_task (args=<error reading variable: value has been optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/app_startup.c:208
+#8  0x40385eea in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+ELF file SHA256: 15c466aaa
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380746
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Dec 21 2023 04:19:22[0m
+[0;32mI (36) boot: chip revision: v0.4[0m
+[0;32mI (40) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (45) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c568h ( 50536) map[0m
+[0;32mI (113) esp_image: segment 1: paddr=0001c590 vaddr=3fc8c800 size=01354h (  4948) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=0001d8ec vaddr=40380000 size=0272ch ( 10028) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1eee4h (126692) map[0m
+[0;32mI (151) esp_image: segment 4: paddr=0003ef0c vaddr=4038272c size=09fcch ( 40908) load[0m
+[0;32mI (163) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (163) boot: Disabling RNG early entropy source...[0m
+[0;32mI (174) cpu_start: Unicore app[0m
+[0;32mI (183) cpu_start: Pro cpu start user code[0m
+[0;32mI (183) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (183) cpu_start: Application information:[0m
+[0;32mI (186) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (191) cpu_start: App version:      ec20f92-dirty[0m
+[0;32mI (197) cpu_start: Compile time:     Dec 21 2023 04:22:37[0m
+[0;32mI (203) cpu_start: ELF file SHA256:  15c466aaa...[0m
+[0;32mI (208) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (215) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (219) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (224) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (229) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (236) heap_init: At 3FC8EB60 len 000314A0 (197 KiB): RAM[0m
+[0;32mI (242) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (249) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (256) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (263) spi_flash: detected chip: generic[0m
+[0;32mI (267) spi_flash: flash io: dio[0m
+[0;33mW (271) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (284) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (295) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (302) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (309) main_task: Started on CPU0[0m
+[0;32mI (309) main_task: Calling app_main()[0m
+[0;32mI (309) mpu9250: Initializating MPU9250[0m
+[0;32mI (469) mpu9250: Enabling magnetometer[0m
+[0;32mI (699) mpu9250: Magnetometer enabled[0m
+[0;32mI (699) mpu9250: MPU9250:[0m
+[0;32mI (699) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (699) mpu9250: --> Device address: 0x69[0m
+[0;32mI (699) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (699) mpu9250: --> initialised: Yes[0m
+[0;32mI (709) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (709) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (719) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (719) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (729) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (739) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (739) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (749) mpu9250: Accelerometer:[0m
+[0;32mI (749) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (759) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (769) mpu9250: --> Calibration:[0m
+[0;32mI (769) mpu9250:   --> Offset: [0m
+[0;32mI (769) mpu9250:     --> x: 0.020900[0m
+[0;32mI (779) mpu9250:     --> y: 0.014688[0m
+[0;32mI (779) mpu9250:     --> z: -0.002580[0m
+[0;32mI (789) mpu9250:   --> Scale: [0m
+[0;32mI (789) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (799) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (799) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (809) mpu9250: Gyroscope:[0m
+[0;32mI (809) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (819) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (819) mpu9250: --> Bias Offset:[0m
+[0;32mI (819) mpu9250:   --> x: 0.303956[0m
+[0;32mI (829) mpu9250:   --> y: -1.049768[0m
+[0;32mI (829) mpu9250:   --> z: -0.403782[0m
+[0;32mI (839) ak8963: Magnetometer (Compass):[0m
+[0;32mI (839) ak8963: --> i2c address: 0x00[0m
+[0;32mI (849) ak8963: --> initialised: true[0m
+[0;32mI (849) ak8963: --> Device ID: 0x48[0m
+[0;32mI (849) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (859) ak8963: --> ASA Scalars:[0m
+[0;32mI (869) ak8963:   --> x: 1.175781[0m
+[0;32mI (869) ak8963:   --> y: 1.187500[0m
+[0;32mI (869) ak8963:   --> z: 1.136719[0m
+[0;32mI (879) ak8963: --> Offset:[0m
+[0;32mI (879) ak8963:   --> x: 25.183594[0m
+[0;32mI (879) ak8963:   --> y: 57.519531[0m
+[0;32mI (889) ak8963:   --> z: -62.648438[0m
+[0;32mI (889) ak8963: --> Scale:[0m
+[0;32mI (899) ak8963:   --> x: 1.513449[0m
+[0;32mI (899) ak8963:   --> y: 1.557811[0m
+[0;32mI (899) ak8963:   --> z: 1.434039[0m
+Starting main loop
+0
+0
+0
+0
+0
+0
+0
+0
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2
+-2

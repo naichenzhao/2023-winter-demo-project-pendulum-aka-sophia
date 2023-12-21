@@ -1,19 +1,25 @@
 # Edit following two lines to set component requirements (see docs)
-set(COMPONENT_REQUIRES )
-set(COMPONENT_PRIV_REQUIRES )
+# set(COMPONENT_REQUIRES )
+# set(COMPONENT_PRIV_REQUIRES )
 
-set(COMPONENT_SRCS 
+# set(COMPONENT_SRCS 
+#     "main.c"
+#     "motor.c"
+#     "motor.h"
+#     "accel.c"
+#     "accel.h")
+
+idf_component_register(SRCS 
     "main.c"
     "motor.c"
     "motor.h"
     "accel.c"
-    "accel.h")
+    "accel.h"
+    "encoder.c"
+    "encoder.h"
+    INCLUDE_DIRS "."
+    REQUIRES ahrs mpu9250 rotary_encoder esp_timer)
+
 set(COMPONENT_ADD_INCLUDEDIRS "")
-
-
-
-idf_component_register(COMPONENT_SRCS "main.c"
-                       INCLUDE_DIRS "."
-                       REQUIRES ahrs mpu9250)
 
 # register_component()

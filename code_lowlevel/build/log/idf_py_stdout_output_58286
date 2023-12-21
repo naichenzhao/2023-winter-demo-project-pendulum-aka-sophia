@@ -1,0 +1,226 @@
+e time:     Dec�ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x1 (POWERON),boot:0xc (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (30) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Dec 21 2023 04:19:22[0m
+[0;32mI (31) boot: chip revision: v0.4[0m
+[0;32mI (35) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (40) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (58) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (73) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0c568h ( 50536) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0001c590 vaddr=3fc8c800 size=01354h (  4948) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001d8ec vaddr=40380000 size=0272ch ( 10028) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1eeech (126700) map[0m
+[0;32mI (146) esp_image: segment 4: paddr=0003ef14 vaddr=4038272c size=09fcch ( 40908) load[0m
+[0;32mI (158) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (158) boot: Disabling RNG early entropy source...[0m
+[0;32mI (169) cpu_start: Unicore app[0m
+[0;32mI (178) cpu_start: Pro cpu start user code[0m
+[0;32mI (178) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (178) cpu_start: Application information:[0m
+[0;32mI (181) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (186) cpu_start: App version:      ec20f92-dirty[0m
+[0;32mI (192) cpu_start: Compile time:     Dec 21 2023 04:22:37[0m
+[0;32mI (198) cpu_start: ELF file SHA256:  ef78e025a...[0m
+[0;32mI (203) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (210) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (214) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (219) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (224) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (231) heap_init: At 3FC8EB60 len 000314A0 (197 KiB): RAM[0m
+[0;32mI (237) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (244) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (251) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (262) spi_flash: flash io: dio[0m
+[0;33mW (266) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (279) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (290) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (297) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (304) main_task: Started on CPU0[0m
+[0;32mI (304) main_task: Calling app_main()[0m
+[0;32mI (304) mpu9250: Initializating MPU9250[0m
+[0;32mI (464) mpu9250: Enabling magnetometer[0m
+[0;32mI (694) mpu9250: Magnetometer enabled[0m
+[0;32mI (694) mpu9250: MPU9250:[0m
+[0;32mI (694) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (694) mpu9250: --> Device address: 0x69[0m
+[0;32mI (694) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (694) mpu9250: --> initialised: Yes[0m
+[0;32mI (704) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (704) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (714) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (714) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (724) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (734) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (734) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (744) mpu9250: Accelerometer:[0m
+[0;32mI (744) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (754) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (764) mpu9250: --> Calibration:[0m
+[0;32mI (764) mpu9250:   --> Offset: [0m
+[0;32mI (764) mpu9250:     --> x: 0.020900[0m
+[0;32mI (774) mpu9250:     --> y: 0.014688[0m
+[0;32mI (774) mpu9250:     --> z: -0.002580[0m
+[0;32mI (784) mpu9250:   --> Scale: [0m
+[0;32mI (784) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (794) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (794) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (804) mpu9250: Gyroscope:[0m
+[0;32mI (804) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (814) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (814) mpu9250: --> Bias Offset:[0m
+[0;32mI (814) mpu9250:   --> x: 0.303956[0m
+[0;32mI (824) mpu9250:   --> y: -1.049768[0m
+[0;32mI (824) mpu9250:   --> z: -0.403782[0m
+[0;32mI (834) ak8963: Magnetometer (Compass):[0m
+[0;32mI (834) ak8963: --> i2c address: 0x00[0m
+[0;32mI (844) ak8963: --> initialised: true[0m
+[0;32mI (844) ak8963: --> Device ID: 0x48[0m
+[0;32mI (844) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (854) ak8963: --> ASA Scalars:[0m
+[0;32mI (864) ak8963:   --> x: 1.175781[0m
+[0;32mI (864) ak8963:   --> y: 1.187500[0m
+[0;32mI (864) ak8963:   --> z: 1.136719[0m
+[0;32mI (874) ak8963: --> Offset:[0m
+[0;32mI (874) ak8963:   --> x: 25.183594[0m
+[0;32mI (874) ak8963:   --> y: 57.519531[0m
+[0;32mI (884) ak8963:   --> z: -62.648438[0m
+[0;32mI (884) ak8963: --> Scale:[0m
+[0;32mI (894) ak8963:   --> x: 1.513449[0m
+[0;32mI (894) ak8963:   --> y: 1.557811[0m
+[0;32mI (894) ak8963:   --> z: 1.434039[0m
+Starting main loop
+746902
+846480
+946480
+1046486
+1146951
+1246622
+1346506
+1446485
+1546480
+1646480
+1746738
+1846480
+1946499
+2046904
+2146480
+2246550
+2346961
+2446499
+2546502
+2646539
+2746494
+2846480
+2946512
+3046569
+3146480
+3246480
+3346674
+3446480
+3546480
+3646714
+3746480
+3846480
+3946775
+4046480
+4146480
+4246883
+4346480
+4446571
+4546480
+4646480
+4746540
+4846557
+4946495
+5046480
+5146484
+5246672
+5346480
+5446480
+5546825
+5646480
+5746534
+5846971
+5946499
+6046496
+6146544
+6246481
+6346480
+6446481
+6546684
+6646480
+6746480
+6846832
+6946480
+7046560
+7146481
+7246484
+7346551
+7446480
+7546510
+7646480
+7746499
+7846691
+7946480
+8046480
+8146844
+8246480
+8346542
+8446480
+8546480
+8646505
+8746545
+8846481
+8946480
+9046480
+9146657
+9246480
+9346480
+9446780
+9546480
+9646490
+9746946
+9846480
+9946480
+10046502
+10146489
+10246480
+10346519
+10446591
+10546480
+10646480
+10746763
+10846480
+10946493
+11046852
+11146480
+11246559
+11346484
+11446494
+11546558
+11646492
+11746531
+11846480
+11946499
+12046707
+12146480
+12246483
+12346854
+12446480
+12546555
+12646480

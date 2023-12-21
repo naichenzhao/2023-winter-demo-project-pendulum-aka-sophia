@@ -1,4 +1,4 @@
-# Install script for directory: /Users/naichenzhao/Desktop/SLICE/pendulum_lowlevel/main
+# Install script for directory: /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

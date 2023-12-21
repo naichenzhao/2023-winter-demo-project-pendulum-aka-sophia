@@ -1,4 +1,4 @@
-/* * Data converted from /Users/naichenzhao/Desktop/SLICE/pendulum_lowlevel/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

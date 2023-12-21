@@ -1,4 +1,4 @@
-# Install script for directory: /Users/naichenzhao/Desktop/SLICE/pendulum_lowlevel
+# Install script for directory: /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/naichenzhao/Desktop/SLICE/pendulum_lowlevel/build/esp-idf/cmake_install.cmake")
+  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/build/esp-idf/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/naichenzhao/Desktop/SLICE/pendulum_lowlevel/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
