@@ -1,0 +1,3457 @@
+
+[0;32mI (193) cp�ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x1 (POWERON),boot:0xf (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (30) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Dec 22 2023 00:21:23[0m
+[0;32mI (31) boot: chip revision: v0.4[0m
+[0;32mI (35) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (40) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (44) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (49) boot: Enabling RNG early entropy source...[0m
+[0;32mI (54) boot: Partition Table:[0m
+[0;32mI (58) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (65) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (73) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (80) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (88) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0cdd0h ( 52688) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0001cdf8 vaddr=3fc8ca00 size=0139ch (  5020) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001e19c vaddr=40380000 size=01e7ch (  7804) load[0m
+[0;32mI (119) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=20a1ch (133660) map[0m
+[0;32mI (147) esp_image: segment 4: paddr=00040a44 vaddr=40381e7c size=0aa90h ( 43664) load[0m
+[0;32mI (159) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (159) boot: Disabling RNG early entropy source...[0m
+[0;32mI (171) cpu_start: Unicore app[0m
+[0;32mI (180) cpu_start: Pro cpu start user code[0m
+[0;32mI (180) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (180) cpu_start: Application information:[0m
+[0;32mI (183) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (188) cpu_start: App version:      e081166-dirty[0m
+[0;32mI (193) cpu_start: Compile time:     Dec 22 2023 00:21:09[0m
+[0;32mI (199) cpu_start: ELF file SHA256:  27e922f41...[0m
+[0;32mI (205) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (211) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (216) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (221) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (226) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (233) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (239) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (246) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (253) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (260) spi_flash: detected chip: generic[0m
+[0;32mI (264) spi_flash: flash io: dio[0m
+[0;33mW (268) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (281) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (292) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (298) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (306) main_task: Started on CPU0[0m
+[0;32mI (306) main_task: Calling app_main()[0m
+0
+[0;32mI (306) mpu9250: Initializating MPU9250[0m
+[0;32mI (466) mpu9250: Enabling magnetometer[0m
+[0;32mI (696) mpu9250: Magnetometer enabled[0m
+[0;32mI (696) mpu9250: MPU9250:[0m
+[0;32mI (696) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (696) mpu9250: --> Device address: 0x69[0m
+[0;32mI (696) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (696) mpu9250: --> initialised: Yes[0m
+[0;32mI (706) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (706) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (716) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (716) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (726) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (736) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (736) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (746) mpu9250: Accelerometer:[0m
+[0;32mI (746) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (756) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (766) mpu9250: --> Calibration:[0m
+[0;32mI (766) mpu9250:   --> Offset: [0m
+[0;32mI (766) mpu9250:     --> x: 0.020900[0m
+[0;32mI (776) mpu9250:     --> y: 0.014688[0m
+[0;32mI (776) mpu9250:     --> z: -0.002580[0m
+[0;32mI (786) mpu9250:   --> Scale: [0m
+[0;32mI (786) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (796) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (796) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (806) mpu9250: Gyroscope:[0m
+[0;32mI (806) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (816) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (816) mpu9250: --> Bias Offset:[0m
+[0;32mI (816) mpu9250:   --> x: 0.303956[0m
+[0;32mI (826) mpu9250:   --> y: -1.049768[0m
+[0;32mI (826) mpu9250:   --> z: -0.403782[0m
+[0;32mI (836) ak8963: Magnetometer (Compass):[0m
+[0;32mI (836) ak8963: --> i2c address: 0x00[0m
+[0;32mI (846) ak8963: --> initialised: true[0m
+[0;32mI (846) ak8963: --> Device ID: 0x48[0m
+[0;32mI (846) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (856) ak8963: --> ASA Scalars:[0m
+[0;32mI (866) ak8963:   --> x: 1.175781[0m
+[0;32mI (866) ak8963:   --> y: 1.187500[0m
+[0;32mI (866) ak8963:   --> z: 1.136719[0m
+[0;32mI (876) ak8963: --> Offset:[0m
+[0;32mI (876) ak8963:   --> x: 25.183594[0m
+[0;32mI (876) ak8963:   --> y: 57.519531[0m
+[0;32mI (886) ak8963:   --> z: -62.648438[0m
+[0;32mI (886) ak8963: --> Scale:[0m
+[0;32mI (896) ak8963:   --> x: 1.513449[0m
+[0;32mI (896) ak8963:   --> y: 1.557811[0m
+[0;32mI (896) ak8963:   --> z: 1.434039[0m
+[0;32mI (906) gpio: GPIO[9]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Starting main loop
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-2262.443604
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:99.980003
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-98.980499
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:100.060036
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-100.796295
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:100.120148
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-100.050026
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:101.112236
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-99.661148
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:99.730728
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-100.532822
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:99.482689
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-96.786682
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:103.401924
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-100.745514
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:100.010002
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-100.170288
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:100.270729
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-97.418411
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:100.959114
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-99.810356
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:99.989998
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-99.840256
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:100.010002
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-95.510986
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:101.368477
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-100.010002
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:99.542107
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-100.240578
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:99.950027
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-100.160255
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:99.354195
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-97.247887
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:101.967987
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-8.691382
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:101.091789
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-99.700897
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.230530
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-98.863075
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.130173
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-99.472794
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:101.719055
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-100.989700
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:99.641296
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-99.661148
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.190361
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-98.892410
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:103.476822
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-100.573273
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.030014
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-99.108032
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:99.820328
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-98.463966
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.452034
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-99.840256
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:95.684624
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-103.680664
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.160255
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-99.206352
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:97.370979
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-101.947189
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.786125
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-100.160255
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.502510
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-97.115662
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:103.455406
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-100.080063
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:101.677681
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-98.960907
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.070053
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:97.247887
+163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-103.177879
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:100.542931
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+Resetting gyro
+163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-11.770868
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:99.631363
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-99.462898
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:99.780479
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-100.341164
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-97.228973
+-327
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:102.965401
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-100.220490
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:100.010002
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-101.574402
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:99.960014
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.786125
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-100.684654
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-100.270729
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:0.000000
+-327
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:101.636345
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-100.000000
+-327
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:100.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-103.359177
+-327
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:101.708702
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:98.853302
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-100.190361
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:99.770531
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-95.410744
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.240578
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-99.989998
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:103.359177
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-101.153152
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-99.860199
+-327
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:99.970009
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-99.304871
+-327
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:99.780479
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:100.160255
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-99.502487
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-100.110123
+-327
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:100.080063
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:0.000000
+-163
+x:0.000000, theta:-2.000000, dx:0.000000, dtheta:-103.327133
+-327
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x4200916a
+file: "./main/accel.c" line 91
+func: accel_update
+expression: get_accel_gyro_mag(&va, &vg, &vm)
+
+abort() was called at PC 0x40384ff5 on core 0
+Core  0 register dump:
+MEPC    : 0x4038078e  RA      : 0x40385000  SP      : 0x3fc968c0  GP      : 0x3fc8d200  
+TP      : 0x3fc8a768  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fc96924  A0      : 0x3fc968ec  A1      : 0x3fc96922  
+A2      : 0x00000000  A3      : 0x3fc96919  A4      : 0x00000001  A5      : 0x3fc8f000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+472	    *((volatile int *) 0) = 0; // NOLINT(clang-analyzer-core.NullDereference) should be an invalid operation on targets
+#0  panic_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+#1  0x40385000 in esp_system_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+#2  0x4038b266 in abort () at /Users/naichenzhao/esp/esp-idf/components/newlib/abort.c:38
+#3  0x40384ff8 in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x3c034c00 "", line=line@entry=91, function=function@entry=0x3c03a440 <__func__.0> "", expression=expression@entry=0x3c034bdc "") at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+#4  0x4200916e in accel_update () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:91
+#5  0x42009176 in imu_task (arg=<error reading variable: value has been optimized out>) at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:73
+#6  0x40385f98 in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+ELF file SHA256: 27e922f41
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380746
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Dec 22 2023 00:21:23[0m
+[0;32mI (36) boot: chip revision: v0.4[0m
+[0;32mI (40) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (45) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0cdd0h ( 52688) map[0m
+[0;32mI (114) esp_image: segment 1: paddr=0001cdf8 vaddr=3fc8ca00 size=0139ch (  5020) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=0001e19c vaddr=40380000 size=01e7ch (  7804) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=20a1ch (133660) map[0m
+[0;32mI (152) esp_image: segment 4: paddr=00040a44 vaddr=40381e7c size=0aa90h ( 43664) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (164) boot: Disabling RNG early entropy source...[0m
+[0;32mI (176) cpu_start: Unicore app[0m
+[0;32mI (184) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) cpu_start: Application information:[0m
+[0;32mI (187) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (193) cpu_start: App version:      e081166-dirty[0m
+[0;32mI (198) cpu_start: Compile time:     Dec 22 2023 00:21:09[0m
+[0;32mI (204) cpu_start: ELF file SHA256:  27e922f41...[0m
+[0;32mI (210) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (216) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (221) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (226) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (231) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (238) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (244) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (251) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (258) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (265) spi_flash: detected chip: generic[0m
+[0;32mI (269) spi_flash: flash io: dio[0m
+[0;33mW (273) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (286) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (297) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (303) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (311) main_task: Started on CPU0[0m
+[0;32mI (311) main_task: Calling app_main()[0m
+0
+[0;32mI (311) mpu9250: Initializating MPU9250[0m
+[0;32mI (471) mpu9250: Enabling magnetometer[0m
+[0;32mI (701) mpu9250: Magnetometer enabled[0m
+[0;32mI (701) mpu9250: MPU9250:[0m
+[0;32mI (701) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (701) mpu9250: --> Device address: 0x69[0m
+[0;32mI (701) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (701) mpu9250: --> initialised: Yes[0m
+[0;32mI (711) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (711) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (721) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (721) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (731) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (741) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (741) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (751) mpu9250: Accelerometer:[0m
+[0;32mI (751) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (761) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (771) mpu9250: --> Calibration:[0m
+[0;32mI (771) mpu9250:   --> Offset: [0m
+[0;32mI (771) mpu9250:     --> x: 0.020900[0m
+[0;32mI (781) mpu9250:     --> y: 0.014688[0m
+[0;32mI (781) mpu9250:     --> z: -0.002580[0m
+[0;32mI (791) mpu9250:   --> Scale: [0m
+[0;32mI (791) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (801) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (801) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (811) mpu9250: Gyroscope:[0m
+[0;32mI (811) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (821) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (821) mpu9250: --> Bias Offset:[0m
+[0;32mI (821) mpu9250:   --> x: 0.303956[0m
+[0;32mI (831) mpu9250:   --> y: -1.049768[0m
+[0;32mI (831) mpu9250:   --> z: -0.403782[0m
+[0;32mI (841) ak8963: Magnetometer (Compass):[0m
+[0;32mI (841) ak8963: --> i2c address: 0x00[0m
+[0;32mI (851) ak8963: --> initialised: true[0m
+[0;32mI (851) ak8963: --> Device ID: 0x48[0m
+[0;32mI (851) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (861) ak8963: --> ASA Scalars:[0m
+[0;32mI (871) ak8963:   --> x: 1.175781[0m
+[0;32mI (871) ak8963:   --> y: 1.187500[0m
+[0;32mI (871) ak8963:   --> z: 1.136719[0m
+[0;32mI (881) ak8963: --> Offset:[0m
+[0;32mI (881) ak8963:   --> x: 25.183594[0m
+[0;32mI (881) ak8963:   --> y: 57.519531[0m
+[0;32mI (891) ak8963:   --> z: -62.648438[0m
+[0;32mI (891) ak8963: --> Scale:[0m
+[0;32mI (901) ak8963:   --> x: 1.513449[0m
+[0;32mI (901) ak8963:   --> y: 1.557811[0m
+[0;32mI (901) ak8963:   --> z: 1.434039[0m
+[0;32mI (911) gpio: GPIO[9]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Starting main loop
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:-20316.027344
+0
+x:0.000000, theta:2.000000, dx:0.000000, dtheta:211.550659
+327
+x:0.000000, theta:3.000000, dx:0.000000, dtheta:103.348488
+491
+x:0.000000, theta:4.000000, dx:0.000000, dtheta:100.421768
+655
+x:0.000000, theta:5.000000, dx:0.000000, dtheta:99.989998
+819
+x:0.000000, theta:6.000000, dx:0.000000, dtheta:100.030014
+983
+x:0.000000, theta:7.000000, dx:0.000000, dtheta:99.790443
+1146
+x:0.000000, theta:8.000000, dx:0.000000, dtheta:99.117851
+1310
+x:0.000000, theta:9.000000, dx:0.000000, dtheta:100.170288
+1474
+x:0.000000, theta:9.000000, dx:0.000000, dtheta:0.000000
+1474
+x:0.000000, theta:10.000000, dx:0.000000, dtheta:100.240578
+1638
+x:0.000000, theta:11.000000, dx:0.000000, dtheta:100.290848
+1802
+x:0.000000, theta:11.000000, dx:0.000000, dtheta:0.000000
+1802
+x:0.000000, theta:12.000000, dx:0.000000, dtheta:99.830284
+1966
+x:0.000000, theta:12.000000, dx:0.000000, dtheta:0.000000
+1966
+x:0.000000, theta:13.000000, dx:0.000000, dtheta:99.730728
+2129
+x:0.000000, theta:13.000000, dx:0.000000, dtheta:0.000000
+2129
+x:0.000000, theta:14.000000, dx:0.000000, dtheta:99.880142
+2293
+x:0.000000, theta:14.000000, dx:0.000000, dtheta:0.000000
+2293
+x:0.000000, theta:15.000000, dx:0.000000, dtheta:99.870163
+2457
+x:0.000000, theta:15.000000, dx:0.000000, dtheta:0.000000
+2457
+x:0.000000, theta:15.000000, dx:0.000000, dtheta:0.000000
+2457
+x:0.000000, theta:16.000000, dx:0.000000, dtheta:100.190361
+2621
+x:0.000000, theta:16.000000, dx:0.000000, dtheta:0.000000
+2621
+x:0.000000, theta:16.000000, dx:0.000000, dtheta:0.000000
+2621
+x:0.000000, theta:17.000000, dx:0.000000, dtheta:100.010002
+2785
+x:-0.003907, theta:17.000000, dx:-0.390655, dtheta:0.000000
+2785
+x:-0.009767, theta:18.000000, dx:-0.585690, dtheta:99.940033
+2949
+x:-0.025395, theta:19.000000, dx:-1.562465, dtheta:99.980003
+3112
+x:-0.046883, theta:19.000000, dx:-2.150324, dtheta:0.000000
+3112
+x:-0.056651, theta:17.000000, dx:-0.976638, dtheta:-199.979996
+2785
+x:-0.058604, theta:16.000000, dx:-0.195367, dtheta:-100.010002
+2621
+x:-0.058604, theta:16.000000, dx:0.000000, dtheta:0.000000
+2621
+x:-0.060558, theta:16.000000, dx:-0.195367, dtheta:0.000000
+2621
+x:-0.060558, theta:16.000000, dx:0.000000, dtheta:0.000000
+2621
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:100.030014
+2785
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:99.970009
+2949
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:-100.030014
+2785
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:99.989998
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:-99.970009
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:99.989998
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:-100.030014
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:100.030014
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:-100.010002
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:100.030014
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:18.000000, dx:0.000000, dtheta:0.000000
+2949
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:-100.010002
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:17.000000, dx:0.000000, dtheta:0.000000
+2785
+x:-0.060558, theta:16.000000, dx:0.000000, dtheta:-99.970009
+2621
+x:-0.060558, theta:16.000000, dx:0.000000, dtheta:0.000000
+2621
+x:-0.060558, theta:15.000000, dx:0.000000, dtheta:-99.989998
+2457
+x:-0.060558, theta:15.000000, dx:0.000000, dtheta:0.000000
+2457
+x:-0.060558, theta:15.000000, dx:0.000000, dtheta:0.000000
+2457
+x:-0.060558, theta:14.000000, dx:0.000000, dtheta:-99.989998
+2293
+x:-0.060558, theta:14.000000, dx:0.000000, dtheta:0.000000
+2293
+x:-0.060558, theta:14.000000, dx:0.000000, dtheta:0.000000
+2293
+x:-0.060558, theta:13.000000, dx:0.000000, dtheta:-99.970009
+2129
+x:-0.060558, theta:13.000000, dx:0.000000, dtheta:0.000000
+2129
+x:-0.060558, theta:13.000000, dx:0.000000, dtheta:0.000000
+2129
+x:-0.060558, theta:13.000000, dx:0.000000, dtheta:0.000000
+2129
+x:-0.060558, theta:12.000000, dx:0.000000, dtheta:-100.010002
+1966
+x:-0.060558, theta:12.000000, dx:0.000000, dtheta:0.000000
+1966
+x:-0.060558, theta:12.000000, dx:0.000000, dtheta:0.000000
+1966
+x:-0.060558, theta:12.000000, dx:0.000000, dtheta:0.000000
+1966
+x:-0.060558, theta:12.000000, dx:0.000000, dtheta:0.000000
+1966
+x:-0.060558, theta:12.000000, dx:0.000000, dtheta:0.000000
+1966
+x:-0.060558, theta:12.000000, dx:0.000000, dtheta:0.000000
+1966
+x:-0.060558, theta:11.000000, dx:0.000000, dtheta:-99.989998
+1802
+x:-0.060558, theta:11.000000, dx:0.000000, dtheta:0.000000
+1802
+x:-0.060558, theta:11.000000, dx:0.000000, dtheta:0.000000
+1802
+x:-0.060558, theta:11.000000, dx:0.000000, dtheta:0.000000
+1802
+x:-0.060558, theta:10.000000, dx:0.000000, dtheta:-100.030014
+1638
+x:-0.060558, theta:10.000000, dx:0.000000, dtheta:0.000000
+1638
+x:-0.060558, theta:9.000000, dx:0.000000, dtheta:-100.030014
+1474
+x:-0.060558, theta:9.000000, dx:0.000000, dtheta:0.000000
+1474
+x:-0.060558, theta:8.000000, dx:0.000000, dtheta:-100.030014
+1310
+x:-0.060558, theta:8.000000, dx:0.000000, dtheta:0.000000
+1310
+x:-0.060558, theta:7.000000, dx:0.000000, dtheta:-100.010002
+1146
+x:-0.060558, theta:6.000000, dx:0.000000, dtheta:-99.989998
+983
+x:-0.060558, theta:6.000000, dx:0.000000, dtheta:0.000000
+983
+x:-0.060558, theta:5.000000, dx:0.000000, dtheta:-100.030014
+819
+x:-0.058604, theta:4.000000, dx:0.195328, dtheta:-99.989998
+655
+x:-0.056651, theta:4.000000, dx:0.195328, dtheta:0.000000
+655
+x:-0.054697, theta:3.000000, dx:0.195406, dtheta:-100.030014
+491
+x:-0.052744, theta:2.000000, dx:0.195289, dtheta:-99.970009
+327
+x:-0.050790, theta:1.000000, dx:0.195367, dtheta:-100.010002
+163
+x:-0.048837, theta:1.000000, dx:0.195328, dtheta:0.000000
+163
+x:-0.048837, theta:0.000000, dx:0.000000, dtheta:-99.790443
+0
+x:-0.048837, theta:-1.000000, dx:0.000000, dtheta:-98.931541
+-163
+x:-0.048837, theta:-2.000000, dx:0.000000, dtheta:-100.341164
+-327
+x:-0.048837, theta:-3.000000, dx:0.000000, dtheta:-100.361298
+-491
+x:-0.048837, theta:-4.000000, dx:0.000000, dtheta:-100.361298
+-655
+x:-0.048837, theta:-5.000000, dx:0.000000, dtheta:-100.040016
+-819
+x:-0.048837, theta:-6.000000, dx:0.000000, dtheta:-99.255577
+-983
+x:-0.048837, theta:-7.000000, dx:0.000000, dtheta:-100.381447
+-1146
+x:-0.048837, theta:-9.000000, dx:0.000000, dtheta:-199.720398
+-1474
+x:-0.046883, theta:-10.000000, dx:0.195132, dtheta:-99.890121
+-1638
+x:-0.046883, theta:-11.000000, dx:0.000000, dtheta:-100.401611
+-1802
+x:-0.046883, theta:-12.000000, dx:0.000000, dtheta:-99.631363
+-1966
+x:-0.044930, theta:-13.000000, dx:0.195133, dtheta:-99.890121
+-2129
+x:-0.044930, theta:-13.000000, dx:0.000000, dtheta:0.000000
+-2129
+x:-0.042976, theta:-14.000000, dx:0.195621, dtheta:-100.140198
+-2293
+x:-0.041023, theta:-15.000000, dx:0.195582, dtheta:-100.120148
+-2457
+x:-0.039069, theta:-16.000000, dx:0.194841, dtheta:-99.740677
+-2621
+x:-0.037116, theta:-16.000000, dx:0.195328, dtheta:0.000000
+-2621
+x:-0.035162, theta:-16.000000, dx:0.196487, dtheta:0.000000
+-2621
+x:-0.033209, theta:-16.000000, dx:0.196014, dtheta:0.000000
+-2621
+x:-0.033209, theta:-17.000000, dx:0.000000, dtheta:-99.980003
+-2785
+x:-0.033209, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.031256, theta:-17.000000, dx:0.195445, dtheta:0.000000
+-2785
+x:-0.031256, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.031256, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.031256, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.031256, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.029302, theta:-17.000000, dx:0.195425, dtheta:0.000000
+-2785
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:99.443115
+-2621
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:0.000000
+-2621
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:0.000000
+-2621
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:-103.103409
+-2785
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:99.989998
+-2621
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:0.000000
+-2621
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:-99.950027
+-2785
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:100.694794
+-2621
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:0.000000
+-2621
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:0.000000
+-2621
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:0.000000
+-2621
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:0.000000
+-2621
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:0.000000
+-2621
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:0.000000
+-2621
+x:-0.029302, theta:-15.000000, dx:0.000000, dtheta:100.010002
+-2457
+x:-0.029302, theta:-16.000000, dx:0.000000, dtheta:-99.800400
+-2621
+x:-0.029302, theta:-17.000000, dx:0.000000, dtheta:-99.930046
+-2785
+x:-0.027349, theta:-17.000000, dx:0.194530, dtheta:0.000000
+-2785
+x:-0.027349, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.027349, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.027349, theta:-17.000000, dx:0.000000, dtheta:0.000000
+-2785
+x:-0.027349, theta:-18.000000, dx:0.000000, dtheta:-100.462120
+-2949
+x:-0.027349, theta:-18.000000, dx:0.000000, dtheta:0.000000
+-2949
+x:-0.027349, theta:-18.000000, dx:0.000000, dtheta:0.000000
+-2949
+x:-0.025395, theta:-18.000000, dx:0.196566, dtheta:0.000000
+-2949
+x:-0.025395, theta:-19.000000, dx:0.000000, dtheta:-100.381447
+-3112
+x:-0.023442, theta:-19.000000, dx:0.195347, dtheta:0.000000
+-3112
+x:-0.021488, theta:-19.000000, dx:0.195328, dtheta:0.000000
+-3112
+x:-0.015628, theta:-20.000000, dx:0.584988, dtheta:-99.820328
+-3276
+x:-0.005860, theta:-20.000000, dx:0.967257, dtheta:0.000000
+-3276
+x:0.015628, theta:-20.000000, dx:2.172060, dtheta:0.000000
+-3276
+x:0.050790, theta:-20.000000, dx:3.511333, dtheta:0.000000
+-3276
+x:0.083999, theta:-20.000000, dx:3.329559, dtheta:0.000000
+-3276
+x:0.113301, theta:-19.000000, dx:2.928158, dtheta:99.930046
+-3112
+x:0.146510, theta:-20.000000, dx:3.323229, dtheta:-100.070053
+-3276
+x:0.169952, theta:-19.000000, dx:2.342994, dtheta:99.950027
+-3112
+x:0.191440, theta:-19.000000, dx:2.149464, dtheta:0.000000
+-3112
+x:0.218789, theta:-20.000000, dx:2.733221, dtheta:-99.940033
+-3276
+x:0.253951, theta:-20.000000, dx:3.519065, dtheta:0.000000
+-3276
+x:0.281300, theta:-20.000000, dx:2.734041, dtheta:0.000000
+-3276
+x:0.320369, theta:-20.000000, dx:3.908117, dtheta:0.000000
+-3276
+x:0.359439, theta:-21.000000, dx:3.904598, dtheta:-99.940033
+-3440
+x:0.400462, theta:-21.000000, dx:4.103114, dtheta:0.000000
+-3440
+x:0.451252, theta:-21.000000, dx:5.077502, dtheta:0.000000
+-3440
+x:0.505949, theta:-21.000000, dx:5.472458, dtheta:0.000000
+-3440
+x:0.558693, theta:-21.000000, dx:5.273846, dtheta:0.000000
+-3440
+x:0.609483, theta:-22.000000, dx:5.079539, dtheta:-100.010002
+-3604
+x:0.662227, theta:-22.000000, dx:5.273846, dtheta:0.000000
+-3604
+x:0.716924, theta:-23.000000, dx:5.469722, dtheta:-100.000000
+-3768
+x:0.773575, theta:-23.000000, dx:5.665064, dtheta:0.000000
+-3768
+x:0.839993, theta:-24.000000, dx:6.639813, dtheta:-99.970009
+-3932
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x4200916a
+file: "./main/accel.c" line 91
+func: accel_update
+expression: get_accel_gyro_mag(&va, &vg, &vm)
+
+abort() was called at PC 0x40384ff5 on core 0
+Core  0 register dump:
+MEPC    : 0x4038078e  RA      : 0x40385000  SP      : 0x3fc968c0  GP      : 0x3fc8d200  
+TP      : 0x3fc8a768  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fc96924  A0      : 0x3fc968ec  A1      : 0x3fc96922  
+A2      : 0x00000000  A3      : 0x3fc96919  A4      : 0x00000001  A5      : 0x3fc8f000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+472	    *((volatile int *) 0) = 0; // NOLINT(clang-analyzer-core.NullDereference) should be an invalid operation on targets
+#0  panic_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+#1  0x40385000 in esp_system_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+#2  0x4038b266 in abort () at /Users/naichenzhao/esp/esp-idf/components/newlib/abort.c:38
+#3  0x40384ff8 in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x3c034c00 "", line=line@entry=91, function=function@entry=0x3c03a440 <__func__.0> "", expression=expression@entry=0x3c034bdc "") at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+#4  0x4200916e in accel_update () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:91
+#5  0x42009176 in imu_task (arg=<error reading variable: value has been optimized out>) at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:73
+#6  0x40385f98 in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+ELF file SHA256: 27e922f41
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380746
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Dec 22 2023 00:21:23[0m
+[0;32mI (36) boot: chip revision: v0.4[0m
+[0;32mI (40) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (45) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0cdd0h ( 52688) map[0m
+[0;32mI (114) esp_image: segment 1: paddr=0001cdf8 vaddr=3fc8ca00 size=0139ch (  5020) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=0001e19c vaddr=40380000 size=01e7ch (  7804) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=20a1ch (133660) map[0m
+[0;32mI (152) esp_image: segment 4: paddr=00040a44 vaddr=40381e7c size=0aa90h ( 43664) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (164) boot: Disabling RNG early entropy source...[0m
+[0;32mI (176) cpu_start: Unicore app[0m
+[0;32mI (184) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) cpu_start: Application information:[0m
+[0;32mI (187) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (193) cpu_start: App version:      e081166-dirty[0m
+[0;32mI (198) cpu_start: Compile time:     Dec 22 2023 00:21:09[0m
+[0;32mI (204) cpu_start: ELF file SHA256:  27e922f41...[0m
+[0;32mI (210) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (216) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (221) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (226) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (231) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (238) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (244) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (251) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (258) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (265) spi_flash: detected chip: generic[0m
+[0;32mI (269) spi_flash: flash io: dio[0m
+[0;33mW (273) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (286) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (297) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (303) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (311) main_task: Started on CPU0[0m
+[0;32mI (311) main_task: Calling app_main()[0m
+0
+[0;32mI (311) mpu9250: Initializating MPU9250[0m
+[0;32mI (471) mpu9250: Enabling magnetometer[0m
+[0;32mI (701) mpu9250: Magnetometer enabled[0m
+[0;32mI (701) mpu9250: MPU9250:[0m
+[0;32mI (701) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (701) mpu9250: --> Device address: 0x69[0m
+[0;32mI (701) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (701) mpu9250: --> initialised: Yes[0m
+[0;32mI (711) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (711) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (721) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (721) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (731) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (741) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (741) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (751) mpu9250: Accelerometer:[0m
+[0;32mI (751) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (761) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (771) mpu9250: --> Calibration:[0m
+[0;32mI (771) mpu9250:   --> Offset: [0m
+[0;32mI (771) mpu9250:     --> x: 0.020900[0m
+[0;32mI (781) mpu9250:     --> y: 0.014688[0m
+[0;32mI (781) mpu9250:     --> z: -0.002580[0m
+[0;32mI (791) mpu9250:   --> Scale: [0m
+[0;32mI (791) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (801) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (801) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (811) mpu9250: Gyroscope:[0m
+[0;32mI (811) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (821) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (821) mpu9250: --> Bias Offset:[0m
+[0;32mI (821) mpu9250:   --> x: 0.303956[0m
+[0;32mI (831) mpu9250:   --> y: -1.049768[0m
+[0;32mI (831) mpu9250:   --> z: -0.403782[0m
+[0;32mI (841) ak8963: Magnetometer (Compass):[0m
+[0;32mI (841) ak8963: --> i2c address: 0x00[0m
+[0;32mI (851) ak8963: --> initialised: true[0m
+[0;32mI (851) ak8963: --> Device ID: 0x48[0m
+[0;32mI (851) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (861) ak8963: --> ASA Scalars:[0m
+[0;32mI (871) ak8963:   --> x: 1.175781[0m
+[0;32mI (871) ak8963:   --> y: 1.187500[0m
+[0;32mI (871) ak8963:   --> z: 1.136719[0m
+[0;32mI (881) ak8963: --> Offset:[0m
+[0;32mI (881) ak8963:   --> x: 25.183594[0m
+[0;32mI (881) ak8963:   --> y: 57.519531[0m
+[0;32mI (891) ak8963:   --> z: -62.648438[0m
+[0;32mI (891) ak8963: --> Scale:[0m
+[0;32mI (901) ak8963:   --> x: 1.513449[0m
+[0;32mI (901) ak8963:   --> y: 1.557811[0m
+[0;32mI (901) ak8963:   --> z: 1.434039[0m
+[0;32mI (911) gpio: GPIO[9]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Starting main loop
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:5624.296875
+0
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:0.000000
+0
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:104.036621
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:0.000000
+163
+x:0.000000, theta:2.000000, dx:0.000000, dtheta:98.941330
+327
+x:0.000000, theta:2.000000, dx:0.000000, dtheta:0.000000
+327
+x:0.000000, theta:3.000000, dx:0.000000, dtheta:100.806450
+491
+x:0.000000, theta:3.000000, dx:0.000000, dtheta:0.000000
+491
+x:0.000000, theta:3.000000, dx:0.000000, dtheta:0.000000
+491
+x:0.000000, theta:4.000000, dx:0.000000, dtheta:100.331093
+655
+x:0.000000, theta:4.000000, dx:0.000000, dtheta:0.000000
+655
+x:0.000000, theta:4.000000, dx:0.000000, dtheta:0.000000
+655
+x:0.000000, theta:4.000000, dx:0.000000, dtheta:0.000000
+655
+x:0.000000, theta:5.000000, dx:0.000000, dtheta:99.950027
+819
+x:0.000000, theta:5.000000, dx:0.000000, dtheta:0.000000
+819
+x:0.000000, theta:5.000000, dx:0.000000, dtheta:0.000000
+819
+x:0.000000, theta:5.000000, dx:0.000000, dtheta:0.000000
+819
+x:0.000000, theta:5.000000, dx:0.000000, dtheta:0.000000
+819
+x:0.000000, theta:5.000000, dx:0.000000, dtheta:0.000000
+819
+x:0.000000, theta:5.000000, dx:0.000000, dtheta:0.000000
+819
+x:0.000000, theta:6.000000, dx:0.000000, dtheta:96.927406
+983
+x:0.000000, theta:6.000000, dx:0.000000, dtheta:0.000000
+983
+x:0.000000, theta:6.000000, dx:0.000000, dtheta:0.000000
+983
+x:0.000000, theta:7.000000, dx:0.000000, dtheta:99.989998
+1146
+x:0.000000, theta:7.000000, dx:0.000000, dtheta:0.000000
+1146
+x:0.000000, theta:7.000000, dx:0.000000, dtheta:0.000000
+1146
+x:0.000000, theta:8.000000, dx:0.000000, dtheta:100.806450
+1310
+x:0.000000, theta:8.000000, dx:0.000000, dtheta:0.000000
+1310
+x:0.000000, theta:8.000000, dx:0.000000, dtheta:0.000000
+1310
+x:0.000000, theta:9.000000, dx:0.000000, dtheta:95.895668
+1474
+x:0.000000, theta:10.000000, dx:0.000000, dtheta:103.466118
+1638
+x:0.000000, theta:10.000000, dx:0.000000, dtheta:0.000000
+1638
+x:0.000000, theta:11.000000, dx:0.000000, dtheta:100.040016
+1802
+x:0.000000, theta:12.000000, dx:0.000000, dtheta:99.502487
+1966
+x:0.000000, theta:12.000000, dx:0.000000, dtheta:0.000000
+1966
+x:0.000000, theta:13.000000, dx:0.000000, dtheta:100.694794
+2129
+x:0.000000, theta:14.000000, dx:0.000000, dtheta:99.989998
+2293
+x:0.000000, theta:15.000000, dx:0.000000, dtheta:99.830284
+2457
+x:-0.001953, theta:15.000000, dx:-0.194821, dtheta:0.000000
+2457
+x:-0.005860, theta:16.000000, dx:-0.374587, dtheta:95.877281
+2621
+x:-0.013674, theta:17.000000, dx:-0.793610, dtheta:101.564087
+2785
+x:-0.027349, theta:17.000000, dx:-1.389100, dtheta:0.000000
+2785
+x:-0.050790, theta:18.000000, dx:-2.369999, dtheta:101.102013
+2949
+x:-0.072278, theta:18.000000, dx:-2.146457, dtheta:0.000000
+2949
+x:-0.080092, theta:18.000000, dx:-0.787056, dtheta:0.000000
+2949
+x:-0.087906, theta:19.000000, dx:-0.781623, dtheta:100.030014
+3112
+x:-0.099627, theta:20.000000, dx:-1.171848, dtheta:99.980003
+3276
+x:-0.115255, theta:21.000000, dx:-1.562622, dtheta:99.989998
+3440
+x:-0.144557, theta:21.000000, dx:-2.930500, dtheta:0.000000
+3440
+x:-0.167999, theta:21.000000, dx:-2.343933, dtheta:0.000000
+3440
+x:-0.191440, theta:22.000000, dx:-2.344400, dtheta:100.010002
+3604
+x:-0.226603, theta:23.000000, dx:-3.515898, dtheta:99.989998
+3768
+x:-0.263719, theta:23.000000, dx:-3.711967, dtheta:0.000000
+3768
+x:-0.304742, theta:24.000000, dx:-4.100652, dtheta:99.960014
+3932
+x:-0.353578, theta:24.000000, dx:-4.885634, dtheta:0.000000
+3932
+x:-0.404369, theta:25.000000, dx:-5.077502, dtheta:99.970009
+4096
+x:-0.464926, theta:25.000000, dx:-6.055763, dtheta:0.000000
+4096
+x:-0.535251, theta:26.000000, dx:-7.032496, dtheta:100.000000
+4259
+x:-0.603623, theta:26.000000, dx:-6.835786, dtheta:0.000000
+4259
+x:-0.675901, theta:27.000000, dx:-7.214137, dtheta:99.810356
+4423
+x:-0.752087, theta:27.000000, dx:-7.577621, dtheta:0.000000
+4423
+x:-0.828272, theta:28.000000, dx:-7.652978, dtheta:100.452034
+4587
+x:-0.920085, theta:28.000000, dx:-8.999530, dtheta:0.000000
+4587
+x:-1.015805, theta:29.000000, dx:-9.282400, dtheta:96.974403
+4751
+x:-1.117386, theta:29.000000, dx:-10.715242, dtheta:0.000000
+4751
+x:-1.220920, theta:30.000000, dx:-10.373119, dtheta:100.190361
+4915
+x:-1.338128, theta:30.000000, dx:-11.724341, dtheta:0.000000
+4915
+x:-1.459243, theta:30.000000, dx:-11.990418, dtheta:0.000000
+4915
+x:-1.592080, theta:31.000000, dx:-12.993847, dtheta:97.818642
+5079
+x:-1.717102, theta:31.000000, dx:-12.903529, dtheta:0.000000
+5079
+x:-1.844077, theta:32.000000, dx:-12.705189, dtheta:100.060036
+5242
+x:-1.982774, theta:32.000000, dx:-13.883527, dtheta:0.000000
+5242
+x:-2.123424, theta:33.000000, dx:-14.032717, dtheta:99.770531
+5406
+x:-2.264074, theta:33.000000, dx:-13.524041, dtheta:0.000000
+5406
+x:-2.398863, theta:34.000000, dx:-14.036183, dtheta:104.134125
+5570
+x:-2.541467, theta:34.000000, dx:-14.141574, dtheta:0.000000
+5570
+x:-2.689931, theta:35.000000, dx:-15.003914, dtheta:101.061142
+5734
+x:-2.836441, theta:36.000000, dx:-14.463017, dtheta:98.716682
+5898
+x:-3.004440, theta:36.000000, dx:-15.980077, dtheta:0.000000
+5898
+x:-3.158764, theta:37.000000, dx:-16.489399, dtheta:106.849022
+6062
+x:-3.332623, theta:36.000000, dx:-17.392870, dtheta:-100.040016
+5898
+x:-3.518203, theta:37.000000, dx:-18.142515, dtheta:97.761269
+6062
+x:-3.703783, theta:37.000000, dx:-18.743538, dtheta:0.000000
+6062
+x:-3.895223, theta:37.000000, dx:-19.288700, dtheta:0.000000
+6062
+x:-4.094477, theta:37.000000, dx:-19.983379, dtheta:0.000000
+6062
+x:-4.287871, theta:38.000000, dx:-18.116507, dtheta:93.676811
+6225
+x:-4.491032, theta:37.000000, dx:-21.702892, dtheta:-106.826195
+6062
+x:-4.694193, theta:38.000000, dx:-20.391573, dtheta:100.371376
+6225
+x:-4.905168, theta:38.000000, dx:-20.050861, dtheta:0.000000
+6225
+x:-5.106375, theta:39.000000, dx:-21.276003, dtheta:105.741776
+6389
+x:-5.319304, theta:39.000000, dx:-21.295008, dtheta:0.000000
+6389
+x:-5.547860, theta:40.000000, dx:-21.907042, dtheta:95.849709
+6553
+x:-5.760788, theta:40.000000, dx:-22.254211, dtheta:0.000000
+6553
+x:-5.983484, theta:41.000000, dx:-22.276266, dtheta:100.030014
+6717
+x:-6.231575, theta:42.000000, dx:-23.424677, dtheta:94.419792
+6881
+x:-6.440597, theta:42.000000, dx:-22.153849, dtheta:0.000000
+6881
+x:-6.675014, theta:43.000000, dx:-23.453424, dtheta:100.050026
+7045
+x:-6.923104, theta:44.000000, dx:-23.257780, dtheta:93.747070
+7208
+x:-7.147754, theta:44.000000, dx:-23.822845, dtheta:0.000000
+7208
+x:-7.399751, theta:45.000000, dx:-25.336565, dtheta:100.542931
+7372
+x:-7.655656, theta:45.000000, dx:-25.677820, dtheta:0.000000
+7372
+x:-7.923282, theta:46.000000, dx:-26.837679, dtheta:100.280785
+7536
+x:-8.208488, theta:47.000000, dx:-26.837940, dtheta:94.099930
+7700
+x:-8.468301, theta:47.000000, dx:-27.589716, dtheta:0.000000
+7700
+x:-8.751554, theta:48.000000, dx:-27.481586, dtheta:97.021439
+7864
+x:-9.026994, theta:48.000000, dx:-28.469273, dtheta:0.000000
+7864
+x:-9.327828, theta:49.000000, dx:-29.741440, dtheta:98.863075
+8028
+x:-9.626709, theta:50.000000, dx:-30.300140, dtheta:101.378746
+8192
+x:-9.933404, theta:50.000000, dx:-30.516914, dtheta:0.000000
+8192
+x:-10.249866, theta:51.000000, dx:-31.821270, dtheta:100.553040
+8355
+x:-10.560469, theta:50.000000, dx:-30.783169, dtheta:-99.108032
+8192
+x:-10.804653, theta:49.000000, dx:-24.580683, dtheta:-100.664391
+8028
+x:-11.084000, theta:49.000000, dx:-27.993431, dtheta:0.000000
+8028
+x:-11.377020, theta:48.000000, dx:-27.861580, dtheta:-95.084152
+7864
+x:-11.654413, theta:48.000000, dx:-29.205448, dtheta:0.000000
+7864
+x:-11.966969, theta:49.000000, dx:-30.079426, dtheta:96.237129
+8028
+x:-12.252175, theta:49.000000, dx:-29.423996, dtheta:0.000000
+8028
+x:-12.572545, theta:50.000000, dx:-31.206869, dtheta:97.408920
+8192
+x:-12.859705, theta:49.000000, dx:-29.613276, dtheta:-103.124680
+8028
+x:-13.195703, theta:50.000000, dx:-32.542137, dtheta:96.852303
+8192
+x:-13.506305, theta:49.000000, dx:-31.928677, dtheta:-102.796051
+8028
+x:-13.852069, theta:50.000000, dx:-33.323452, dtheta:96.376251
+8192
+x:-14.176345, theta:50.000000, dx:-33.544636, dtheta:0.000000
+8192
+x:-14.527970, theta:51.000000, dx:-33.354717, dtheta:94.858658
+8355
+x:-14.826851, theta:51.000000, dx:-32.154984, dtheta:0.000000
+8355
+x:-15.072989, theta:50.000000, dx:-23.774521, dtheta:-96.590363
+8192
+x:-15.285917, theta:50.000000, dx:-21.758509, dtheta:0.000000
+8192
+x:-15.524240, theta:51.000000, dx:-24.163359, dtheta:101.389030
+8355
+x:-15.784053, theta:52.000000, dx:-24.480576, dtheta:94.224068
+8519
+x:-15.961819, theta:52.000000, dx:-18.939468, dtheta:0.000000
+8519
+x:-16.131771, theta:51.000000, dx:-16.990141, dtheta:-99.970009
+8355
+x:-16.262653, theta:51.000000, dx:-12.941982, dtheta:0.000000
+8355
+x:-16.372047, theta:52.000000, dx:-10.586864, dtheta:96.777313
+8519
+x:-16.446280, theta:52.000000, dx:-7.748654, dtheta:0.000000
+8519
+x:-16.510744, theta:52.000000, dx:-6.447102, dtheta:0.000000
+8519
+x:-16.545906, theta:53.000000, dx:-3.527485, dtheta:100.321030
+8683
+x:-16.561535, theta:53.000000, dx:-1.560229, dtheta:0.000000
+8683
+x:-16.571302, theta:55.000000, dx:-0.976558, dtheta:199.960007
+9011
+x:-16.573256, theta:55.000000, dx:-0.193762, dtheta:0.000000
+9011
+x:-16.573256, theta:57.000000, dx:0.000000, dtheta:201.551956
+9338
+x:-16.573256, theta:57.000000, dx:0.000000, dtheta:0.000000
+9338
+x:-16.573256, theta:58.000000, dx:0.000000, dtheta:99.989998
+9502
+x:-16.573256, theta:58.000000, dx:0.000000, dtheta:0.000000
+9502
+x:-16.573256, theta:59.000000, dx:0.000000, dtheta:100.010002
+9666
+x:-16.573256, theta:60.000000, dx:0.000000, dtheta:100.030014
+9830
+x:-16.573256, theta:61.000000, dx:0.000000, dtheta:99.970009
+9994
+x:-16.573256, theta:62.000000, dx:0.000000, dtheta:100.030014
+10158
+x:-16.573256, theta:63.000000, dx:0.000000, dtheta:99.950027
+10321
+x:-16.573256, theta:64.000000, dx:0.000000, dtheta:100.050026
+10485
+x:-16.573256, theta:66.000000, dx:0.000000, dtheta:199.979996
+10813
+x:-16.575209, theta:67.000000, dx:-0.195332, dtheta:100.010002
+10977
+x:-16.579115, theta:68.000000, dx:-0.390586, dtheta:99.989998
+11141
+x:-16.583023, theta:70.000000, dx:-0.390855, dtheta:200.020004
+11468
+x:-16.584976, theta:72.000000, dx:-0.195293, dtheta:199.979996
+11796
+x:-16.588882, theta:73.000000, dx:-0.390664, dtheta:100.010002
+11960
+x:-16.594744, theta:75.000000, dx:-0.586070, dtheta:199.979996
+12288
+x:-16.602558, theta:77.000000, dx:-0.781363, dtheta:199.979996
+12615
+x:-16.622091, theta:79.000000, dx:-1.952925, dtheta:199.960007
+12943
+x:-16.663115, theta:80.000000, dx:-4.102325, dtheta:100.000000
+13107
+x:-16.721720, theta:82.000000, dx:-5.845904, dtheta:199.501236
+13434
+x:-16.792044, theta:83.000000, dx:-7.016957, dtheta:99.780479
+13598
+x:-16.881905, theta:85.000000, dx:-8.759228, dtheta:194.950775
+13926
+x:-16.993252, theta:86.000000, dx:-10.782144, dtheta:96.833542
+14090
+x:-17.110460, theta:87.000000, dx:-12.367678, dtheta:105.518623
+14254
+x:-17.245249, theta:88.000000, dx:-13.546584, dtheta:100.502510
+14417
+x:-17.395666, theta:89.000000, dx:-15.124920, dtheta:100.553040
+14581
+x:-17.567572, theta:90.000000, dx:-16.684998, dtheta:97.059105
+14745
+x:-17.739477, theta:91.000000, dx:-17.519926, dtheta:101.916016
+14909
+x:-17.921150, theta:92.000000, dx:-18.335995, dtheta:100.928543
+15073
+x:-18.124311, theta:92.000000, dx:-20.166887, dtheta:0.000000
+15073
+x:-18.331379, theta:93.000000, dx:-19.777218, dtheta:95.510986
+15237
+x:-18.530634, theta:93.000000, dx:-21.127665, dtheta:0.000000
+15237
+x:-18.743563, theta:94.000000, dx:-21.286491, dtheta:99.970009
+15400
+x:-18.977980, theta:94.000000, dx:-22.297817, dtheta:0.000000
+15400
+x:-19.196768, theta:94.000000, dx:-23.057030, dtheta:0.000000
+15400
+x:-19.444859, theta:95.000000, dx:-24.764498, dtheta:99.820328
+15564
+x:-19.708578, theta:95.000000, dx:-24.662823, dtheta:0.000000
+15564
+x:-19.954716, theta:94.000000, dx:-26.176498, dtheta:-106.349037
+15400
+x:-20.222342, theta:94.000000, dx:-26.160881, dtheta:0.000000
+15400
+x:-20.486059, theta:94.000000, dx:-27.322590, dtheta:0.000000
+15400
+x:-20.757591, theta:94.000000, dx:-26.948399, dtheta:0.000000
+15400
+x:-21.029125, theta:93.000000, dx:-27.270660, dtheta:-100.431854
+15237
+x:-21.304564, theta:92.000000, dx:-27.635025, dtheta:-100.331093
+15073
+x:-21.595631, theta:91.000000, dx:-27.673239, dtheta:-95.075111
+14909
+x:-21.857397, theta:91.000000, dx:-27.304312, dtheta:0.000000
+14909
+x:-22.134790, theta:89.000000, dx:-27.521912, dtheta:-198.432388
+14581
+x:-22.388741, theta:88.000000, dx:-25.558588, dtheta:-100.644127
+14417
+x:-22.644646, theta:87.000000, dx:-25.906574, dtheta:-101.235069
+14254
+x:-22.902504, theta:86.000000, dx:-24.246193, dtheta:-94.029152
+14090
+x:-23.123247, theta:85.000000, dx:-23.448395, dtheta:-106.224770
+13926
+x:-23.357662, theta:84.000000, dx:-23.299379, dtheta:-99.393700
+13762
+x:-23.582312, theta:83.000000, dx:-21.237419, dtheta:-94.535828
+13598
+x:-23.801102, theta:82.000000, dx:-23.330139, dtheta:-106.632545
+13434
+x:-24.015984, theta:81.000000, dx:-21.464579, dtheta:-99.890121
+13271
+x:-24.217190, theta:80.000000, dx:-19.259710, dtheta:-95.721260
+13107
+x:-24.400816, theta:79.000000, dx:-19.380072, dtheta:-105.540894
+12943
+x:-24.572721, theta:79.000000, dx:-17.181961, dtheta:0.000000
+12943
+x:-24.740721, theta:78.000000, dx:-16.681488, dtheta:-99.295006
+12779
+x:-24.902859, theta:78.000000, dx:-15.425552, dtheta:0.000000
+12779
+x:-25.049370, theta:78.000000, dx:-15.525174, dtheta:0.000000
+12779
+x:-25.193926, theta:78.000000, dx:-14.330925, dtheta:0.000000
+12779
+x:-25.334576, theta:78.000000, dx:-14.202746, dtheta:0.000000
+12779
+x:-25.477180, theta:78.000000, dx:-13.964437, dtheta:0.000000
+12779
+x:-25.617830, theta:78.000000, dx:-13.518819, dtheta:0.000000
+12779
+x:-25.742851, theta:78.000000, dx:-13.157333, dtheta:0.000000
+12779
+x:-25.871780, theta:79.000000, dx:-12.996889, dtheta:100.806450
+12943
+x:-25.994850, theta:79.000000, dx:-12.370064, dtheta:0.000000
+12943
+x:-26.119873, theta:80.000000, dx:-12.432666, dtheta:99.443115
+13107
+x:-26.240988, theta:81.000000, dx:-11.714356, dtheta:96.721153
+13271
+x:-26.356243, theta:81.000000, dx:-11.938611, dtheta:0.000000
+13271
+x:-26.475405, theta:82.000000, dx:-11.971229, dtheta:100.462120
+13434
+x:-26.604334, theta:83.000000, dx:-12.894203, dtheta:100.010002
+13598
+x:-26.725449, theta:83.000000, dx:-12.096957, dtheta:0.000000
+13598
+x:-26.864145, theta:84.000000, dx:-13.607051, dtheta:98.106544
+13762
+x:-27.008701, theta:84.000000, dx:-13.850345, dtheta:0.000000
+13762
+x:-27.143492, theta:84.000000, dx:-14.369981, dtheta:0.000000
+13762
+x:-27.295862, theta:84.000000, dx:-15.243142, dtheta:0.000000
+13762
+x:-27.456047, theta:84.000000, dx:-15.861459, dtheta:0.000000
+13762
+x:-27.627953, theta:84.000000, dx:-16.598003, dtheta:0.000000
+13762
+x:-27.788137, theta:84.000000, dx:-16.659891, dtheta:0.000000
+13762
+x:-27.963949, theta:84.000000, dx:-17.521603, dtheta:0.000000
+13762
+x:-28.133902, theta:84.000000, dx:-17.046379, dtheta:0.000000
+13762
+x:-28.313622, theta:84.000000, dx:-17.284086, dtheta:0.000000
+13762
+x:-28.473806, theta:84.000000, dx:-16.656427, dtheta:0.000000
+13762
+x:-28.651571, theta:84.000000, dx:-17.737467, dtheta:0.000000
+13762
+x:-28.815662, theta:84.000000, dx:-16.493227, dtheta:0.000000
+13762
+x:-29.003197, theta:84.000000, dx:-18.004448, dtheta:0.000000
+13762
+x:-29.165335, theta:84.000000, dx:-16.866533, dtheta:0.000000
+13762
+x:-29.341146, theta:84.000000, dx:-17.512877, dtheta:0.000000
+13762
+x:-29.522820, theta:84.000000, dx:-18.399134, dtheta:0.000000
+13762
+x:-29.710354, theta:84.000000, dx:-17.770714, dtheta:0.000000
+13762
+x:-29.876398, theta:84.000000, dx:-17.613688, dtheta:0.000000
+13762
+x:-30.056118, theta:84.000000, dx:-17.975588, dtheta:0.000000
+13762
+x:-30.231930, theta:84.000000, dx:-17.341860, dtheta:0.000000
+13762
+x:-30.392115, theta:84.000000, dx:-15.225250, dtheta:0.000000
+13762
+x:-30.562067, theta:84.000000, dx:-18.180614, dtheta:0.000000
+13762
+x:-30.720299, theta:85.000000, dx:-15.834257, dtheta:100.070053
+13926
+x:-30.884390, theta:85.000000, dx:-16.237000, dtheta:0.000000
+13926
+x:-31.060202, theta:85.000000, dx:-16.704205, dtheta:0.000000
+13926
+x:-31.218433, theta:85.000000, dx:-16.888861, dtheta:0.000000
+13926
+x:-31.392292, theta:84.000000, dx:-17.387604, dtheta:-100.010002
+13762
+x:-31.566153, theta:84.000000, dx:-17.142630, dtheta:0.000000
+13762
+x:-31.747824, theta:84.000000, dx:-18.378468, dtheta:0.000000
+13762
+x:-31.921684, theta:84.000000, dx:-17.391272, dtheta:0.000000
+13762
+x:-32.101402, theta:84.000000, dx:-18.015038, dtheta:0.000000
+13762
+x:-32.281124, theta:83.000000, dx:-17.578426, dtheta:-97.809074
+13598
+x:-32.449120, theta:83.000000, dx:-17.103996, dtheta:0.000000
+13598
+x:-32.619072, theta:83.000000, dx:-17.039541, dtheta:0.000000
+13598
+x:-32.783165, theta:82.000000, dx:-16.442184, dtheta:-100.200401
+13434
+x:-32.957024, theta:82.000000, dx:-16.991659, dtheta:0.000000
+13434
+x:-33.119164, theta:82.000000, dx:-16.541512, dtheta:0.000000
+13434
+x:-33.279346, theta:82.000000, dx:-16.035934, dtheta:0.000000
+13434
+x:-33.445393, theta:81.000000, dx:-16.642893, dtheta:-100.230530
+13271
+x:-33.611435, theta:81.000000, dx:-16.285046, dtheta:0.000000
+13271
+x:-33.765762, theta:80.000000, dx:-14.730112, dtheta:-95.447166
+13107
+x:-33.920086, theta:80.000000, dx:-16.544123, dtheta:0.000000
+13107
+x:-34.070503, theta:79.000000, dx:-15.035718, dtheta:-99.960014
+12943
+x:-34.209198, theta:79.000000, dx:-13.843174, dtheta:0.000000
+12943
+x:-34.349850, theta:79.000000, dx:-13.491770, dtheta:0.000000
+12943
+x:-34.474873, theta:78.000000, dx:-12.961113, dtheta:-103.669914
+12779
+x:-34.592079, theta:78.000000, dx:-11.829489, dtheta:0.000000
+12779
+x:-34.711243, theta:78.000000, dx:-11.922313, dtheta:0.000000
+12779
+x:-34.822590, theta:78.000000, dx:-11.131380, dtheta:0.000000
+12779
+x:-34.930031, theta:78.000000, dx:-10.599936, dtheta:0.000000
+12779
+x:-35.035519, theta:78.000000, dx:-10.251490, dtheta:0.000000
+12779
+x:-35.135143, theta:78.000000, dx:-10.381892, dtheta:0.000000
+12779
+x:-35.240631, theta:78.000000, dx:-10.550893, dtheta:0.000000
+12779
+x:-35.334400, theta:78.000000, dx:-9.289585, dtheta:0.000000
+12779
+x:-35.430119, theta:78.000000, dx:-9.687116, dtheta:0.000000
+12779
+x:-35.521931, theta:78.000000, dx:-9.114676, dtheta:0.000000
+12779
+x:-35.578583, theta:78.000000, dx:-5.681114, dtheta:0.000000
+12779
+x:-35.609837, theta:79.000000, dx:-3.105506, dtheta:99.364075
+12943
+x:-35.621559, theta:79.000000, dx:-1.174370, dtheta:0.000000
+12943
+x:-35.623512, theta:80.000000, dx:-0.196630, dtheta:100.674522
+13107
+x:-35.623512, theta:81.000000, dx:0.000000, dtheta:99.108032
+13271
+x:-35.623512, theta:82.000000, dx:0.000000, dtheta:100.684654
+13434
+x:-35.623512, theta:83.000000, dx:0.000000, dtheta:100.411682
+13598
+x:-35.623512, theta:84.000000, dx:0.000000, dtheta:100.010002
+13762
+x:-35.623512, theta:85.000000, dx:0.000000, dtheta:99.989998
+13926
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x4200916a
+file: "./main/accel.c" line 91
+func: accel_update
+expression: get_accel_gyro_mag(&va, &vg, &vm)
+
+abort() was called at PC 0x40384ff5 on core 0
+Core  0 register dump:
+MEPC    : 0x4038078e  RA      : 0x40385000  SP      : 0x3fc968c0  GP      : 0x3fc8d200  
+TP      : 0x3fc8a768  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fc96924  A0      : 0x3fc968ec  A1      : 0x3fc96922  
+A2      : 0x00000000  A3      : 0x3fc96919  A4      : 0x00000001  A5      : 0x3fc8f000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+472	    *((volatile int *) 0) = 0; // NOLINT(clang-analyzer-core.NullDereference) should be an invalid operation on targets
+#0  panic_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+#1  0x40385000 in esp_system_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+#2  0x4038b266 in abort () at /Users/naichenzhao/esp/esp-idf/components/newlib/abort.c:38
+#3  0x40384ff8 in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x3c034c00 "", line=line@entry=91, function=function@entry=0x3c03a440 <__func__.0> "", expression=expression@entry=0x3c034bdc "") at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+#4  0x4200916e in accel_update () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:91
+#5  0x42009176 in imu_task (arg=<error reading variable: value has been optimized out>) at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:73
+#6  0x40385f98 in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+ELF file SHA256: 27e922f41
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380746
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Dec 22 2023 00:21:23[0m
+[0;32mI (36) boot: chip revision: v0.4[0m
+[0;32mI (40) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (45) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0cdd0h ( 52688) map[0m
+[0;32mI (114) esp_image: segment 1: paddr=0001cdf8 vaddr=3fc8ca00 size=0139ch (  5020) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=0001e19c vaddr=40380000 size=01e7ch (  7804) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=20a1ch (133660) map[0m
+[0;32mI (152) esp_image: segment 4: paddr=00040a44 vaddr=40381e7c size=0aa90h ( 43664) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (164) boot: Disabling RNG early entropy source...[0m
+[0;32mI (176) cpu_start: Unicore app[0m
+[0;32mI (184) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) cpu_start: Application information:[0m
+[0;32mI (187) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (193) cpu_start: App version:      e081166-dirty[0m
+[0;32mI (198) cpu_start: Compile time:     Dec 22 2023 00:21:09[0m
+[0;32mI (204) cpu_start: ELF file SHA256:  27e922f41...[0m
+[0;32mI (210) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (216) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (221) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (226) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (231) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (238) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (244) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (251) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (258) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (265) spi_flash: detected chip: generic[0m
+[0;32mI (269) spi_flash: flash io: dio[0m
+[0;33mW (273) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (286) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (297) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (303) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (311) main_task: Started on CPU0[0m
+[0;32mI (311) main_task: Calling app_main()[0m
+0
+[0;32mI (311) mpu9250: Initializating MPU9250[0m
+[0;32mI (471) mpu9250: Enabling magnetometer[0m
+[0;32mI (701) mpu9250: Magnetometer enabled[0m
+[0;32mI (701) mpu9250: MPU9250:[0m
+[0;32mI (701) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (701) mpu9250: --> Device address: 0x69[0m
+[0;32mI (701) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (701) mpu9250: --> initialised: Yes[0m
+[0;32mI (711) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (711) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (721) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (721) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (731) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (741) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (741) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (751) mpu9250: Accelerometer:[0m
+[0;32mI (751) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (761) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (771) mpu9250: --> Calibration:[0m
+[0;32mI (771) mpu9250:   --> Offset: [0m
+[0;32mI (771) mpu9250:     --> x: 0.020900[0m
+[0;32mI (781) mpu9250:     --> y: 0.014688[0m
+[0;32mI (781) mpu9250:     --> z: -0.002580[0m
+[0;32mI (791) mpu9250:   --> Scale: [0m
+[0;32mI (791) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (801) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (801) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (811) mpu9250: Gyroscope:[0m
+[0;32mI (811) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (821) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (821) mpu9250: --> Bias Offset:[0m
+[0;32mI (821) mpu9250:   --> x: 0.303956[0m
+[0;32mI (831) mpu9250:   --> y: -1.049768[0m
+[0;32mI (831) mpu9250:   --> z: -0.403782[0m
+[0;32mI (841) ak8963: Magnetometer (Compass):[0m
+[0;32mI (841) ak8963: --> i2c address: 0x00[0m
+[0;32mI (851) ak8963: --> initialised: true[0m
+[0;32mI (851) ak8963: --> Device ID: 0x48[0m
+[0;32mI (851) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (861) ak8963: --> ASA Scalars:[0m
+[0;32mI (871) ak8963:   --> x: 1.175781[0m
+[0;32mI (871) ak8963:   --> y: 1.187500[0m
+[0;32mI (871) ak8963:   --> z: 1.136719[0m
+[0;32mI (881) ak8963: --> Offset:[0m
+[0;32mI (881) ak8963:   --> x: 25.183594[0m
+[0;32mI (881) ak8963:   --> y: 57.519531[0m
+[0;32mI (891) ak8963:   --> z: -62.648438[0m
+[0;32mI (891) ak8963: --> Scale:[0m
+[0;32mI (901) ak8963:   --> x: 1.513449[0m
+[0;32mI (901) ak8963:   --> y: 1.557811[0m
+[0;32mI (901) ak8963:   --> z: 1.434039[0m
+[0;32mI (911) gpio: GPIO[9]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Starting main loop
+x:0.000000, theta:0.000000, dx:0.000000, dtheta:21335.806641
+0
+x:0.000000, theta:-1.000000, dx:0.000000, dtheta:-112.511253
+-163
+x:0.000000, theta:-3.000000, dx:0.000000, dtheta:-199.860092
+-491
+x:0.000000, theta:-5.000000, dx:0.000000, dtheta:-191.350937
+-819
+x:0.000000, theta:-7.000000, dx:0.000000, dtheta:-204.123291
+-1146
+x:0.000000, theta:-8.000000, dx:0.000000, dtheta:-101.864113
+-1310
+x:0.000000, theta:-10.000000, dx:0.000000, dtheta:-200.080032
+-1638
+x:0.000000, theta:-11.000000, dx:0.000000, dtheta:-100.928543
+-1802
+x:0.000000, theta:-13.000000, dx:0.000000, dtheta:-200.000000
+-2129
+x:0.000000, theta:-14.000000, dx:0.000000, dtheta:-99.989998
+-2293
+x:0.000000, theta:-15.000000, dx:0.000000, dtheta:-100.030014
+-2457
+x:0.000000, theta:-16.000000, dx:0.000000, dtheta:-99.980003
+-2621
+x:0.000000, theta:-17.000000, dx:0.000000, dtheta:-100.020004
+-2785
+x:0.001953, theta:-19.000000, dx:0.195386, dtheta:-200.040009
+-3112
+x:0.005860, theta:-20.000000, dx:0.390733, dtheta:-100.010002
+-3276
+x:0.011721, theta:-20.000000, dx:0.586100, dtheta:0.000000
+-3276
+x:0.019535, theta:-21.000000, dx:0.781232, dtheta:-99.980003
+-3440
+x:0.031256, theta:-22.000000, dx:1.172083, dtheta:-100.000000
+-3604
+x:0.056651, theta:-24.000000, dx:2.540529, dtheta:-200.080032
+-3932
+x:0.101581, theta:-25.000000, dx:4.490291, dtheta:-99.940033
+-4096
+x:0.154324, theta:-24.000000, dx:5.267526, dtheta:99.870163
+-3932
+x:0.224649, theta:-25.000000, dx:6.971153, dtheta:-99.127678
+-4096
+x:0.298881, theta:-24.000000, dx:7.389204, dtheta:99.542107
+-3932
+x:0.382880, theta:-25.000000, dx:8.171136, dtheta:-97.276268
+-4096
+x:0.459066, theta:-24.000000, dx:7.944255, dtheta:104.275284
+-3932
+x:0.539158, theta:-23.000000, dx:7.944092, dtheta:99.186668
+-3768
+x:0.619251, theta:-23.000000, dx:8.063261, dtheta:0.000000
+-3768
+x:0.695436, theta:-23.000000, dx:7.645299, dtheta:0.000000
+-3768
+x:0.773575, theta:-23.000000, dx:7.794397, dtheta:0.000000
+-3768
+x:0.847807, theta:-23.000000, dx:7.389944, dtheta:0.000000
+-3768
+x:0.914225, theta:-22.000000, dx:6.503916, dtheta:97.924011
+-3604
+x:0.980643, theta:-23.000000, dx:6.508383, dtheta:-97.991180
+-3768
+x:1.035340, theta:-23.000000, dx:5.735866, dtheta:0.000000
+-3768
+x:1.095898, theta:-23.000000, dx:6.058184, dtheta:0.000000
+-3768
+x:1.158409, theta:-24.000000, dx:6.259872, dtheta:-100.140198
+-3932
+x:1.222873, theta:-25.000000, dx:6.374426, dtheta:-98.882629
+-4096
+x:1.289291, theta:-26.000000, dx:6.719074, dtheta:-101.163376
+-4259
+x:1.353756, theta:-26.000000, dx:6.434232, dtheta:0.000000
+-4259
+x:1.416267, theta:-26.000000, dx:6.252985, dtheta:0.000000
+-4259
+x:1.486592, theta:-27.000000, dx:6.919030, dtheta:-98.386459
+-4423
+x:1.566684, theta:-28.000000, dx:7.832234, dtheta:-97.789948
+-4587
+x:1.648730, theta:-29.000000, dx:8.535767, dtheta:-104.036621
+-4751
+x:1.750311, theta:-30.000000, dx:10.079431, dtheta:-99.226036
+-4915
+x:1.847984, theta:-29.000000, dx:9.781047, dtheta:100.140198
+-4751
+x:1.955425, theta:-29.000000, dx:10.829660, dtheta:0.000000
+-4751
+x:2.078494, theta:-29.000000, dx:12.283530, dtheta:0.000000
+-4751
+x:2.211330, theta:-30.000000, dx:12.791151, dtheta:-96.292732
+-4915
+x:2.332445, theta:-29.000000, dx:12.519662, dtheta:103.369858
+-4751
+x:2.467235, theta:-30.000000, dx:13.589018, dtheta:-100.816612
+-4915
+x:2.605932, theta:-30.000000, dx:13.871054, dtheta:0.000000
+-4915
+x:2.742675, theta:-29.000000, dx:13.568473, dtheta:99.226036
+-4751
+x:2.887231, theta:-28.000000, dx:13.817316, dtheta:95.584015
+-4587
+x:3.012254, theta:-28.000000, dx:13.162999, dtheta:0.000000
+-4587
+x:3.145090, theta:-29.000000, dx:13.199136, dtheta:-99.364075
+-4751
+x:3.262298, theta:-27.000000, dx:11.839241, dtheta:202.020203
+-4423
+x:3.391227, theta:-29.000000, dx:12.845386, dtheta:-199.262726
+-4751
+x:3.518203, theta:-27.000000, dx:12.293111, dtheta:193.629593
+-4423
+x:3.639318, theta:-28.000000, dx:12.553401, dtheta:-103.648422
+-4587
+x:3.754573, theta:-27.000000, dx:11.515124, dtheta:99.910080
+-4423
+x:3.883502, theta:-28.000000, dx:12.891624, dtheta:-99.989998
+-4587
+x:4.012431, theta:-28.000000, dx:12.923931, dtheta:0.000000
+-4587
+x:4.133546, theta:-28.000000, dx:11.979743, dtheta:0.000000
+-4587
+x:4.264429, theta:-28.000000, dx:12.874556, dtheta:0.000000
+-4587
+x:4.391405, theta:-29.000000, dx:12.229176, dtheta:-96.311279
+-4751
+x:4.520334, theta:-28.000000, dx:13.654855, dtheta:105.909760
+-4587
+x:4.643403, theta:-28.000000, dx:12.412386, dtheta:0.000000
+-4587
+x:4.772332, theta:-30.000000, dx:12.914869, dtheta:-200.340576
+-4915
+x:4.889540, theta:-28.000000, dx:11.593322, dtheta:197.823929
+-4587
+x:5.012609, theta:-29.000000, dx:12.101161, dtheta:-98.328423
+-4751
+x:5.133724, theta:-29.000000, dx:11.734833, dtheta:0.000000
+-4751
+x:5.243118, theta:-29.000000, dx:11.594497, dtheta:0.000000
+-4751
+x:5.356420, theta:-29.000000, dx:11.341517, dtheta:0.000000
+-4751
+x:5.473628, theta:-29.000000, dx:11.750175, dtheta:0.000000
+-4751
+x:5.594743, theta:-30.000000, dx:12.001111, dtheta:-99.088387
+-4915
+x:5.715858, theta:-29.000000, dx:11.907896, dtheta:98.318748
+-4751
+x:5.838927, theta:-31.000000, dx:11.871208, dtheta:-192.919846
+-5079
+x:5.965903, theta:-30.000000, dx:13.398284, dtheta:105.518623
+-4915
+x:6.102646, theta:-31.000000, dx:13.664742, dtheta:-99.930046
+-5079
+x:6.241343, theta:-31.000000, dx:14.026767, dtheta:0.000000
+-5079
+x:6.391760, theta:-32.000000, dx:15.010211, dtheta:-99.790443
+-5242
+x:6.544131, theta:-30.000000, dx:14.601911, dtheta:191.662674
+-4915
+x:6.694548, theta:-31.000000, dx:15.724161, dtheta:-104.536896
+-5079
+x:6.841058, theta:-30.000000, dx:14.537619, dtheta:99.226036
+-4915
+x:6.989522, theta:-30.000000, dx:14.994869, dtheta:0.000000
+-4915
+x:7.137986, theta:-30.000000, dx:14.803442, dtheta:0.000000
+-4915
+x:7.280590, theta:-29.000000, dx:13.700009, dtheta:96.070709
+-4751
+x:7.411472, theta:-30.000000, dx:13.544732, dtheta:-103.487534
+-4915
+x:7.554076, theta:-30.000000, dx:14.382592, dtheta:0.000000
+-4915
+x:7.690819, theta:-30.000000, dx:13.697593, dtheta:0.000000
+-4915
+x:7.829515, theta:-30.000000, dx:13.844699, dtheta:0.000000
+-4915
+x:7.985793, theta:-32.000000, dx:14.936264, dtheta:-191.149765
+-5242
+x:8.118629, theta:-30.000000, dx:13.925605, dtheta:209.665588
+-4915
+x:8.271000, theta:-32.000000, dx:15.143158, dtheta:-198.767639
+-5242
+x:8.423370, theta:-32.000000, dx:15.356829, dtheta:0.000000
+-5242
+x:8.571835, theta:-31.000000, dx:14.819745, dtheta:99.820328
+-5079
+x:8.737880, theta:-32.000000, dx:15.875819, dtheta:-95.611435
+-5242
+x:8.876576, theta:-31.000000, dx:14.535388, dtheta:104.799828
+-5079
+x:9.021133, theta:-31.000000, dx:14.400976, dtheta:0.000000
+-5079
+x:9.167644, theta:-32.000000, dx:14.740932, dtheta:-100.613747
+-5242
+x:9.304386, theta:-31.000000, dx:13.634719, dtheta:99.710838
+-5079
+x:9.448943, theta:-32.000000, dx:13.893032, dtheta:-96.107643
+-5242
+x:9.585687, theta:-32.000000, dx:14.139545, dtheta:0.000000
+-5242
+x:9.728290, theta:-32.000000, dx:14.372396, dtheta:0.000000
+-5242
+x:9.874801, theta:-33.000000, dx:14.695193, dtheta:-100.300903
+-5406
+x:10.031078, theta:-34.000000, dx:15.477633, dtheta:-99.039314
+-5570
+x:10.195169, theta:-34.000000, dx:15.638150, dtheta:0.000000
+-5570
+x:10.357307, theta:-35.000000, dx:17.217585, dtheta:-106.190926
+-5734
+x:10.525307, theta:-34.000000, dx:16.808332, dtheta:100.050026
+-5570
+x:10.706979, theta:-35.000000, dx:18.118290, dtheta:-99.730728
+-5734
+x:10.888652, theta:-34.000000, dx:17.323645, dtheta:95.356155
+-5570
+x:11.058604, theta:-35.000000, dx:17.712601, dtheta:-104.220947
+-5734
+x:11.236370, theta:-35.000000, dx:17.742874, dtheta:0.000000
+-5734
+x:11.416089, theta:-35.000000, dx:18.024168, dtheta:0.000000
+-5734
+x:11.605577, theta:-35.000000, dx:18.251537, dtheta:0.000000
+-5734
+x:11.781388, theta:-36.000000, dx:18.271852, dtheta:-103.928497
+-5898
+x:11.970876, theta:-36.000000, dx:18.897720, dtheta:0.000000
+-5898
+x:12.168176, theta:-37.000000, dx:19.903152, dtheta:-100.877640
+-6062
+x:12.381104, theta:-36.000000, dx:20.064905, dtheta:94.232941
+-5898
+x:12.574498, theta:-36.000000, dx:20.641874, dtheta:0.000000
+-5898
+x:12.773752, theta:-36.000000, dx:19.965336, dtheta:0.000000
+-5898
+x:12.978867, theta:-35.000000, dx:19.964411, dtheta:97.333076
+-5734
+x:13.172260, theta:-36.000000, dx:19.837288, dtheta:-102.574623
+-5898
+x:13.361748, theta:-35.000000, dx:18.920366, dtheta:99.850220
+-5734
+x:13.553187, theta:-36.000000, dx:19.071491, dtheta:-99.621437
+-5898
+x:13.750488, theta:-37.000000, dx:18.894934, dtheta:-95.767090
+-6062
+x:13.934114, theta:-37.000000, dx:19.123743, dtheta:0.000000
+-6062
+x:14.133368, theta:-38.000000, dx:20.175581, dtheta:-101.255569
+-6225
+x:14.340437, theta:-38.000000, dx:20.461308, dtheta:0.000000
+-6225
+x:14.551412, theta:-39.000000, dx:21.284775, dtheta:-100.887810
+-6389
+x:14.770201, theta:-39.000000, dx:21.900810, dtheta:0.000000
+-6389
+x:14.987036, theta:-40.000000, dx:21.552034, dtheta:-99.393700
+-6553
+x:15.219500, theta:-40.000000, dx:22.116245, dtheta:0.000000
+-6553
+x:15.428521, theta:-40.000000, dx:22.217430, dtheta:0.000000
+-6553
+x:15.659030, theta:-41.000000, dx:23.041664, dtheta:-99.960014
+-6717
+x:15.903214, theta:-41.000000, dx:23.346828, dtheta:0.000000
+-6717
+x:16.139584, theta:-41.000000, dx:24.766254, dtheta:0.000000
+-6717
+x:16.385721, theta:-41.000000, dx:24.611301, dtheta:0.000000
+-6717
+x:16.653347, theta:-41.000000, dx:25.293055, dtheta:0.000000
+-6717
+x:16.891670, theta:-42.000000, dx:25.144884, dtheta:-105.507492
+-6881
+x:17.139763, theta:-41.000000, dx:24.754805, dtheta:99.780479
+-6717
+x:17.387854, theta:-42.000000, dx:23.371716, dtheta:-94.206314
+-6881
+x:17.637897, theta:-43.000000, dx:26.535484, dtheta:-106.123314
+-7045
+x:17.891850, theta:-43.000000, dx:25.453747, dtheta:0.000000
+-7045
+ESP_ERROR_CHECK failed: esp_err_t 0xffffffff (ESP_FAIL) at 0x4200916a
+file: "./main/accel.c" line 91
+func: accel_update
+expression: get_accel_gyro_mag(&va, &vg, &vm)
+
+abort() was called at PC 0x40384ff5 on core 0
+Core  0 register dump:
+MEPC    : 0x4038078e  RA      : 0x40385000  SP      : 0x3fc968c0  GP      : 0x3fc8d200  
+TP      : 0x3fc8a768  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x00000004  S1      : 0x3fc96924  A0      : 0x3fc968ec  A1      : 0x3fc96922  
+A2      : 0x00000000  A3      : 0x3fc96919  A4      : 0x00000001  A5      : 0x3fc8f000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+472	    *((volatile int *) 0) = 0; // NOLINT(clang-analyzer-core.NullDereference) should be an invalid operation on targets
+#0  panic_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+#1  0x40385000 in esp_system_abort (details=details@entry=0x3fc968ec "abort() was called at PC 0x40384ff5 on core 0") at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+#2  0x4038b266 in abort () at /Users/naichenzhao/esp/esp-idf/components/newlib/abort.c:38
+#3  0x40384ff8 in _esp_error_check_failed (rc=<optimized out>, file=file@entry=0x3c034c00 "", line=line@entry=91, function=function@entry=0x3c03a440 <__func__.0> "", expression=expression@entry=0x3c034bdc "") at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+#4  0x4200916e in accel_update () at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:91
+#5  0x42009176 in imu_task (arg=<error reading variable: value has been optimized out>) at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/accel.c:73
+#6  0x40385f98 in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+ELF file SHA256: 27e922f41
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380746
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1738
+load:0x403cc710,len:0xb9c
+load:0x403ce710,len:0x2e34
+entry 0x403cc71a
+[0;32mI (35) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (35) boot: compile time Dec 22 2023 00:21:23[0m
+[0;32mI (36) boot: chip revision: v0.4[0m
+[0;32mI (40) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (45) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (78) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (97) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0cdd0h ( 52688) map[0m
+[0;32mI (114) esp_image: segment 1: paddr=0001cdf8 vaddr=3fc8ca00 size=0139ch (  5020) load[0m
+[0;32mI (115) esp_image: segment 2: paddr=0001e19c vaddr=40380000 size=01e7ch (  7804) load[0m
+[0;32mI (124) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=20a1ch (133660) map[0m
+[0;32mI (152) esp_image: segment 4: paddr=00040a44 vaddr=40381e7c size=0aa90h ( 43664) load[0m
+[0;32mI (164) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (164) boot: Disabling RNG early entropy source...[0m
+[0;32mI (176) cpu_start: Unicore app[0m
+[0;32mI (184) cpu_start: Pro cpu start user code[0m
+[0;32mI (184) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (185) cpu_start: Application information:[0m
+[0;32mI (187) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (193) cpu_start: App version:      e081166-dirty[0m
+[0;32mI (198) cpu_start: Compile time:     Dec 22 2023 00:21:09[0m
+[0;32mI (204) cpu_start: ELF file SHA256:  27e922f41...[0m
+[0;32mI (210) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (216) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (221) cpu_start: Max chip rev:     v1.99 [0m
+[0;32mI (226) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (231) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (238) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (244) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (251) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (258) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (265) spi_flash: detected chip: generic[0m
+[0;32mI (269) spi_flash: flash io: dio[0m
+[0;33mW (273) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (286) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (297) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (303) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (311) main_task: Started on CPU0[0m
+[0;32mI (311) main_task: Calling app_main()[0m
+0
+[0;32mI (311) mpu9250: Initializating MPU9250[0m
+[0;32mI (471) mpu9250: Enabling magnetometer[0m
+[0;32mI (701) mpu9250: Magnetometer enabled[0m
+[0;32mI (701) mpu9250: MPU9250:[0m
+[0;32mI (701) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (701) mpu9250: --> Device address: 0x69[0m
+[0;32mI (701) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (701) mpu9250: --> initialised: Yes[0m
+[0;32mI (711) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (711) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (721) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (721) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (731) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (741) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (741) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (751) mpu9250: Accelerometer:[0m
+[0;32mI (751) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (761) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (771) mpu9250: --> Calibration:[0m
+[0;32mI (771) mpu9250:   --> Offset: [0m
+[0;32mI (771) mpu9250:     --> x: 0.020900[0m
+[0;32mI (781) mpu9250:     --> y: 0.014688[0m
+[0;32mI (781) mpu9250:     --> z: -0.002580[0m
+[0;32mI (791) mpu9250:   --> Scale: [0m
+[0;32mI (791) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (801) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (801) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (811) mpu9250: Gyroscope:[0m
+[0;32mI (811) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (821) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (821) mpu9250: --> Bias Offset:[0m
+[0;32mI (821) mpu9250:   --> x: 0.303956[0m
+[0;32mI (831) mpu9250:   --> y: -1.049768[0m
+[0;32mI (831) mpu9250:   --> z: -0.403782[0m
+[0;32mI (841) ak8963: Magnetometer (Compass):[0m
+[0;32mI (841) ak8963: --> i2c address: 0x00[0m
+[0;32mI (851) ak8963: --> initialised: true[0m
+[0;32mI (851) ak8963: --> Device ID: 0x48[0m
+[0;32mI (851) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (861) ak8963: --> ASA Scalars:[0m
+[0;32mI (871) ak8963:   --> x: 1.175781[0m
+[0;32mI (871) ak8963:   --> y: 1.187500[0m
+[0;32mI (871) ak8963:   --> z: 1.136719[0m
+[0;32mI (881) ak8963: --> Offset:[0m
+[0;32mI (881) ak8963:   --> x: 25.183594[0m
+[0;32mI (881) ak8963:   --> y: 57.519531[0m
+[0;32mI (891) ak8963:   --> z: -62.648438[0m
+[0;32mI (891) ak8963: --> Scale:[0m
+[0;32mI (901) ak8963:   --> x: 1.513449[0m
+[0;32mI (901) ak8963:   --> y: 1.557811[0m
+[0;32mI (901) ak8963:   --> z: 1.434039[0m
+[0;32mI (911) gpio: GPIO[9]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+Starting main loop
+x:0.000000, theta:1.000000, dx:0.000000, dtheta:-20202.019531
+163
+x:0.000000, theta:2.000000, dx:0.000000, dtheta:105.708252
+327
+x:0.000000, theta:4.000000, dx:0.000000, dtheta:207.167999
+655
+x:0.000000, theta:5.000000, dx:0.000000, dtheta:100.300903
+819
+x:0.000000, theta:7.000000, dx:0.000000, dtheta:200.140106
+1146
+x:0.000000, theta:8.000000, dx:0.000000, dtheta:99.989998
+1310
+x:0.000000, theta:10.000000, dx:0.000000, dtheta:199.700439
+1638
+x:0.000000, theta:11.000000, dx:0.000000, dtheta:99.000099
+1802
+x:0.000000, theta:12.000000, dx:0.000000, dtheta:100.180328
+1966
+x:0.000000, theta:13.000000, dx:0.000000, dtheta:100.472221
+2129
+x:0.000000, theta:14.000000, dx:0.000000, dtheta:100.160255
+2293
+x:-0.001953, theta:15.000000, dx:-0.194705, dtheta:99.671089
+2457
+x:-0.003907, theta:16.000000, dx:-0.194646, dtheta:99.641296
+2621
+x:-0.007814, theta:17.000000, dx:-0.394282, dtheta:100.918358
+2785
+x:-0.009767, theta:18.000000, dx:-0.195719, dtheta:100.190361
+2949
+x:-0.011721, theta:19.000000, dx:-0.195406, dtheta:100.030014
+3112
+x:-0.015628, theta:20.000000, dx:-0.390655, dtheta:99.989998
+3276
+x:-0.017581, theta:21.000000, dx:-0.195328, dtheta:99.989998
+3440
+x:-0.023442, theta:22.000000, dx:-0.586100, dtheta:100.010002
+3604
+x:-0.033209, theta:23.000000, dx:-0.976638, dtheta:99.989998
+3768
+x:-0.056651, theta:24.000000, dx:-2.344401, dtheta:100.010002
+3932
+x:-0.095720, theta:25.000000, dx:-3.903431, dtheta:99.910080
+4096
+x:-0.150417, theta:26.000000, dx:-5.460438, dtheta:99.830284
+4259
+x:-0.212928, theta:27.000000, dx:-6.244241, dtheta:99.890121
+4423
+x:-0.283253, theta:28.000000, dx:-6.894608, dtheta:98.039215
+4587
+x:-0.359439, theta:28.000000, dx:-7.444340, dtheta:0.000000
+4587
+x:-0.439531, theta:29.000000, dx:-8.385757, dtheta:104.701080
+4751
+x:-0.527437, theta:29.000000, dx:-8.716531, dtheta:0.000000
+4751
+x:-0.625111, theta:30.000000, dx:-9.770290, dtheta:100.030014
+4915
+x:-0.730598, theta:30.000000, dx:-10.657453, dtheta:0.000000
+4915
+x:-0.836086, theta:30.000000, dx:-10.438108, dtheta:0.000000
+4915
+x:-0.945480, theta:31.000000, dx:-10.803321, dtheta:98.755676
+5079
+x:-1.072456, theta:31.000000, dx:-12.230360, dtheta:0.000000
+5079
+x:-1.191618, theta:31.000000, dx:-12.549957, dtheta:0.000000
+5079
+x:-1.320547, theta:32.000000, dx:-12.992959, dtheta:100.775978
+5242
+x:-1.455337, theta:32.000000, dx:-13.519517, dtheta:0.000000
+5242
+x:-1.599893, theta:33.000000, dx:-14.321070, dtheta:99.068756
+5406
+x:-1.754218, theta:33.000000, dx:-14.763637, dtheta:0.000000
+5406
+x:-1.898775, theta:33.000000, dx:-15.146362, dtheta:0.000000
+5406
+x:-2.049192, theta:34.000000, dx:-15.161509, dtheta:100.796295
+5570
+x:-2.207423, theta:34.000000, dx:-15.845309, dtheta:0.000000
+5570
+x:-2.369561, theta:35.000000, dx:-15.789096, dtheta:97.380463
+5734
+x:-2.519979, theta:35.000000, dx:-15.406877, dtheta:0.000000
+5734
+x:-2.684070, theta:36.000000, dx:-16.446987, dtheta:100.230530
+5898
+x:-2.842302, theta:36.000000, dx:-15.832625, dtheta:0.000000
+5898
+x:-3.016160, theta:37.000000, dx:-17.056694, dtheta:98.106544
+6062
+x:-3.184159, theta:37.000000, dx:-17.081703, dtheta:0.000000
+6062
+x:-3.365832, theta:38.000000, dx:-18.080519, dtheta:99.522293
+6225
+x:-3.549458, theta:39.000000, dx:-18.503242, dtheta:100.765823
+6389
+x:-3.750666, theta:40.000000, dx:-19.387901, dtheta:96.357681
+6553
+x:-3.947967, theta:41.000000, dx:-20.275478, dtheta:102.764359
+6717
+x:-4.155035, theta:41.000000, dx:-20.928640, dtheta:0.000000
+6717
+x:-4.377730, theta:42.000000, dx:-21.756138, dtheta:97.694412
+6881
+x:-4.594566, theta:43.000000, dx:-22.112534, dtheta:101.978378
+7045
+x:-4.823122, theta:43.000000, dx:-22.952013, dtheta:0.000000
+7045
+x:-5.059492, theta:43.000000, dx:-22.966389, dtheta:0.000000
+7045
+x:-5.295862, theta:43.000000, dx:-24.285429, dtheta:0.000000
+7045
+x:-5.543953, theta:44.000000, dx:-24.878735, dtheta:100.280785
+7208
+x:-5.817439, theta:43.000000, dx:-25.727764, dtheta:-94.073380
+7045
+x:-6.057716, theta:43.000000, dx:-25.583187, dtheta:0.000000
+7045
+x:-6.327295, theta:43.000000, dx:-26.434490, dtheta:0.000000
+7045
+x:-6.573433, theta:43.000000, dx:-24.852345, dtheta:0.000000
+7045
+x:-6.837152, theta:44.000000, dx:-26.689466, dtheta:101.204330
+7208
+x:-7.106730, theta:43.000000, dx:-25.367361, dtheta:-94.099930
+7045
+x:-7.354822, theta:44.000000, dx:-26.398300, dtheta:106.405617
+7208
+x:-7.628308, theta:45.000000, dx:-26.642586, dtheta:97.418411
+7372
+x:-7.892026, theta:45.000000, dx:-27.167879, dtheta:0.000000
+7372
+x:-8.169419, theta:45.000000, dx:-27.653561, dtheta:0.000000
+7372
+x:-8.442905, theta:45.000000, dx:-27.386955, dtheta:0.000000
+7372
+x:-8.724205, theta:45.000000, dx:-28.180685, dtheta:0.000000
+7372
+x:-9.015272, theta:46.000000, dx:-27.529284, dtheta:94.580536
+7536
+x:-9.288758, theta:46.000000, dx:-28.897520, dtheta:0.000000
+7536
+x:-9.585687, theta:47.000000, dx:-28.644453, dtheta:96.469231
+7700
+x:-9.872847, theta:47.000000, dx:-29.831697, dtheta:0.000000
+7700
+x:-10.171728, theta:48.000000, dx:-29.322235, dtheta:98.106544
+7864
+x:-10.458888, theta:48.000000, dx:-29.349951, dtheta:0.000000
+7864
+x:-10.755816, theta:49.000000, dx:-29.363964, dtheta:98.892410
+8028
+x:-11.054697, theta:49.000000, dx:-29.861183, dtheta:0.000000
+8028
+x:-11.357486, theta:50.000000, dx:-30.655941, dtheta:101.245316
+8192
+x:-11.666134, theta:51.000000, dx:-30.787840, dtheta:99.750618
+8355
+x:-11.968922, theta:51.000000, dx:-30.339457, dtheta:0.000000
+8355
+x:-12.209199, theta:52.000000, dx:-23.282682, dtheta:96.899223
+8519
+x:-12.386965, theta:54.000000, dx:-18.333937, dtheta:206.270630
+8847
+x:-12.543242, theta:55.000000, dx:-15.520673, dtheta:99.314728
+9011
+x:-12.666311, theta:57.000000, dx:-12.426172, dtheta:201.938614
+9338
+x:-12.767892, theta:59.000000, dx:-10.056491, dtheta:198.000198
+9666
+x:-12.840171, theta:62.000000, dx:-7.232961, dtheta:300.210144
+10158
+x:-12.892914, theta:64.000000, dx:-5.217426, dtheta:197.843506
+10485
+x:-12.930030, theta:67.000000, dx:-3.681782, dtheta:297.589508
+10977
+x:-12.953472, theta:70.000000, dx:-2.343758, dtheta:299.940002
+11468
+x:-12.988634, theta:73.000000, dx:-3.480350, dtheta:296.941498
+11960
+x:-13.021843, theta:75.000000, dx:-3.285077, dtheta:197.843506
+12288
+x:-13.068727, theta:77.000000, dx:-4.623172, dtheta:197.219208
+12615
+x:-13.127331, theta:80.000000, dx:-6.246455, dtheta:319.761261
+13107
+x:-13.193748, theta:83.000000, dx:-6.655746, dtheta:300.631348
+13598
+x:-13.279701, theta:85.000000, dx:-8.504280, dtheta:197.882660
+13926
+x:-13.375422, theta:88.000000, dx:-9.674580, dtheta:303.214081
+14417
+x:-13.500444, theta:90.000000, dx:-12.421549, dtheta:198.708389
+14745
+x:-13.645000, theta:91.000000, dx:-13.850345, dtheta:95.812973
+14909
+x:-13.795418, theta:93.000000, dx:-15.671736, dtheta:208.376740
+15237
+x:-13.965370, theta:94.000000, dx:-16.932589, dtheta:99.631363
+15400
+x:-14.152904, theta:95.000000, dx:-18.830544, dtheta:100.411682
+15564
+x:-14.356065, theta:96.000000, dx:-20.326288, dtheta:100.050026
+15728
+x:-14.561179, theta:97.000000, dx:-20.639402, dtheta:100.623871
+15892
+x:-14.785829, theta:97.000000, dx:-22.357626, dtheta:0.000000
+15892
+x:-15.012431, theta:97.000000, dx:-22.549763, dtheta:0.000000
+15892
+x:-15.258569, theta:97.000000, dx:-24.922806, dtheta:0.000000
+15892
+x:-15.522287, theta:97.000000, dx:-25.357557, dtheta:0.000000
+15892
+x:-15.776238, theta:97.000000, dx:-26.381786, dtheta:0.000000
+15892
+x:-16.055586, theta:96.000000, dx:-27.724039, dtheta:-99.245735
+15728
+x:-16.329071, theta:96.000000, dx:-27.226002, dtheta:0.000000
+15728
+x:-16.614279, theta:95.000000, dx:-28.949224, dtheta:-101.502235
+15564
+x:-16.897532, theta:95.000000, dx:-28.139551, dtheta:0.000000
+15564
+x:-17.184692, theta:94.000000, dx:-28.883614, dtheta:-100.583382
+15400
+x:-17.493340, theta:94.000000, dx:-28.832056, dtheta:0.000000
+15400
+x:-17.762920, theta:93.000000, dx:-28.937403, dtheta:-107.342209
+15237
+x:-18.067661, theta:92.000000, dx:-28.757280, dtheta:-94.366333
+15073
+x:-18.343102, theta:91.000000, dx:-29.113224, dtheta:-105.697075
+14909
+x:-18.630260, theta:89.000000, dx:-27.696661, dtheta:-192.901230
+14581
+x:-18.890072, theta:88.000000, dx:-27.165560, dtheta:-104.558762
+14417
+x:-19.147930, theta:86.000000, dx:-25.721523, dtheta:-199.501236
+14090
+x:-19.403835, theta:84.000000, dx:-25.639231, dtheta:-200.380722
+13762
+x:-19.649973, theta:82.000000, dx:-24.670504, dtheta:-200.461060
+13434
+x:-19.894157, theta:81.000000, dx:-23.594984, dtheta:-96.627693
+13271
+x:-20.105133, theta:80.000000, dx:-21.853703, dtheta:-103.584000
+13107
+x:-20.316107, theta:79.000000, dx:-21.110039, dtheta:-100.060036
+12943
+x:-20.511454, theta:78.000000, dx:-18.969395, dtheta:-97.106232
+12779
+x:-20.683359, theta:77.000000, dx:-17.687572, dtheta:-102.891243
+12615
+x:-20.849405, theta:76.000000, dx:-16.558252, dtheta:-99.720779
+12451
+x:-20.995916, theta:75.000000, dx:-14.702567, dtheta:-100.351227
+12288
+x:-21.142426, theta:74.000000, dx:-14.166425, dtheta:-96.693100
+12124
+x:-21.271355, theta:74.000000, dx:-13.258859, dtheta:0.000000
+12124
+x:-21.384657, theta:74.000000, dx:-11.412393, dtheta:0.000000
+12124
+x:-21.499910, theta:74.000000, dx:-11.535728, dtheta:0.000000
+12124
+x:-21.607351, theta:75.000000, dx:-10.640878, dtheta:99.039314
+12288
+x:-21.710886, theta:76.000000, dx:-10.190423, dtheta:98.425194
+12451
+x:-21.810513, theta:77.000000, dx:-9.642522, dtheta:96.786682
+12615
+x:-21.904280, theta:77.000000, dx:-9.936120, dtheta:0.000000
+12615
+x:-21.998047, theta:78.000000, dx:-9.393625, dtheta:100.180328
+12779
+x:-22.095720, theta:80.000000, dx:-9.776140, dtheta:200.180161
+13107
+x:-22.195347, theta:81.000000, dx:-9.926917, dtheta:99.641296
+13271
+x:-22.302788, theta:83.000000, dx:-10.580104, dtheta:196.947327
+13598
+x:-22.414137, theta:84.000000, dx:-10.752134, dtheta:96.562378
+13762
+x:-22.525484, theta:86.000000, dx:-11.708433, dtheta:210.304947
+14090
+x:-22.654413, theta:88.000000, dx:-12.818566, dtheta:198.846680
+14417
+x:-22.785295, theta:90.000000, dx:-13.235136, dtheta:202.244919
+14745
+x:-22.937666, theta:93.000000, dx:-14.933887, dtheta:294.031158
+15237
+x:-23.091991, theta:95.000000, dx:-15.709027, dtheta:203.583054
+15564
+x:-23.273664, theta:97.000000, dx:-18.118385, dtheta:199.461456
+15892
+x:-23.469011, theta:100.000000, dx:-19.573830, dtheta:300.601227
+16384
+x:-23.678032, theta:102.000000, dx:-19.861326, dtheta:190.041809
+16711
+x:-23.824543, theta:105.000000, dx:-15.343081, dtheta:314.169006
+17203
+x:-23.955425, theta:108.000000, dx:-13.144749, dtheta:301.295563
+17694
+x:-24.062866, theta:112.000000, dx:-10.818744, dtheta:402.779175
+18350
+x:-24.150772, theta:115.000000, dx:-8.763422, dtheta:299.072876
+18841
+x:-24.225004, theta:119.000000, dx:-7.266259, dtheta:391.542664
+19496
+x:-24.281654, theta:123.000000, dx:-5.550673, dtheta:391.926331
+20152
+x:-24.330492, theta:127.000000, dx:-4.804492, dtheta:393.507141
+20807
+x:-24.387142, theta:130.000000, dx:-5.977016, dtheta:316.522461
+21299
+x:-24.453560, theta:134.000000, dx:-6.634471, dtheta:399.560486
+21954
+x:-24.537560, theta:138.000000, dx:-8.465145, dtheta:403.103912
+22609
+x:-24.637186, theta:142.000000, dx:-9.987623, dtheta:401.002502
+23265
+x:-24.760256, theta:147.000000, dx:-12.306976, dtheta:500.000031
+24084
+x:-24.902859, theta:151.000000, dx:-14.109323, dtheta:395.765320
+24739
+x:-25.059137, theta:155.000000, dx:-15.006588, dtheta:384.098328
+25395
+x:-25.172438, theta:159.000000, dx:-11.811960, dtheta:417.014191
+26050
+x:-25.279879, theta:164.000000, dx:-10.860300, dtheta:505.407867
+26869
+x:-25.359972, theta:168.000000, dx:-7.932395, dtheta:396.157257
+27525
+x:-25.428343, theta:172.000000, dx:-6.910332, dtheta:404.285400
+28180
+x:-25.492807, theta:176.000000, dx:-6.445812, dtheta:399.959991
+28835
+x:-25.561180, theta:180.000000, dx:-6.834539, dtheta:399.840057
+29491
+x:-25.639318, theta:-176.000000, dx:-7.731112, dtheta:-35223.113281
+-28835
+x:-25.711597, theta:-172.000000, dx:-7.218513, dtheta:399.480652
+-28180
+x:-25.705736, theta:-168.000000, dx:0.588423, dtheta:401.566101
+-27525
+x:-25.678387, theta:-164.000000, dx:2.724051, dtheta:398.406372
+-26869
+x:-25.654945, theta:-160.000000, dx:2.328299, dtheta:397.298370
+-26214
+x:-25.641272, theta:-156.000000, dx:1.360982, dtheta:398.128784
+-25559
+x:-25.635410, theta:-152.000000, dx:0.586598, dtheta:400.320251
+-24903
+x:-25.635410, theta:-148.000000, dx:0.000000, dtheta:401.203613
+-24248
+x:-25.621737, theta:-144.000000, dx:1.361930, dtheta:398.406372
+-23592
+x:-25.547504, theta:-140.000000, dx:7.223832, dtheta:389.256500
+-22937
+x:-25.459599, theta:-137.000000, dx:9.178854, dtheta:313.250488
+-22446
+x:-25.344343, theta:-133.000000, dx:11.625515, dtheta:403.469849
+-21790
+x:-25.205647, theta:-129.000000, dx:13.873830, dtheta:400.120056
+-21135
+x:-25.061090, theta:-125.000000, dx:14.359397, dtheta:397.337830
+-20480
+x:-24.914579, theta:-122.000000, dx:13.945467, dtheta:285.551117
+-19988
+x:-24.799326, theta:-119.000000, dx:12.143446, dtheta:316.088928
+-19496
+x:-24.687977, theta:-117.000000, dx:11.118234, dtheta:199.700439
+-19169
+x:-24.596165, theta:-114.000000, dx:9.260857, dtheta:302.602386
+-18677
+x:-24.527792, theta:-112.000000, dx:6.806643, dtheta:199.104034
+-18350
+x:-24.478956, theta:-110.000000, dx:4.893853, dtheta:200.420883
+-18022
+x:-24.449654, theta:-108.000000, dx:2.907004, dtheta:198.412704
+-17694
+x:-24.428165, theta:-107.000000, dx:2.145172, dtheta:99.830284
+-17530
+x:-24.428165, theta:-106.000000, dx:0.000000, dtheta:100.462120
+-17367
+x:-24.430119, theta:-107.000000, dx:-0.194302, dtheta:-99.482689
+-17530
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:0.000000
+-17530
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:0.000000
+-17530
+x:-24.432072, theta:-108.000000, dx:-0.195684, dtheta:-100.190361
+-17694
+x:-24.432072, theta:-108.000000, dx:0.000000, dtheta:0.000000
+-17694
+x:-24.432072, theta:-108.000000, dx:0.000000, dtheta:0.000000
+-17694
+x:-24.430119, theta:-108.000000, dx:0.195293, dtheta:0.000000
+-17694
+x:-24.430119, theta:-109.000000, dx:0.000000, dtheta:-100.050026
+-17858
+x:-24.430119, theta:-109.000000, dx:0.000000, dtheta:0.000000
+-17858
+x:-24.430119, theta:-110.000000, dx:0.000000, dtheta:-100.010002
+-18022
+x:-24.430119, theta:-111.000000, dx:0.000000, dtheta:-100.050026
+-18186
+x:-24.430119, theta:-111.000000, dx:0.000000, dtheta:0.000000
+-18186
+x:-24.430119, theta:-111.000000, dx:0.000000, dtheta:0.000000
+-18186
+x:-24.430119, theta:-112.000000, dx:0.000000, dtheta:-100.050026
+-18350
+x:-24.430119, theta:-112.000000, dx:0.000000, dtheta:0.000000
+-18350
+x:-24.430119, theta:-112.000000, dx:0.000000, dtheta:0.000000
+-18350
+x:-24.430119, theta:-112.000000, dx:0.000000, dtheta:0.000000
+-18350
+x:-24.430119, theta:-111.000000, dx:0.000000, dtheta:99.950027
+-18186
+x:-24.430119, theta:-111.000000, dx:0.000000, dtheta:0.000000
+-18186
+x:-24.430119, theta:-110.000000, dx:0.000000, dtheta:99.820328
+-18022
+x:-24.430119, theta:-109.000000, dx:0.000000, dtheta:100.200401
+-17858
+x:-24.430119, theta:-108.000000, dx:0.000000, dtheta:99.930046
+-17694
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:100.010002
+-17530
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:0.000000
+-17530
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:0.000000
+-17530
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:0.000000
+-17530
+x:-24.430119, theta:-106.000000, dx:0.000000, dtheta:100.010002
+-17367
+x:-24.430119, theta:-106.000000, dx:0.000000, dtheta:0.000000
+-17367
+x:-24.430119, theta:-106.000000, dx:0.000000, dtheta:0.000000
+-17367
+x:-24.430119, theta:-106.000000, dx:0.000000, dtheta:0.000000
+-17367
+x:-24.430119, theta:-106.000000, dx:0.000000, dtheta:0.000000
+-17367
+x:-24.430119, theta:-106.000000, dx:0.000000, dtheta:0.000000
+-17367
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:-98.990295
+-17530
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:0.000000
+-17530
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:0.000000
+-17530
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:0.000000
+-17530
+x:-24.430119, theta:-107.000000, dx:0.000000, dtheta:0.000000
+-17530
+x:-24.432072, theta:-106.000000, dx:-0.195234, dtheta:99.960014
+-17367
+x:-24.432072, theta:-106.000000, dx:0.000000, dtheta:0.000000
+-17367
+x:-24.432072, theta:-105.000000, dx:0.000000, dtheta:100.180328
+-17203
+x:-24.432072, theta:-105.000000, dx:0.000000, dtheta:0.000000
+-17203
+x:-24.432072, theta:-104.000000, dx:0.000000, dtheta:100.210442
+-17039
+x:-24.432072, theta:-102.000000, dx:0.000000, dtheta:200.180161
+-16711
+x:-24.432072, theta:-102.000000, dx:0.000000, dtheta:0.000000
+-16711
+x:-24.432072, theta:-103.000000, dx:0.000000, dtheta:-99.870163
+-16875
+x:-24.434027, theta:-103.000000, dx:-0.194763, dtheta:0.000000
+-16875
+x:-24.434027, theta:-103.000000, dx:0.000000, dtheta:0.000000
+-16875
+x:-24.434027, theta:-103.000000, dx:0.000000, dtheta:0.000000
+-16875
+x:-24.434027, theta:-103.000000, dx:0.000000, dtheta:0.000000
+-16875
+x:-24.434027, theta:-104.000000, dx:0.000000, dtheta:-98.980499
+-17039
+x:-24.434027, theta:-106.000000, dx:0.000000, dtheta:-200.180161
+-17367
+x:-24.434027, theta:-107.000000, dx:0.000000, dtheta:-100.010002
+-17530
+x:-24.434027, theta:-108.000000, dx:0.000000, dtheta:-100.160255
+-17694
+x:-24.434027, theta:-109.000000, dx:0.000000, dtheta:-100.090080
+-17858
+x:-24.434027, theta:-110.000000, dx:0.000000, dtheta:-99.980003
+-18022
+x:-24.434027, theta:-111.000000, dx:0.000000, dtheta:-100.070053
+-18186
+x:-24.434027, theta:-112.000000, dx:0.000000, dtheta:-100.010002
+-18350
+x:-24.434027, theta:-113.000000, dx:0.000000, dtheta:-100.050026
+-18513
+x:-24.434027, theta:-114.000000, dx:0.000000, dtheta:-100.040016
+-18677
+x:-24.434027, theta:-115.000000, dx:0.000000, dtheta:-100.050026
+-18841
+x:-24.434027, theta:-116.000000, dx:0.000000, dtheta:-99.980003
+-19005
+x:-24.434027, theta:-117.000000, dx:0.000000, dtheta:-99.989998
+-19169
+x:-24.434027, theta:-117.000000, dx:0.000000, dtheta:0.000000
+-19169
+x:-24.434027, theta:-117.000000, dx:0.000000, dtheta:0.000000
+-19169
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:-99.980003
+-19333
+x:-24.434027, theta:-117.000000, dx:0.000000, dtheta:99.960014
+-19169
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:-100.030014
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.434027, theta:-119.000000, dx:0.000000, dtheta:-100.010002
+-19496
+x:-24.432072, theta:-119.000000, dx:0.195464, dtheta:0.000000
+-19496
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:99.970009
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-119.000000, dx:0.000000, dtheta:-99.970009
+-19496
+x:-24.432072, theta:-119.000000, dx:0.000000, dtheta:0.000000
+-19496
+x:-24.432072, theta:-119.000000, dx:0.000000, dtheta:0.000000
+-19496
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:99.850220
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-119.000000, dx:0.000000, dtheta:-99.989998
+-19496
+x:-24.432072, theta:-119.000000, dx:0.000000, dtheta:0.000000
+-19496
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:100.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.432072, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.195020, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-119.000000, dx:0.000000, dtheta:-99.980003
+-19496
+x:-24.430119, theta:-119.000000, dx:0.000000, dtheta:0.000000
+-19496
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:100.010002
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333
+x:-24.430119, theta:-118.000000, dx:0.000000, dtheta:0.000000
+-19333

@@ -1,0 +1,101 @@
+[0;33m--- esp-idf-monitor 1.3.4 on /dev/cu.usbserial-1420 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33mStack dump detected[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40382766: esp_crosscore_int_send at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:166
+[0m
+[0;33m0x40386960: prvAddCurrentTaskToDelayedList at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:6329
+[0m
+[0;33m0x40386958: prvAddCurrentTaskToDelayedList at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:6329
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40387256: vTaskPlaceOnEventList at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3704
+[0m
+[0;33m0x40389cfe: assert_valid_block at /Users/naichenzhao/esp/esp-idf/components/heap/multi_heap.c:120
+[0m
+[0;33m0x40389cf0: block_to_ptr at /Users/naichenzhao/esp/esp-idf/components/heap/tlsf/tlsf_block_functions.h:72
+ (inlined by) assert_valid_block at /Users/naichenzhao/esp/esp-idf/components/heap/multi_heap.c:115
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40389d38: multi_heap_free_impl at /Users/naichenzhao/esp/esp-idf/components/heap/multi_heap.c:231
+[0m
+[0;33m0x40056b4c: __addsf3 in ROM
+[0m
+[0;33m0x4200a194: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/components/ahrs/ahrs.c:105
+[0m
+[0;33m0x4200a194: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/components/ahrs/ahrs.c:105
+[0m
+[0;33m0x40057358: __mulsf3 in ROM
+[0m
+[0;33m0x42016560: atanf at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/math/sf_atan.c:109
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x420132ee: ledc_update_duty at /Users/naichenzhao/esp/esp-idf/components/driver/ledc/ledc.c:734 (discriminator 2)
+[0m
+[0;33m0x403827a4: esp_crosscore_int_send_yield at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:173
+[0m
+[0;33m0x4038620c: vPortYield at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:652 (discriminator 3)
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40385c56: xQueueReceive at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1659
+[0m
+[0;33m0x42008d18: app_main at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/main/main.c:57
+[0m
+[0;33m0x40000d14: __call_r_h4tl_rx_done in ROM
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x403827a4: esp_crosscore_int_send_yield at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:173
+[0m
+[0;33m0x4038620c: vPortYield at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:652 (discriminator 3)
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40385c56: xQueueReceive at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1659
+[0m
+[0;33m0x40057424: __mulsf3 in ROM
+[0m
+[0;33m0x4200a26a: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/components/ahrs/ahrs.c:107
+[0m
+[0;33m0x40000854: __call___mulsf3 in ROM
+[0m
+[0;33m0x42016512: atanf at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/math/sf_atan.c:109
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x403870b4: xTaskResumeAll at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:2666
+[0m
+[0;33m0x403827a4: esp_crosscore_int_send_yield at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:173
+[0m
+[0;33m0x4038620c: vPortYield at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:652 (discriminator 3)
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40385c56: xQueueReceive at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1659
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40385c2c: xQueueReceive at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1647
+[0m
+[0m
