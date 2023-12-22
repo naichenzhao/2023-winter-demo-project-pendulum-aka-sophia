@@ -17,16 +17,18 @@ void setup() {
   Serial.begin(115200);
   Serial1.begin(115200, SERIAL_8N1, RX1, TX1);
 
-  step_motor.setCurrentPosition(0);
-  step_motor.setMaxSpeed(400000);
-  step_motor.setAcceleration(150000000);
-  
+  // step_motor.setCurrentPosition(0);
+  // step_motor.setMaxSpeed(400000);
+  // step_motor.setAcceleration(150000000);
+
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
 }
 
 void loop() {
   float curr_angle = -((float)sensor_val)/1000;
 
-  int getspeed = 10000 * (int)curr_angle;
+  int getspeed = 100 * (int)curr_angle;
 
   if (curr_angle > 45 || curr_angle < -45) {
     set_motor(0);
@@ -34,15 +36,9 @@ void loop() {
     set_motor(getspeed);
   }
 
-    
-
-  // Serial.print(curr_angle);
-  // Serial.print("  ");
-  // Serial.print(getspeed);
-  // Serial.print("  ");
-  // Serial.println(step_motor.speed());
-
-
+  Serial.print(curr_angle);
+  Serial.print("  ");
+  Serial.println(getspeed);
 
   if (Serial1.available()) {
     String ser_read = Serial1.readStringUntil('\n');
@@ -53,11 +49,15 @@ void loop() {
 
 void set_motor(int speed) {
 
-  if (speed == 0) {
-    step_motor.stop();
+  speed = (speed > 255)? 255:speed;
+  speed = (speed < -255) ? -255 : speed;
+
+  if (speed > 0) {
+    analogWrite(5, speed);
+    analogWrite(4, 0);
   } else {
-    step_motor.setSpeed(speed);
-    step_motor.runSpeed();
+    analogWrite(4, -speed);
+    analogWrite(5, 0);
   }
 
 }
