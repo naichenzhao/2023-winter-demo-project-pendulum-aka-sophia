@@ -1,3 +1,4 @@
 {
-    "idf.port": "/dev/cu.usbserial-1410"
+    "idf.port": "/dev/cu.usbserial-1410",
+    "idf.flashType": "JTAG"
 }

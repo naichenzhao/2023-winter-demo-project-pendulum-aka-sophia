@@ -18,7 +18,7 @@ void setup()
   Serial1.begin(115200, SERIAL_8N1, RX1, TX1);
 
   step_motor.setCurrentPosition(0);
-  step_motor.setMaxSpeed(400000);
+  step_motor.setMaxSpeed(200000);
   step_motor.setAcceleration(150000000);
 }
 
@@ -28,20 +28,10 @@ void loop()
 
   int getspeed = 10000 * (int)curr_angle;
 
-  if (curr_angle > 45 || curr_angle < -45)
-  {
+  if (curr_angle > 45 || curr_angle < -45) {
     set_motor(0);
-  }
-  else
-  {
+  } else {
     set_motor(getspeed);
-  }
-  for (int i = 0; i < 8000; i++) {
-    set_motor(20000);
-  }
-
-    for (int i = 0; i < 8000; i++) {
-    set_motor(-20000);
   }
 
   Serial.print(curr_angle);
