@@ -20,7 +20,7 @@
 
 #include "accel.h"
 
-int ref_val = 0;
+float ref_val = 0;
 
 float heading, pitch, roll;
 vector_t va, vg, vm;
@@ -104,11 +104,13 @@ void accel_update() {
 }
 
 void set_ref() {
-    ref_val = (int) roll;
+    ref_val = roll;
 }
 
 float gyro_x() {
 
-    float raw_angle = (((int)roll) - ref_val + 360) % 360;
+    float raw_angle = (roll - ref_val + 360);
+    raw_angle = raw_angle > 360 ? raw_angle - 360 : raw_angle;
+    raw_angle = raw_angle > 360 ? raw_angle - 360 : raw_angle;
     return raw_angle > 180 ? raw_angle-360 : raw_angle;
 }

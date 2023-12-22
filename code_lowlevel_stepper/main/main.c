@@ -13,7 +13,7 @@
 
 
 #define ACCEL_RST GPIO_NUM_9 // Designe GPIO you want ot toggle
-const int Kp  = 2;
+const int Kp  = 10;
 
 float last_x = 0;
 float last_theta = 0;
@@ -67,7 +67,7 @@ void app_main(void) {
         // vTaskDelay(1000 / portTICK_PERIOD_MS);
         // set_motor(-80);
         set_motor(Kp * curr_theta);
-        vTaskDelay(10 / portTICK_PERIOD_MS);
+        // vTaskDelay(1 / portTICK_PERIOD_MS);
         
     }
 

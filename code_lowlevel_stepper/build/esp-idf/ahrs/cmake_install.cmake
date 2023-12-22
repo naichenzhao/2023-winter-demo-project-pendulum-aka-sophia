@@ -1,4 +1,4 @@
-# Install script for directory: /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/components/ahrs
+# Install script for directory: /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/build/esp-idf/mbedtls/mbedtls/3rdparty/everest/cmake_install.cmake")
-  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel/build/esp-idf/mbedtls/mbedtls/3rdparty/p256-m/cmake_install.cmake")
+  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/build/esp-idf/mbedtls/mbedtls/3rdparty/everest/cmake_install.cmake")
+  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/build/esp-idf/mbedtls/mbedtls/3rdparty/p256-m/cmake_install.cmake")
 
 endif()
 

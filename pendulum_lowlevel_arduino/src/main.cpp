@@ -1,89 +1,65 @@
 #include <Arduino.h>
-#include "MPU9250.h"
+#include <AccelStepper.h>
+#include <SPI.h>
 
-MPU9250 mpu;
+#define motorInterfaceType 1
+AccelStepper step_motor = AccelStepper(motorInterfaceType, 5, 4);
 
-void print_roll_pitch_yaw();
-void print_calibration();
+void set_motor(int speed);
 
-void setup()
-{
+int sensor_val = 0;
+
+// Set pins for I2C1
+#define RX1 2
+#define TX1 3
+
+void setup() {
   Serial.begin(115200);
-  Wire.begin(19, 18);
-  delay(2000);
+  Serial1.begin(115200, SERIAL_8N1, RX1, TX1);
 
-  if (!mpu.setup(0x69))
-  { // change to your own address
-    while (1)
-    {
-      Serial.println("MPU connection failed. Please check your connection with `connection_check` example.");
-      delay(5000);
-    }
+  step_motor.setCurrentPosition(0);
+  step_motor.setMaxSpeed(400000);
+  step_motor.setAcceleration(150000000);
+  
+}
+
+void loop() {
+  float curr_angle = -((float)sensor_val)/1000;
+
+  int getspeed = 10000 * (int)curr_angle;
+
+  if (curr_angle > 45 || curr_angle < -45) {
+    set_motor(0);
+  } else {
+    set_motor(getspeed);
   }
 
-  // calibrate anytime you want to
-  Serial.println("Accel Gyro calibration will start in 5sec.");
-  Serial.println("Please leave the device still on the flat plane.");
-  mpu.verbose(true);
-  delay(5000);
-  mpu.calibrateAccelGyro();
+    
 
-  print_calibration();
-  mpu.verbose(false);
-}
+  // Serial.print(curr_angle);
+  // Serial.print("  ");
+  // Serial.print(getspeed);
+  // Serial.print("  ");
+  // Serial.println(step_motor.speed());
 
-void loop()
-{
-  if (mpu.update())
-  {
-    static uint32_t prev_ms = millis();
-    if (millis() > prev_ms + 25)
-    {
-      print_roll_pitch_yaw();
-      prev_ms = millis();
-    }
+
+
+  if (Serial1.available()) {
+    String ser_read = Serial1.readStringUntil('\n');
+    sensor_val = ser_read.toInt();
   }
 }
 
-void print_roll_pitch_yaw()
-{
-  Serial.print("Yaw, Pitch, Roll: ");
-  Serial.print(mpu.getYaw(), 2);
-  Serial.print(", ");
-  Serial.print(mpu.getPitch(), 2);
-  Serial.print(", ");
-  Serial.println(mpu.getRoll(), 2);
+
+void set_motor(int speed) {
+
+  if (speed == 0) {
+    step_motor.stop();
+  } else {
+    step_motor.setSpeed(speed);
+    step_motor.runSpeed();
+  }
+
 }
 
-void print_calibration()
-{
-  Serial.println("< calibration parameters >");
-  Serial.println("accel bias [g]: ");
-  Serial.print(mpu.getAccBiasX() * 1000.f / (float)MPU9250::CALIB_ACCEL_SENSITIVITY);
-  Serial.print(", ");
-  Serial.print(mpu.getAccBiasY() * 1000.f / (float)MPU9250::CALIB_ACCEL_SENSITIVITY);
-  Serial.print(", ");
-  Serial.print(mpu.getAccBiasZ() * 1000.f / (float)MPU9250::CALIB_ACCEL_SENSITIVITY);
-  Serial.println();
-  Serial.println("gyro bias [deg/s]: ");
-  Serial.print(mpu.getGyroBiasX() / (float)MPU9250::CALIB_GYRO_SENSITIVITY);
-  Serial.print(", ");
-  Serial.print(mpu.getGyroBiasY() / (float)MPU9250::CALIB_GYRO_SENSITIVITY);
-  Serial.print(", ");
-  Serial.print(mpu.getGyroBiasZ() / (float)MPU9250::CALIB_GYRO_SENSITIVITY);
-  Serial.println();
-  Serial.println("mag bias [mG]: ");
-  Serial.print(mpu.getMagBiasX());
-  Serial.print(", ");
-  Serial.print(mpu.getMagBiasY());
-  Serial.print(", ");
-  Serial.print(mpu.getMagBiasZ());
-  Serial.println();
-  Serial.println("mag scale []: ");
-  Serial.print(mpu.getMagScaleX());
-  Serial.print(", ");
-  Serial.print(mpu.getMagScaleY());
-  Serial.print(", ");
-  Serial.print(mpu.getMagScaleZ());
-  Serial.println();
-}
+
