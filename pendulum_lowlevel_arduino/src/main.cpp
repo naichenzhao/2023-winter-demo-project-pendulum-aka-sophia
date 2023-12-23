@@ -28,9 +28,7 @@ void setup()
 
 int getspeed;
 
-    void
-    loop()
-{
+void loop() {
   float curr_angle = -((float)sensor_val) / 1000;
 
   // if (curr_angle < 5 && curr_angle > -5) {

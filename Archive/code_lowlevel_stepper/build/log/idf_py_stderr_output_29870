@@ -1,0 +1,354 @@
+[0;33m--- esp-idf-monitor 1.3.4 on /dev/cu.usbserial-1420 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x4200c0f0: i2c_mpu9250_init at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/mpu9250/mpu9250.c:64 (discriminator 1)
+[0m
+[0;33m0x40384ff5: _esp_error_check_failed at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x4038078e: panic_abort at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+[0m
+[0;33m0x40385000: __ubsan_include at /Users/naichenzhao/esp/esp-idf/components/esp_system/ubsan.c:313
+[0m
+[0;33m0x40380001: _vector_table at ??:?
+[0m
+[0;33m
+Backtrace:
+
+[0m
+[0;33m0x40380746: esp_restart_noos at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:111
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x4200ac40: MadgwickGetEulerAngles at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:256
+[0m
+[0;33m0x4200ac36: MadgwickGetEulerAngles at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:255
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40389daa: multi_heap_internal_unlock at /Users/naichenzhao/esp/esp-idf/components/heap/multi_heap.c:171
+[0m
+[0;33m0x4200ac5e: MadgwickGetEulerAngles at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:257
+[0m
+[0;33m0x40000c5a: __call_r_co_list_pool_init in ROM
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42007e52: esp_vfs_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs.c:482 (discriminator 4)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42011568: i2c_reset_tx_fifo at /Users/naichenzhao/esp/esp-idf/components/driver/i2c/i2c.c:511
+[0m
+[0;33m0x420121ee: i2c_master_cmd_begin at /Users/naichenzhao/esp/esp-idf/components/driver/i2c/i2c.c:1546
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x42011d84: i2c_master_stop at /Users/naichenzhao/esp/esp-idf/components/driver/i2c/i2c.c:1262
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40382766: esp_crosscore_int_send at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:166
+[0m
+[0;33m0x42005c8c: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x400575d0: __mulsf3 in ROM
+[0m
+[0;33m0x4200a69a: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:114
+[0m
+[0;33m0x42005c8c: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42005c8a: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42005c8e: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42005c8c: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42005c8e: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42005c96: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42005c96: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x403873f6: xTaskCheckForTimeOut at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:4148
+[0m
+[0;33m0x42005c96: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42005c8e: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x403827a4: esp_crosscore_int_send_yield at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:173
+[0m
+[0;33m0x4038620c: vPortYield at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:652 (discriminator 3)
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40385c56: xQueueReceive at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1659
+[0m
+[0;33m0x40057860: __subsf3 in ROM
+[0m
+[0;33m0x4200b150: scale_accel at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/mpu9250/mpu9250.c:184
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x4200b150: scale_accel at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/mpu9250/mpu9250.c:184
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40385b9c: xQueueReceive at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1582
+[0m
+[0;33m0x40382744: esp_crosscore_int_send at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:138
+[0m
+[0;33m0x403827a0: esp_crosscore_int_send_yield at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:173
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x403827a0: esp_crosscore_int_send_yield at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:173
+[0m
+[0;33m0x42015604: __ieee754_sqrt at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/machine/riscv/e_sqrt.c:140
+[0m
+[0;33m0x4201545c: sqrt at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/math/w_sqrt.c:61
+[0m
+[0;33m0x40000854: __call___mulsf3 in ROM
+[0m
+[0;33m0x4200a73e: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:114
+[0m
+[0;33m0x420181a8: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:682 (discriminator 1)
+[0m
+[0;33m0x420181a8: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:682 (discriminator 1)
+[0m
+[0;33m0x403827a4: esp_crosscore_int_send_yield at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:173
+[0m
+[0;33m0x4038620c: vPortYield at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:652 (discriminator 3)
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40385c56: xQueueReceive at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1659
+[0m
+[0;33m0x40056a24: __addsf3 in ROM
+[0m
+[0;33m0x4200a75e: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:114
+[0m
+[0;33m0x4200a75e: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:114
+[0m
+[0;33m0x403827a4: esp_crosscore_int_send_yield at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:173
+[0m
+[0;33m0x4038620c: vPortYield at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:652 (discriminator 3)
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40385c56: xQueueReceive at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1659
+[0m
+[0;33m0x42012a70: ledc_set_timer_div at /Users/naichenzhao/esp/esp-idf/components/driver/ledc/ledc.c:534
+[0m
+[0;33m0x42012b20: ledc_calculate_divisor at /Users/naichenzhao/esp/esp-idf/components/driver/ledc/ledc.c:351
+ (inlined by) ledc_set_timer_div at /Users/naichenzhao/esp/esp-idf/components/driver/ledc/ledc.c:516
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40389daa: multi_heap_internal_unlock at /Users/naichenzhao/esp/esp-idf/components/heap/multi_heap.c:171
+[0m
+[0;33m0x40056d78: __addsf3 in ROM
+[0m
+[0;33m0x42009ee6: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:84
+[0m
+[0;33m0x42009ee6: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:84
+[0m
+[0;33m0x420155f8: __ieee754_sqrt at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/machine/riscv/e_sqrt.c:133
+[0m
+[0;33m0x4201545c: sqrt at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/math/w_sqrt.c:61
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4201291c: ledc_timer_set at /Users/naichenzhao/esp/esp-idf/components/driver/ledc/ledc.c:220
+[0m
+[0;33m0x42009fc4: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:94
+[0m
+[0;33m0x42009fc4: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:94
+[0m
+[0;33m0x42005c8c: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42016c7a: _fflush_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/fflush.c:281
+[0m
+[0;33m0x42017204: __sfvwrite_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251 (discriminator 1)
+[0m
+[0;33m0x403813f6: lock_acquire_generic at /Users/naichenzhao/esp/esp-idf/components/newlib/locks.c:144
+[0m
+[0;33m0x42015628: __ieee754_sqrt at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/machine/riscv/e_sqrt.c:149
+[0m
+[0;33m0x4201545c: sqrt at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/math/w_sqrt.c:61
+[0m
+[0;33m0x40000000: _start in ROM
+[0m
+[0;33m0x400008bc: __call___umoddi3 in ROM
+[0m
+[0;33m0x42019ba0: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1591
+[0m
+[0;33m0x42005c8c: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x4200ac20: MadgwickGetEulerAngles at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:254
+[0m
+[0;33m0x4200adf0: ahrs_get_euler_in_degrees at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:281
+[0m
+[0;33m0x42005c8a: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006dba: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:220
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42005c9c: uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171 (discriminator 1)
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x40055d7c: __subdf3 in ROM
+[0m
+[0;33m0x420158de: __ieee754_atan2 at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/math/e_atan2.c:125
+[0m
+[0;33m0x40000000: _start in ROM
+[0m
+[0;33m0x40000000: _start in ROM
+[0m
+[0;33m0x4201544a: sqrt at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/math/w_sqrt.c:56
+[0m
+[0;33m0x42009dc4: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:70
+[0m
+[0;33m0x40000000: _start in ROM
+[0m
+[1;31mNone[0m
+[0;33mWaiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[1;31mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', '/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/build/demo_sophia.elf', '-ex', 'target remote | "/Users/naichenzhao/.espressif/python_env/idf5.3_py3.11_env/bin/python" -m "esp_idf_panic_decoder" --target esp32c3 "/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T/tmphiytupwg"', '-ex', 'bt']' returned non-zero exit status 1.
+b'Ignoring packet error, continuing...\nwarning: unrecognized item "timeout" in "qSupported" response\nTraceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/Users/naichenzhao/.espressif/python_env/idf5.3_py3.11_env/lib/python3.11/site-packages/esp_idf_panic_decoder/__main__.py", line 4, in <module>\n    main()\n  File "/Users/naichenzhao/.espressif/python_env/idf5.3_py3.11_env/lib/python3.11/site-packages/esp_idf_panic_decoder/gdb_panic_server.py", line 281, in main\n    panic_info = PANIC_OUTPUT_PARSERS[args.target](args.input_file.read())\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Users/naichenzhao/.espressif/python_env/idf5.3_py3.11_env/lib/python3.11/site-packages/esp_idf_panic_decoder/gdb_panic_server.py", line 134, in parse_idf_riscv_panic_output\n    raise ValueError("Couldn\'t parse panic handler output")\nValueError: Couldn\'t parse panic handler output\nRemote connection closed\nNo stack.\n'
+
+[0m
+[0;33m0x4200c0f0: i2c_mpu9250_init at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/mpu9250/mpu9250.c:64 (discriminator 1)
+[0m
+[0;33m0x40384ff5: _esp_error_check_failed at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x4038078e: panic_abort at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+[0m
+[0;33m0x40385000: __ubsan_include at /Users/naichenzhao/esp/esp-idf/components/esp_system/ubsan.c:313
+[0m
+[0;33m0x40380001: _vector_table at ??:?
+[0m
+[0;33m
+Backtrace:
+
+[0m
+[0;33m0x40380746: esp_restart_noos at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:111
+[0m
+[0;33m0x4200c0f0: i2c_mpu9250_init at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/mpu9250/mpu9250.c:64 (discriminator 1)
+[0m
+[0;33m0x40384ff5: _esp_error_check_failed at /Users/naichenzhao/esp/esp-idf/components/esp_system/esp_err.c:50
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x4038078e: panic_abort at /Users/naichenzhao/esp/esp-idf/components/esp_system/panic.c:472
+[0m
+[0;33m0x40385000: __ubsan_include at /Users/naichenzhao/esp/esp-idf/components/esp_system/ubsan.c:313
+[0m
+[0;33m0x40380001: _vector_table at ??:?
+[0m
+[0;33m
+Backtrace:
+
+[0m
+[0;33m0x40380746: esp_restart_noos at /Users/naichenzhao/esp/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c:111
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x403873f6: xTaskCheckForTimeOut at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:4148
+[0m
+[1;31mFailed to run gdb_panic_server.py script: Command '['riscv32-esp-elf-gdb', '--batch', '-n', '/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/build/demo_sophia.elf', '-ex', 'target remote | "/Users/naichenzhao/.espressif/python_env/idf5.3_py3.11_env/bin/python" -m "esp_idf_panic_decoder" --target esp32c3 "/var/folders/2h/lww79zv53b510qlyvytqnvq40000gn/T/tmpl76k9uu6"', '-ex', 'bt']' returned non-zero exit status 1.
+b'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/Users/naichenzhao/.espressif/python_env/idf5.3_py3.11_env/lib/python3.11/site-packages/esp_idf_panic_decoder/__main__.py", line 4, in <module>\n    main()\n  File "/Users/naichenzhao/.espressif/python_env/idf5.3_py3.11_env/lib/python3.11/site-packages/esp_idf_panic_decoder/gdb_panic_server.py", line 281, in main\n    panic_info = PANIC_OUTPUT_PARSERS[args.target](args.input_file.read())\n                                                   ^^^^^^^^^^^^^^^^^^^^^^\n  File "<frozen codecs>", line 322, in decode\nUnicodeDecodeError: \'utf-8\' codec can\'t decode byte 0xf8 in position 45907: invalid start byte\nRemote connection closed\nNo stack.\n'
+
+[0m
+[0m

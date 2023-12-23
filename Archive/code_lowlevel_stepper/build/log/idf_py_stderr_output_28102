@@ -1,0 +1,165 @@
+[0;33m--- esp-idf-monitor 1.3.4 on /dev/cu.usbserial-1420 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33mStack dump detected[0m
+[0;33m0x400556bc: __muldf3 in ROM
+[0m
+[0;33m0x42008ff0: accel_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/main/accel.c:99
+[0m
+[0;33m0x42015512: __ieee754_sqrt at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/machine/riscv/e_sqrt.c:109
+[0m
+[0;33m0x4201542e: sqrt at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/math/w_sqrt.c:61
+[0m
+[0;33m0x403827a4: esp_crosscore_int_send_yield at /Users/naichenzhao/esp/esp-idf/components/esp_system/crosscore_int.c:173
+[0m
+[0;33m0x4038620c: vPortYield at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:652 (discriminator 3)
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40385c56: xQueueReceive at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1659
+[0m
+[0;33m0x40053f8c: __umoddi3 in ROM
+[0m
+[0;33m0x42019b72: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1591
+[0m
+[0;33m0x4200dbe2: gpio_set_level at /Users/naichenzhao/esp/esp-idf/components/esp_driver_gpio/src/gpio.c:237 (discriminator 2)
+[0m
+[0;33m0x42008eb8: set_motor at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/main/motor.c:65
+[0m
+[0;33m0x42008eb8: set_motor at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/main/motor.c:65
+[0m
+[0;33m0x42018806: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1185 (discriminator 92)
+[0m
+[0;33m0x420181be: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:851
+[0m
+[0;33m0x42005c8c: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40389daa: multi_heap_internal_unlock at /Users/naichenzhao/esp/esp-idf/components/heap/multi_heap.c:171
+[0m
+[0;33m0x400575e0: __mulsf3 in ROM
+[0m
+[0;33m0x4200a3c4: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:112
+[0m
+[0;33m0x42005c9c: uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171 (discriminator 1)
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42016c88: _fflush_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/fflush.c:278
+ (inlined by) _fflush_r at /builds/idf/crosstool-NG/.build/src/newlib-git-af24ceb7/newlib/libc/include/stdio.h:417
+[0m
+[0;33m0x42016c86: _fflush_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libc/stdio/fflush.c:279
+ (inlined by) _fflush_r at /builds/idf/crosstool-NG/.build/src/newlib-git-af24ceb7/newlib/libc/include/stdio.h:417
+[0m
+[0;33m0x42009260: get_dist at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/main/encoder.c:71
+[0m
+[0;33m0x42008c70: app_main at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/main/main.c:51 (discriminator 1)
+[0m
+[0;33m0x42005c8c: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006dba: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:220
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x4200c280: ak8963_get_mag at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/mpu9250/ak8963.c:136
+[0m
+[0;33m0x4200c278: ak8963_get_mag at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/mpu9250/ak8963.c:135
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x4200fff1: esp_task_wdt_print_triggered_tasks at /Users/naichenzhao/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:802
+[0m
+[0;33m0x40000770: __call___addsf3 in ROM
+[0m
+[0;33m0x42009f00: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:87
+[0m
+[0;33m0x420107d3: esp_cpu_configure_region_protection at /Users/naichenzhao/esp/esp-idf/components/esp_hw_support/port/esp32c3/cpu_region_protect.c:63
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x420132b0: ledc_update_duty at /Users/naichenzhao/esp/esp-idf/components/driver/ledc/ledc.c:734 (discriminator 2)
+[0m
+[0;33m0x40057468: __mulsf3 in ROM
+[0m
+[0;33m0x42016626: atanf at /builds/idf/crosstool-NG/.build/HOST-x86_64-apple-darwin21.1/riscv32-esp-elf/src/newlib/newlib/libm/math/sf_atan.c:108
+[0m
+[0;33m0x42005c8c: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x40000854: __call___mulsf3 in ROM
+[0m
+[0;33m0x4200a47e: ahrs_update at /Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/code_lowlevel_stepper/components/ahrs/ahrs.c:112
+[0m
+[0;33m0x40000000: _start in ROM
+[0m
+[0;33m0x42005c8a: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006dba: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:220
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x40386172: vPortClearInterruptMaskFromISR at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:520
+[0m
+[0;33m0x403861d8: vPortExitCritical at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:623
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x403873f6: xTaskCheckForTimeOut at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:4148
+[0m
+[0;33m0x42005c8c: uart_ll_get_txfifo_len at /Users/naichenzhao/esp/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h:403
+ (inlined by) uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171
+[0m
+[0;33m0x42006dba: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:220
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42005c9c: uart_tx_char at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:171 (discriminator 1)
+[0m
+[0;33m0x42006d86: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216 (discriminator 2)
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x403814f6: _lock_acquire_recursive at /Users/naichenzhao/esp/esp-idf/components/newlib/locks.c:158
+[0m
+[0;33m0x42006d46: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216
+[0m
+[0;33m0x420083da: console_write at /Users/naichenzhao/esp/esp-idf/components/vfs/vfs_console.c:75
+[0m
+[0;33m0x42006d46: uart_write at /Users/naichenzhao/esp/esp-idf/components/esp_driver_uart/src/uart_vfs.c:216
+[0m
+[0;33m0x40389dba: multi_heap_malloc_impl at /Users/naichenzhao/esp/esp-idf/components/heap/multi_heap.c:204 (discriminator 1)
+[0m
+[0;33m0x403809e6: heap_caps_malloc_base at /Users/naichenzhao/esp/esp-idf/components/heap/heap_caps.c:180
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x403809e6: heap_caps_malloc_base at /Users/naichenzhao/esp/esp-idf/components/heap/heap_caps.c:180
+[0m
+[0;33m0x40386942: prvAddCurrentTaskToDelayedList at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:6324
+[0m
+[0;33m0x403868a8: prvAddCurrentTaskToDelayedList at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:6284 (discriminator 1)
+[0m
+[0;33m0x4005890e: memset in ROM
+[0m
+[0;33m0x40387256: vTaskPlaceOnEventList at /Users/naichenzhao/esp/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3704
+[0m
+[0m
