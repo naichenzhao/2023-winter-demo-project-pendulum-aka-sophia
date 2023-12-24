@@ -1,0 +1,396 @@
+0x3fff0030,len:7172
+load:0x400780�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (225) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (225) cpu_start: Application information:[0m
+[0;32mI (228) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (311) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+[0;32mI (532) mpu9250: Enabling magnetometer[0m
+[0;32mI (762) mpu9250: Magnetometer enabled[0m
+[0;32mI (762) mpu9250: MPU9250:[0m
+[0;32mI (762) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (762) mpu9250: --> Device address: 0x69[0m
+[0;32mI (762) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (762) mpu9250: --> initialised: Yes[0m
+[0;32mI (772) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (772) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (782) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (782) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (792) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (802) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (802) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (812) mpu9250: Accelerometer:[0m
+[0;32mI (822) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (822) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (832) mpu9250: --> Calibration:[0m
+[0;32mI (832) mpu9250:   --> Offset: [0m
+[0;32mI (832) mpu9250:     --> x: 0.020900[0m
+[0;32mI (842) mpu9250:     --> y: 0.014688[0m
+[0;32mI (842) mpu9250:     --> z: -0.002580[0m
+[0;32mI (852) mpu9250:   --> Scale: [0m
+[0;32mI (852) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (862) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (862) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (872) mpu9250: Gyroscope:[0m
+[0;32mI (872) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (882) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (882) mpu9250: --> Bias Offset:[0m
+[0;32mI (882) mpu9250:   --> x: 0.303956[0m
+[0;32mI (892) mpu9250:   --> y: -1.049768[0m
+[0;32mI (892) mpu9250:   --> z: -0.403782[0m
+[0;32mI (902) ak8963: Magnetometer (Compass):[0m
+[0;32mI (902) ak8963: --> i2c address: 0x00[0m
+[0;32mI (912) ak8963: --> initialised: true[0m
+[0;32mI (912) ak8963: --> Device ID: 0x48[0m
+[0;32mI (912) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (922) ak8963: --> ASA Scalars:[0m
+[0;32mI (932) ak8963:   --> x: 1.175781[0m
+[0;32mI (932) ak8963:   --> y: 1.187500[0m
+[0;32mI (932) ak8963:   --> z: 1.136719[0m
+[0;32mI (942) ak8963: --> Offset:[0m
+[0;32mI (942) ak8963:   --> x: 25.183594[0m
+[0;32mI (942) ak8963:   --> y: 57.519531[0m
+[0;32mI (952) ak8963:   --> z: -62.648438[0m
+[0;32mI (952) ak8963: --> Scale:[0m
+[0;32mI (962) ak8963:   --> x: 1.513449[0m
+[0;32mI (962) ak8963:   --> y: 1.557811[0m
+[0;32mI (962) ak8963:   --> z: 1.434039[0m
+Starting main loop
+motor: 0, gyro: 0.000000, encoder: 0.000000, motor: 0.000000
+motor: 0, gyro: 0.000000, encoder: 0.000000, motor: 0.000000
+motor: 0, gyro: 0.263489, encoder: 0.000000, motor: 263.488770
+motor: 0, gyro: 0.790131, encoder: 0.000000, motor: 790.130615
+motor: 0, gyro: 1.327820, encoder: 0.000000, motor: 1327.819824
+motor: 0, gyro: 2.142609, encoder: 0.000000, motor: 2142.608643
+motor: 0, gyro: 2.689850, encoder: 0.000000, motor: 2689.849854
+motor: 0, gyro: 3.245056, encoder: 0.000000, motor: 3245.056152
+motor: 0, gyro: 4.098145, encoder: 0.000000, motor: 4098.144531
+motor: 0, gyro: 4.676758, encoder: 0.000000, motor: 4676.757812
+motor: 0, gyro: 5.259308, encoder: 0.000000, motor: 5259.307617
+motor: 0, gyro: 6.147339, encoder: 0.000000, motor: 6147.338867
+motor: 0, gyro: 6.750519, encoder: 0.000000, motor: 6750.518555
+motor: 0, gyro: 7.356140, encoder: 0.000000, motor: 7356.140137
+motor: 0, gyro: 8.278748, encoder: 0.000000, motor: 8278.748047
+motor: 0, gyro: 8.905396, encoder: 0.000000, motor: 8905.395508
+motor: 0, gyro: 9.537048, encoder: 0.000000, motor: 9537.048828
+motor: 0, gyro: 10.499725, encoder: 0.000000, motor: 10499.725586
+motor: 0, gyro: 11.150635, encoder: 0.000000, motor: 11150.634766
+motor: 0, gyro: 12.135010, encoder: 0.000000, motor: 12135.009766
+motor: 0, gyro: 12.804352, encoder: 0.000000, motor: 12804.351562
+motor: 0, gyro: 13.821167, encoder: 0.000000, motor: 13821.166992
+motor: 0, gyro: 14.495422, encoder: 0.000000, motor: 14495.421875
+motor: 0, gyro: 15.182587, encoder: 0.000000, motor: 15182.586914
+motor: 0, gyro: 16.225098, encoder: 0.000000, motor: 16225.097656
+motor: 0, gyro: 16.928986, encoder: 0.000000, motor: 16928.986328
+motor: 0, gyro: 18.004669, encoder: 0.000000, motor: 18004.669922
+motor: 0, gyro: 18.733612, encoder: 0.000000, motor: 18733.611328
+motor: 0, gyro: 19.831299, encoder: 0.000000, motor: 19831.298828
+motor: 0, gyro: 20.582153, encoder: 0.000000, motor: 20582.152344
+motor: 0, gyro: 21.334930, encoder: 0.000000, motor: 21334.929688
+motor: 0, gyro: 22.481201, encoder: 0.000000, motor: 22481.201172
+motor: 0, gyro: 23.254730, encoder: 0.000000, motor: 23254.730469
+motor: 0, gyro: 24.431335, encoder: 0.000000, motor: 24431.335938
+motor: 0, gyro: 25.226990, encoder: 0.000000, motor: 25226.990234
+motor: 0, gyro: 26.033020, encoder: 0.000000, motor: 26033.019531
+motor: 0, gyro: 27.253967, encoder: 0.000000, motor: 27253.966797
+motor: 0, gyro: 28.084656, encoder: 0.000000, motor: 28084.656250
+motor: 0, gyro: 29.346039, encoder: 0.000000, motor: 29346.039062
+motor: 0, gyro: 30.200562, encoder: 0.000000, motor: 30200.562500
+motor: 0, gyro: 31.505707, encoder: 0.000000, motor: 31505.707031
+motor: 0, gyro: 32.388672, encoder: 0.000000, motor: 32388.671875
+motor: 0, gyro: 33.282410, encoder: 0.000000, motor: 33282.410156
+motor: 0, gyro: 34.647308, encoder: 0.000000, motor: 34647.308594
+motor: 0, gyro: 35.564606, encoder: 0.000000, motor: 35564.605469
+motor: 0, gyro: 36.965027, encoder: 0.000000, motor: 36965.027344
+motor: 0, gyro: 37.915771, encoder: 0.000000, motor: 37915.773438
+motor: 0, gyro: 39.359314, encoder: 0.000000, motor: 39359.312500
+motor: 0, gyro: 40.337311, encoder: 0.000000, motor: 40337.312500
+motor: 0, gyro: 41.328339, encoder: 0.000000, motor: 41328.339844
+motor: 0, gyro: 42.840881, encoder: 0.000000, motor: 42840.882812
+motor: 0, gyro: 43.863190, encoder: 0.000000, motor: 43863.191406
+motor: 0, gyro: 45.421143, encoder: 0.000000, motor: 45421.140625
+motor: 0, gyro: 46.475281, encoder: 0.000000, motor: 46475.281250
+motor: 0, gyro: 48.077332, encoder: 0.000000, motor: 48077.332031
+motor: 0, gyro: 49.164948, encoder: 0.000000, motor: 49164.949219
+motor: 0, gyro: 50.261902, encoder: 0.000000, motor: 50261.902344
+motor: 0, gyro: 51.928833, encoder: 0.000000, motor: 51928.832031
+motor: 0, gyro: 53.054779, encoder: 0.000000, motor: 53054.777344
+motor: 0, gyro: 54.769928, encoder: 0.000000, motor: 54769.929688
+motor: 0, gyro: 55.926422, encoder: 0.000000, motor: 55926.421875
+motor: 0, gyro: 57.679260, encoder: 0.000000, motor: 57679.261719
+motor: 0, gyro: 58.864655, encoder: 0.000000, motor: 58864.656250
+motor: 0, gyro: 60.058807, encoder: 0.000000, motor: 60058.808594
+motor: 0, gyro: 61.873962, encoder: 0.000000, motor: 61873.960938
+motor: 0, gyro: 63.092529, encoder: 0.000000, motor: 63092.531250
+motor: 0, gyro: 64.941010, encoder: 0.000000, motor: 64941.007812
+motor: 0, gyro: 66.184052, encoder: 0.000000, motor: 66184.054688
+motor: 0, gyro: 68.065918, encoder: 0.000000, motor: 68065.921875
+motor: 0, gyro: 69.331329, encoder: 0.000000, motor: 69331.328125
+motor: 0, gyro: 70.602173, encoder: 0.000000, motor: 70602.171875
+motor: 0, gyro: 72.519958, encoder: 0.000000, motor: 72519.960938
+motor: 0, gyro: 73.801575, encoder: 0.000000, motor: 73801.578125
+motor: 0, gyro: 75.739838, encoder: 0.000000, motor: 75739.835938
+motor: 0, gyro: 77.036316, encoder: 0.000000, motor: 77036.312500
+motor: 0, gyro: 78.990417, encoder: 0.000000, motor: 78990.414062
+motor: 0, gyro: 80.294128, encoder: 0.000000, motor: 80294.125000
+motor: 0, gyro: 81.597168, encoder: 0.000000, motor: 81597.171875
+motor: 0, gyro: 83.558716, encoder: 0.000000, motor: 83558.718750
+motor: 0, gyro: 84.864441, encoder: 0.000000, motor: 84864.437500
+motor: 0, gyro: 86.822815, encoder: 0.000000, motor: 86822.812500
+motor: 0, gyro: 88.123016, encoder: 0.000000, motor: 88123.015625
+motor: 0, gyro: 89.422546, encoder: 0.000000, motor: 89422.546875
+motor: 0, gyro: 91.368042, encoder: 0.000000, motor: 91368.039062
+motor: 0, gyro: 92.658081, encoder: 0.000000, motor: 92658.078125
+motor: 0, gyro: 94.582336, encoder: 0.000000, motor: 94582.335938
+motor: 0, gyro: 95.857727, encoder: 0.000000, motor: 95857.726562
+motor: 0, gyro: 97.758698, encoder: 0.000000, motor: 97758.695312
+motor: 0, gyro: 99.016052, encoder: 0.000000, motor: 99016.054688
+motor: 0, gyro: 100.265747, encoder: 0.000000, motor: 100265.750000
+motor: 0, gyro: 102.125336, encoder: 0.000000, motor: 102125.335938
+motor: 0, gyro: 103.351379, encoder: 0.000000, motor: 103351.382812
+motor: 0, gyro: 105.170380, encoder: 0.000000, motor: 105170.382812
+motor: 0, gyro: 106.368225, encoder: 0.000000, motor: 106368.226562
+motor: 0, gyro: 108.145142, encoder: 0.000000, motor: 108145.140625
+motor: 0, gyro: 109.315582, encoder: 0.000000, motor: 109315.585938
+motor: 0, gyro: 111.050659, encoder: 0.000000, motor: 111050.656250
+motor: 0, gyro: 112.192139, encoder: 0.000000, motor: 112192.140625
+motor: 0, gyro: 113.888245, encoder: 0.000000, motor: 113888.242188
+motor: 0, gyro: 115.000488, encoder: 0.000000, motor: 115000.484375
+motor: 0, gyro: 116.643555, encoder: 0.000000, motor: 116643.554688
+motor: 0, gyro: 117.719849, encoder: 0.000000, motor: 117719.851562
+motor: 0, gyro: 119.305511, encoder: 0.000000, motor: 119305.507812
+motor: 0, gyro: 120.349731, encoder: 0.000000, motor: 120349.734375
+motor: 0, gyro: 121.886475, encoder: 0.000000, motor: 121886.476562
+motor: 0, gyro: 122.895691, encoder: 0.000000, motor: 122895.687500
+motor: 0, gyro: 124.388092, encoder: 0.000000, motor: 124388.093750
+motor: 0, gyro: 125.365051, encoder: 0.000000, motor: 125365.054688
+motor: 0, gyro: 126.805603, encoder: 0.000000, motor: 126805.601562
+motor: 0, gyro: 127.746002, encoder: 0.000000, motor: 127746.000000
+motor: 0, gyro: 129.145691, encoder: 0.000000, motor: 129145.687500
+motor: 0, gyro: 130.061401, encoder: 0.000000, motor: 130061.398438
+motor: 0, gyro: 131.403870, encoder: 0.000000, motor: 131403.875000
+motor: 0, gyro: 132.283875, encoder: 0.000000, motor: 132283.875000
+motor: 0, gyro: 133.585083, encoder: 0.000000, motor: 133585.078125
+motor: 0, gyro: 134.435059, encoder: 0.000000, motor: 134435.062500
+motor: 0, gyro: 135.683960, encoder: 0.000000, motor: 135683.953125
+motor: 0, gyro: 136.502258, encoder: 0.000000, motor: 136502.265625
+motor: 0, gyro: 137.711365, encoder: 0.000000, motor: 137711.359375
+motor: 0, gyro: 138.499634, encoder: 0.000000, motor: 138499.640625
+motor: 0, gyro: 139.665344, encoder: 0.000000, motor: 139665.343750
+motor: 0, gyro: 140.429413, encoder: 0.000000, motor: 140429.406250
+motor: 0, gyro: 141.556824, encoder: 0.000000, motor: 141556.828125
+motor: 0, gyro: 142.306885, encoder: 0.000000, motor: 142306.890625
+motor: 0, gyro: 143.408478, encoder: 0.000000, motor: 143408.484375
+motor: 0, gyro: 144.130981, encoder: 0.000000, motor: 144130.984375
+motor: 0, gyro: 145.190369, encoder: 0.000000, motor: 145190.375000
+motor: 0, gyro: 145.884766, encoder: 0.000000, motor: 145884.765625
+motor: 0, gyro: 146.910400, encoder: 0.000000, motor: 146910.406250
+motor: 0, gyro: 147.573395, encoder: 0.000000, motor: 147573.390625
+motor: 0, gyro: 148.561951, encoder: 0.000000, motor: 148561.953125
+motor: 0, gyro: 149.206848, encoder: 0.000000, motor: 149206.843750
+motor: 0, gyro: 150.167084, encoder: 0.000000, motor: 150167.078125
+motor: 0, gyro: 150.795288, encoder: 0.000000, motor: 150795.281250
+motor: 0, gyro: 151.732574, encoder: 0.000000, motor: 151732.578125
+motor: 0, gyro: 152.327393, encoder: 0.000000, motor: 152327.390625
+motor: 0, gyro: 153.195496, encoder: 0.000000, motor: 153195.500000
+motor: 0, gyro: 153.780151, encoder: 0.000000, motor: 153780.156250
+motor: 0, gyro: 154.636719, encoder: 0.000000, motor: 154636.718750
+motor: 0, gyro: 155.196106, encoder: 0.000000, motor: 155196.109375
+motor: 0, gyro: 156.012878, encoder: 0.000000, motor: 156012.875000
+motor: 0, gyro: 156.541992, encoder: 0.000000, motor: 156542.000000
+motor: 0, gyro: 157.331299, encoder: 0.000000, motor: 157331.296875
+motor: 0, gyro: 157.843994, encoder: 0.000000, motor: 157844.000000
+motor: 0, gyro: 158.570068, encoder: 0.000000, motor: 158570.062500
+motor: 0, gyro: 159.055237, encoder: 0.000000, motor: 159055.234375
+motor: 0, gyro: 159.751587, encoder: 0.000000, motor: 159751.593750
+motor: 0, gyro: 160.190247, encoder: 0.000000, motor: 160190.250000
+motor: 0, gyro: 160.829407, encoder: 0.000000, motor: 160829.406250
+motor: 0, gyro: 161.252686, encoder: 0.000000, motor: 161252.687500
+motor: 0, gyro: 161.853638, encoder: 0.000000, motor: 161853.640625
+motor: 0, gyro: 162.236145, encoder: 0.000000, motor: 162236.140625
+motor: 0, gyro: 162.772339, encoder: 0.000000, motor: 162772.343750
+motor: 0, gyro: 163.119141, encoder: 0.000000, motor: 163119.140625
+motor: 0, gyro: 163.606140, encoder: 0.000000, motor: 163606.140625
+motor: 0, gyro: 163.927307, encoder: 0.000000, motor: 163927.312500
+motor: 0, gyro: 164.372498, encoder: 0.000000, motor: 164372.500000
+motor: 0, gyro: 164.637207, encoder: 0.000000, motor: 164637.203125
+motor: 0, gyro: 165.013000, encoder: 0.000000, motor: 165013.000000
+motor: 0, gyro: 165.382690, encoder: 0.000000, motor: 165382.687500
+motor: 0, gyro: 165.573792, encoder: 0.000000, motor: 165573.796875
+motor: 0, gyro: 165.841980, encoder: 0.000000, motor: 165841.984375
+motor: 0, gyro: 166.028137, encoder: 0.000000, motor: 166028.140625
+motor: 0, gyro: 166.279602, encoder: 0.000000, motor: 166279.609375
+motor: 0, gyro: 166.413940, encoder: 0.000000, motor: 166413.937500
+motor: 0, gyro: 166.645447, encoder: 0.000000, motor: 166645.453125
+motor: 0, gyro: 166.769165, encoder: 0.000000, motor: 166769.171875
+motor: 0, gyro: 166.933228, encoder: 0.000000, motor: 166933.234375
+motor: 0, gyro: 167.021240, encoder: 0.000000, motor: 167021.234375
+motor: 0, gyro: 167.146118, encoder: 0.000000, motor: 167146.125000
+motor: 0, gyro: 167.231445, encoder: 0.000000, motor: 167231.437500
+motor: 0, gyro: 167.331055, encoder: 0.000000, motor: 167331.062500
+motor: 0, gyro: 167.354126, encoder: 0.000000, motor: 167354.125000
+motor: 0, gyro: 167.421143, encoder: 0.000000, motor: 167421.140625
+motor: 0, gyro: 167.473755, encoder: 0.000000, motor: 167473.750000
+motor: 0, gyro: 167.562500, encoder: 0.000000, motor: 167562.500000
+motor: 0, gyro: 167.637573, encoder: 0.000000, motor: 167637.578125
+motor: 0, gyro: 167.744141, encoder: 0.000000, motor: 167744.140625
+motor: 0, gyro: 167.760742, encoder: 0.000000, motor: 167760.750000
+motor: 0, gyro: 167.858276, encoder: 0.000000, motor: 167858.281250
+motor: 0, gyro: 167.861328, encoder: 0.000000, motor: 167861.328125
+motor: 0, gyro: 167.940674, encoder: 0.000000, motor: 167940.671875
+motor: 0, gyro: 167.936768, encoder: 0.000000, motor: 167936.765625
+motor: 0, gyro: 167.989502, encoder: 0.000000, motor: 167989.500000
+motor: 0, gyro: 167.990601, encoder: 0.000000, motor: 167990.593750
+motor: 0, gyro: 168.035889, encoder: 0.000000, motor: 168035.890625
+motor: 0, gyro: 168.055481, encoder: 0.000000, motor: 168055.484375
+motor: 0, gyro: 168.078796, encoder: 0.000000, motor: 168078.796875
+motor: 0, gyro: 168.066345, encoder: 0.000000, motor: 168066.343750
+motor: 0, gyro: 168.089722, encoder: 0.000000, motor: 168089.718750
+motor: 0, gyro: 168.124207, encoder: 0.000000, motor: 168124.203125
+motor: 0, gyro: 168.163025, encoder: 0.000000, motor: 168163.031250
+motor: 0, gyro: 168.194885, encoder: 0.000000, motor: 168194.890625
+motor: 0, gyro: 168.198242, encoder: 0.000000, motor: 168198.250000
+motor: 0, gyro: 168.191833, encoder: 0.000000, motor: 168191.828125
+motor: 0, gyro: 168.214233, encoder: 0.000000, motor: 168214.234375
+motor: 0, gyro: 168.240234, encoder: 0.000000, motor: 168240.234375
+motor: 0, gyro: 168.237000, encoder: 0.000000, motor: 168237.000000
+motor: 0, gyro: 168.249939, encoder: 0.000000, motor: 168249.937500
+motor: 0, gyro: 168.254883, encoder: 0.000000, motor: 168254.875000
+motor: 0, gyro: 168.244873, encoder: 0.000000, motor: 168244.875000
+motor: 0, gyro: 168.256042, encoder: 0.000000, motor: 168256.046875
+motor: 0, gyro: 168.267578, encoder: 0.000000, motor: 168267.578125
+motor: 0, gyro: 168.303467, encoder: 0.000000, motor: 168303.468750
+motor: 0, gyro: 168.309814, encoder: 0.000000, motor: 168309.812500
+motor: 0, gyro: 168.307373, encoder: 0.000000, motor: 168307.375000
+motor: 0, gyro: 168.329834, encoder: 0.000000, motor: 168329.828125
+motor: 0, gyro: 168.340637, encoder: 0.000000, motor: 168340.640625
+motor: 0, gyro: 168.345215, encoder: 0.000000, motor: 168345.218750
+motor: 0, gyro: 168.326721, encoder: 0.000000, motor: 168326.718750
+motor: 0, gyro: 168.336243, encoder: 0.000000, motor: 168336.250000
+motor: 0, gyro: 168.353271, encoder: 0.000000, motor: 168353.265625
+motor: 0, gyro: 168.358398, encoder: 0.000000, motor: 168358.406250
+motor: 0, gyro: 168.344666, encoder: 0.000000, motor: 168344.671875
+motor: 0, gyro: 168.347900, encoder: 0.000000, motor: 168347.906250
+motor: 0, gyro: 168.337402, encoder: 0.000000, motor: 168337.406250
+motor: 0, gyro: 168.348999, encoder: 0.000000, motor: 168349.000000
+motor: 0, gyro: 168.342163, encoder: 0.000000, motor: 168342.156250
+motor: 0, gyro: 168.319946, encoder: 0.000000, motor: 168319.953125
+motor: 0, gyro: 168.328857, encoder: 0.000000, motor: 168328.859375
+motor: 0, gyro: 168.351318, encoder: 0.000000, motor: 168351.312500
+motor: 0, gyro: 168.350830, encoder: 0.000000, motor: 168350.828125
+motor: 0, gyro: 168.327759, encoder: 0.000000, motor: 168327.765625
+motor: 0, gyro: 168.321960, encoder: 0.000000, motor: 168321.953125
+motor: 0, gyro: 168.333740, encoder: 0.000000, motor: 168333.734375
+motor: 0, gyro: 168.320312, encoder: 0.000000, motor: 168320.312500
+motor: 0, gyro: 168.324341, encoder: 0.000000, motor: 168324.343750
+motor: 0, gyro: 168.351501, encoder: 0.000000, motor: 168351.500000
+motor: 0, gyro: 168.345459, encoder: 0.000000, motor: 168345.453125
+motor: 0, gyro: 168.320496, encoder: 0.000000, motor: 168320.500000
+motor: 0, gyro: 168.285645, encoder: 0.000000, motor: 168285.640625
+motor: 0, gyro: 168.301086, encoder: 0.000000, motor: 168301.093750
+motor: 0, gyro: 168.303955, encoder: 0.000000, motor: 168303.953125
+motor: 0, gyro: 168.292786, encoder: 0.000000, motor: 168292.781250
+motor: 0, gyro: 168.300781, encoder: 0.000000, motor: 168300.781250
+motor: 0, gyro: 168.301147, encoder: 0.000000, motor: 168301.140625
+motor: 0, gyro: 168.306580, encoder: 0.000000, motor: 168306.578125
+motor: 0, gyro: 168.323181, encoder: 0.000000, motor: 168323.187500
+motor: 0, gyro: 168.338623, encoder: 0.000000, motor: 168338.625000
+motor: 0, gyro: 168.343811, encoder: 0.000000, motor: 168343.812500
+motor: 0, gyro: 168.331299, encoder: 0.000000, motor: 168331.296875
+motor: 0, gyro: 168.348633, encoder: 0.000000, motor: 168348.625000
+motor: 0, gyro: 168.360657, encoder: 0.000000, motor: 168360.656250
+motor: 0, gyro: 168.343384, encoder: 0.000000, motor: 168343.390625
+motor: 0, gyro: 168.343079, encoder: 0.000000, motor: 168343.078125
+motor: 0, gyro: 168.358154, encoder: 0.000000, motor: 168358.156250
+motor: 0, gyro: 168.353088, encoder: 0.000000, motor: 168353.093750
+motor: 0, gyro: 168.373169, encoder: 0.000000, motor: 168373.171875
+motor: 0, gyro: 168.368042, encoder: 0.000000, motor: 168368.046875
+motor: 0, gyro: 168.378662, encoder: 0.000000, motor: 168378.656250
+motor: 0, gyro: 168.382874, encoder: 0.000000, motor: 168382.875000
+motor: 0, gyro: 168.392944, encoder: 0.000000, motor: 168392.937500
+motor: 0, gyro: 168.389221, encoder: 0.000000, motor: 168389.218750
+motor: 0, gyro: 168.365479, encoder: 0.000000, motor: 168365.484375
+motor: 0, gyro: 168.357300, encoder: 0.000000, motor: 168357.296875
+motor: 0, gyro: 168.361816, encoder: 0.000000, motor: 168361.812500
+motor: 0, gyro: 168.349609, encoder: 0.000000, motor: 168349.609375
+motor: 0, gyro: 168.333191, encoder: 0.000000, motor: 168333.187500
+motor: 0, gyro: 168.350037, encoder: 0.000000, motor: 168350.031250
+motor: 0, gyro: 168.359192, encoder: 0.000000, motor: 168359.187500
+motor: 0, gyro: 168.344482, encoder: 0.000000, motor: 168344.484375
+motor: 0, gyro: 168.358765, encoder: 0.000000, motor: 168358.765625
+motor: 0, gyro: 168.365540, encoder: 0.000000, motor: 168365.546875
+motor: 0, gyro: 168.373901, encoder: 0.000000, motor: 168373.906250
+motor: 0, gyro: 168.398132, encoder: 0.000000, motor: 168398.125000
+motor: 0, gyro: 168.399048, encoder: 0.000000, motor: 168399.046875
+motor: 0, gyro: 168.399841, encoder: 0.000000, motor: 168399.843750
+motor: 0, gyro: 168.389221, encoder: 0.000000, motor: 168389.218750
+motor: 0, gyro: 168.393188, encoder: 0.000000, motor: 168393.187500
+motor: 0, gyro: 168.394165, encoder: 0.000000, motor: 168394.171875
+motor: 0, gyro: 168.392334, encoder: 0.000000, motor: 168392.328125
+motor: 0, gyro: 168.393188, encoder: 0.000000, motor: 168393.187500
+motor: 0, gyro: 168.386414, encoder: 0.000000, motor: 168386.406250
+motor: 0, gyro: 168.397644, encoder: 0.000000, motor: 168397.640625
+motor: 0, gyro: 168.394226, encoder: 0.000000, motor: 168394.218750
+motor: 0, gyro: 168.398010, encoder: 0.000000, motor: 168398.015625
+motor: 0, gyro: 168.404785, encoder: 0.000000, motor: 168404.781250
+motor: 0, gyro: 168.408691, encoder: 0.000000, motor: 168408.687500
+motor: 0, gyro: 168.419922, encoder: 0.000000, motor: 168419.921875
+motor: 0, gyro: 168.408997, encoder: 0.000000, motor: 168409.000000
+motor: 0, gyro: 168.401001, encoder: 0.000000, motor: 168401.000000
+motor: 0, gyro: 168.410950, encoder: 0.000000, motor: 168410.953125
+motor: 0, gyro: 168.433838, encoder: 0.000000, motor: 168433.843750
+motor: 0, gyro: 168.434753, encoder: 0.000000, motor: 168434.750000

@@ -58,6 +58,9 @@ void encoder_init() {
     ESP_ERROR_CHECK(rotary_encoder_set_queue(&info, event_queue));
 }
 
+void reset_encoder() {
+    rotary_encoder_reset(&info);
+}
 
 int get_count() {
     rotary_encoder_state_t state = {0};
@@ -71,4 +74,11 @@ float get_dist() {
     ESP_ERROR_CHECK(rotary_encoder_get_state(&info, &state));
 
     return ((float)state.position * TOTAL_DIST) / MAX_VAL;
+}
+
+float get_angle() {
+    rotary_encoder_state_t state = {0};
+    ESP_ERROR_CHECK(rotary_encoder_get_state(&info, &state));
+
+    return ((float)state.position * 360) / 2048;
 }

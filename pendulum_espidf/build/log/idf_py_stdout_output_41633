@@ -1,0 +1,2668 @@
+mode:DIO, c�H��+��0x3fff0030,len:7172
+load:0x400�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (225) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (225) cpu_start: Application information:[0m
+[0;32mI (228) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (311) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (225) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (225) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (225) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: a8f16eac1
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_imag
+load:0x40078000,len:j
+load:0x40080400,len:4
+load:0x40080404,len:3904�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (225) cpu_start: Application information:[0m
+[0;32mI (228) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  a8f16eac1...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (311) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[18]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+[0;32mI (532) mpu9250: Enabling magnetometer[0m
+[0;32mI (762) mpu9250: Magnetometer enabled[0m
+[0;32mI (762) mpu9250: MPU9250:[0m
+[0;32mI (762) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (762) mpu9250: --> Device address: 0x69[0m
+[0;32mI (762) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (762) mpu9250: --> initialised: Yes[0m
+[0;32mI (772) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (772) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (782) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (782) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (792) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (802) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (802) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (812) mpu9250: Accelerometer:[0m
+[0;32mI (822) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (822) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (832) mpu9250: --> Calibration:[0m
+[0;32mI (832) mpu9250:   --> Offset: [0m
+[0;32mI (832) mpu9250:     --> x: 0.020900[0m
+[0;32mI (842) mpu9250:     --> y: 0.014688[0m
+[0;32mI (842) mpu9250:     --> z: -0.002580[0m
+[0;32mI (852) mpu9250:   --> Scale: [0m
+[0;32mI (852) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (862) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (862) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (872) mpu9250: Gyroscope:[0m
+[0;32mI (872) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (882) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (882) mpu9250: --> Bias Offset:[0m
+[0;32mI (882) mpu9250:   --> x: 0.303956[0m
+[0;32mI (892) mpu9250:   --> y: -1.049768[0m
+[0;32mI (892) mpu9250:   --> z: -0.403782[0m
+[0;32mI (902) ak8963: Magnetometer (Compass):[0m
+[0;32mI (902) ak8963: --> i2c address: 0x00[0m
+[0;32mI (912) ak8963: --> initialised: true[0m
+[0;32mI (912) ak8963: --> Device ID: 0x48[0m
+[0;32mI (912) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (922) ak8963: --> ASA Scalars:[0m
+[0;32mI (932) ak8963:   --> x: 1.175781[0m
+[0;32mI (932) ak8963:   --> y: 1.187500[0m
+[0;32mI (932) ak8963:   --> z: 1.136719[0m
+[0;32mI (942) ak8963: --> Offset:[0m
+[0;32mI (942) ak8963:   --> x: 25.183594[0m
+[0;32mI (942) ak8963:   --> y: 57.519531[0m
+[0;32mI (952) ak8963:   --> z: -62.648438[0m
+[0;32mI (952) ak8963: --> Scale:[0m
+[0;32mI (962) ak8963:   --> x: 1.513449[0m
+[0;32mI (962) ak8963:   --> y: 1.557811[0m
+[0;32mI (962) ak8963:   --> z: 1.434039[0m
+Starting main loop
+motor: 0, gyro: 0.000000, encoder: 0.000000, motor: 0.000000
+motor: 0, gyro: 0.000000, encoder: 0.000000, motor: 0.000000
+motor: 0, gyro: 0.265991, encoder: 0.000000, motor: 265.991211
+motor: 0, gyro: 0.812927, encoder: 0.000000, motor: 812.927246
+motor: 0, gyro: 1.359711, encoder: 0.000000, motor: 1359.710693
+motor: 0, gyro: 2.189423, encoder: 0.000000, motor: 2189.422607
+motor: 0, gyro: 2.754486, encoder: 0.000000, motor: 2754.486084
+motor: 0, gyro: 3.320557, encoder: 0.000000, motor: 3320.556641
+motor: 0, gyro: 4.186554, encoder: 0.000000, motor: 4186.553711
+motor: 0, gyro: 4.770874, encoder: 0.000000, motor: 4770.874023
+motor: 0, gyro: 5.361542, encoder: 0.000000, motor: 5361.541992
+motor: 0, gyro: 6.253235, encoder: 0.000000, motor: 6253.234863
+motor: 0, gyro: 6.856201, encoder: 0.000000, motor: 6856.201172
+motor: 0, gyro: 7.465088, encoder: 0.000000, motor: 7465.087891
+motor: 0, gyro: 8.393860, encoder: 0.000000, motor: 8393.859375
+motor: 0, gyro: 9.021973, encoder: 0.000000, motor: 9021.972656
+motor: 0, gyro: 9.656036, encoder: 0.000000, motor: 9656.036133
+motor: 0, gyro: 10.622894, encoder: 0.000000, motor: 10622.894531
+motor: 0, gyro: 11.270020, encoder: 0.000000, motor: 11270.019531
+motor: 0, gyro: 12.254639, encoder: 0.000000, motor: 12254.638672
+motor: 0, gyro: 12.917297, encoder: 0.000000, motor: 12917.296875
+motor: 0, gyro: 13.930359, encoder: 0.000000, motor: 13930.359375
+motor: 0, gyro: 14.613251, encoder: 0.000000, motor: 14613.250977
+motor: 0, gyro: 15.305634, encoder: 0.000000, motor: 15305.633789
+motor: 0, gyro: 16.355621, encoder: 0.000000, motor: 16355.621094
+motor: 0, gyro: 17.064972, encoder: 0.000000, motor: 17064.972656
+motor: 0, gyro: 18.144043, encoder: 0.000000, motor: 18144.042969
+motor: 0, gyro: 18.877991, encoder: 0.000000, motor: 18877.990234
+motor: 0, gyro: 19.615936, encoder: 0.000000, motor: 19615.935547
+motor: 0, gyro: 20.732544, encoder: 0.000000, motor: 20732.542969
+motor: 0, gyro: 21.488068, encoder: 0.000000, motor: 21488.068359
+motor: 0, gyro: 22.640472, encoder: 0.000000, motor: 22640.472656
+motor: 0, gyro: 23.421265, encoder: 0.000000, motor: 23421.265625
+motor: 0, gyro: 24.608093, encoder: 0.000000, motor: 24608.093750
+motor: 0, gyro: 25.409271, encoder: 0.000000, motor: 25409.271484
+motor: 0, gyro: 26.219849, encoder: 0.000000, motor: 26219.847656
+motor: 0, gyro: 27.452972, encoder: 0.000000, motor: 27452.972656
+motor: 0, gyro: 28.284119, encoder: 0.000000, motor: 28284.119141
+motor: 0, gyro: 29.549133, encoder: 0.000000, motor: 29549.132812
+motor: 0, gyro: 30.406372, encoder: 0.000000, motor: 30406.371094
+motor: 0, gyro: 31.714233, encoder: 0.000000, motor: 31714.234375
+motor: 0, gyro: 32.595734, encoder: 0.000000, motor: 32595.734375
+motor: 0, gyro: 33.487518, encoder: 0.000000, motor: 33487.519531
+motor: 0, gyro: 34.845886, encoder: 0.000000, motor: 34845.886719
+motor: 0, gyro: 35.764465, encoder: 0.000000, motor: 35764.464844
+motor: 0, gyro: 37.164551, encoder: 0.000000, motor: 37164.550781
+motor: 0, gyro: 38.113892, encoder: 0.000000, motor: 38113.890625
+motor: 0, gyro: 39.557892, encoder: 0.000000, motor: 39557.890625
+motor: 0, gyro: 40.535828, encoder: 0.000000, motor: 40535.828125
+motor: 0, gyro: 41.525543, encoder: 0.000000, motor: 41525.542969
+motor: 0, gyro: 43.032745, encoder: 0.000000, motor: 43032.746094
+motor: 0, gyro: 44.051300, encoder: 0.000000, motor: 44051.300781
+motor: 0, gyro: 45.603638, encoder: 0.000000, motor: 45603.636719
+motor: 0, gyro: 46.655090, encoder: 0.000000, motor: 46655.089844
+motor: 0, gyro: 48.252472, encoder: 0.000000, motor: 48252.472656
+motor: 0, gyro: 49.331177, encoder: 0.000000, motor: 49331.175781
+motor: 0, gyro: 50.423065, encoder: 0.000000, motor: 50423.066406
+motor: 0, gyro: 52.083374, encoder: 0.000000, motor: 52083.375000
+motor: 0, gyro: 53.203033, encoder: 0.000000, motor: 53203.035156
+motor: 0, gyro: 54.904449, encoder: 0.000000, motor: 54904.449219
+motor: 0, gyro: 56.051208, encoder: 0.000000, motor: 56051.207031
+motor: 0, gyro: 57.211548, encoder: 0.000000, motor: 57211.546875
+motor: 0, gyro: 58.967346, encoder: 0.000000, motor: 58967.347656
+motor: 0, gyro: 60.152618, encoder: 0.000000, motor: 60152.617188
+motor: 0, gyro: 61.950317, encoder: 0.000000, motor: 61950.316406
+motor: 0, gyro: 63.159271, encoder: 0.000000, motor: 63159.269531
+motor: 0, gyro: 64.992126, encoder: 0.000000, motor: 64992.125000
+motor: 0, gyro: 66.222687, encoder: 0.000000, motor: 66222.687500
+motor: 0, gyro: 67.464050, encoder: 0.000000, motor: 67464.046875
+motor: 0, gyro: 69.336212, encoder: 0.000000, motor: 69336.210938
+motor: 0, gyro: 70.595642, encoder: 0.000000, motor: 70595.640625
+motor: 0, gyro: 72.495483, encoder: 0.000000, motor: 72495.484375
+motor: 0, gyro: 73.768555, encoder: 0.000000, motor: 73768.554688
+motor: 0, gyro: 75.688416, encoder: 0.000000, motor: 75688.414062
+motor: 0, gyro: 76.973022, encoder: 0.000000, motor: 76973.023438
+motor: 0, gyro: 78.263947, encoder: 0.000000, motor: 78263.945312
+motor: 0, gyro: 80.195160, encoder: 0.000000, motor: 80195.156250
+motor: 0, gyro: 81.485931, encoder: 0.000000, motor: 81485.929688
+motor: 0, gyro: 83.423309, encoder: 0.000000, motor: 83423.312500
+motor: 0, gyro: 84.713318, encoder: 0.000000, motor: 84713.320312
+motor: 0, gyro: 86.647308, encoder: 0.000000, motor: 86647.304688
+motor: 0, gyro: 87.939606, encoder: 0.000000, motor: 87939.609375
+motor: 0, gyro: 89.226257, encoder: 0.000000, motor: 89226.257812
+motor: 0, gyro: 91.149597, encoder: 0.000000, motor: 91149.593750
+motor: 0, gyro: 92.424194, encoder: 0.000000, motor: 92424.195312
+motor: 0, gyro: 94.333679, encoder: 0.000000, motor: 94333.679688
+motor: 0, gyro: 95.595734, encoder: 0.000000, motor: 95595.734375
+motor: 0, gyro: 97.479828, encoder: 0.000000, motor: 97479.828125
+motor: 0, gyro: 98.726135, encoder: 0.000000, motor: 98726.132812
+motor: 0, gyro: 99.966400, encoder: 0.000000, motor: 99966.398438
+motor: 0, gyro: 101.809509, encoder: 0.000000, motor: 101809.507812
+motor: 0, gyro: 103.025330, encoder: 0.000000, motor: 103025.328125
+motor: 0, gyro: 104.832520, encoder: 0.000000, motor: 104832.515625
+motor: 0, gyro: 106.026733, encoder: 0.000000, motor: 106026.734375
+motor: 0, gyro: 107.791901, encoder: 0.000000, motor: 107791.898438
+motor: 0, gyro: 108.956177, encoder: 0.000000, motor: 108956.179688
+motor: 0, gyro: 110.682678, encoder: 0.000000, motor: 110682.679688
+motor: 0, gyro: 111.815369, encoder: 0.000000, motor: 111815.367188
+motor: 0, gyro: 113.495300, encoder: 0.000000, motor: 113495.296875
+motor: 0, gyro: 114.596161, encoder: 0.000000, motor: 114596.164062
+motor: 0, gyro: 116.227692, encoder: 0.000000, motor: 116227.695312
+motor: 0, gyro: 117.301086, encoder: 0.000000, motor: 117301.085938
+motor: 0, gyro: 118.889435, encoder: 0.000000, motor: 118889.437500
+motor: 0, gyro: 119.930115, encoder: 0.000000, motor: 119930.117188
+motor: 0, gyro: 121.462982, encoder: 0.000000, motor: 121462.984375
+motor: 0, gyro: 122.469482, encoder: 0.000000, motor: 122469.484375
+motor: 0, gyro: 123.952576, encoder: 0.000000, motor: 123952.578125
+motor: 0, gyro: 124.925354, encoder: 0.000000, motor: 124925.351562
+motor: 0, gyro: 126.367493, encoder: 0.000000, motor: 126367.492188
+motor: 0, gyro: 127.314240, encoder: 0.000000, motor: 127314.242188
+motor: 0, gyro: 128.709045, encoder: 0.000000, motor: 128709.046875
+motor: 0, gyro: 129.622253, encoder: 0.000000, motor: 129622.250000
+motor: 0, gyro: 130.965881, encoder: 0.000000, motor: 130965.882812
+motor: 0, gyro: 131.845306, encoder: 0.000000, motor: 131845.312500
+motor: 0, gyro: 133.148987, encoder: 0.000000, motor: 133148.984375
+motor: 0, gyro: 134.001282, encoder: 0.000000, motor: 134001.281250
+motor: 0, gyro: 135.261902, encoder: 0.000000, motor: 135261.906250
+motor: 0, gyro: 136.089600, encoder: 0.000000, motor: 136089.593750
+motor: 0, gyro: 137.302734, encoder: 0.000000, motor: 137302.734375
+motor: 0, gyro: 138.105408, encoder: 0.000000, motor: 138105.406250
+motor: 0, gyro: 139.285950, encoder: 0.000000, motor: 139285.953125
+motor: 0, gyro: 140.058044, encoder: 0.000000, motor: 140058.046875
+motor: 0, gyro: 141.201904, encoder: 0.000000, motor: 141201.906250
+motor: 0, gyro: 141.945160, encoder: 0.000000, motor: 141945.156250
+motor: 0, gyro: 143.046539, encoder: 0.000000, motor: 143046.546875
+motor: 0, gyro: 143.771118, encoder: 0.000000, motor: 143771.125000
+motor: 0, gyro: 144.836029, encoder: 0.000000, motor: 144836.031250
+motor: 0, gyro: 145.520020, encoder: 0.000000, motor: 145520.015625
+motor: 0, gyro: 146.547974, encoder: 0.000000, motor: 146547.968750
+motor: 0, gyro: 147.238281, encoder: 0.000000, motor: 147238.281250
+motor: 0, gyro: 148.249878, encoder: 0.000000, motor: 148249.875000
+motor: 0, gyro: 148.911835, encoder: 0.000000, motor: 148911.828125
+motor: 0, gyro: 149.893066, encoder: 0.000000, motor: 149893.062500
+motor: 0, gyro: 150.535461, encoder: 0.000000, motor: 150535.468750
+motor: 0, gyro: 151.467041, encoder: 0.000000, motor: 151467.046875
+motor: 0, gyro: 152.065308, encoder: 0.000000, motor: 152065.312500
+motor: 0, gyro: 152.956421, encoder: 0.000000, motor: 152956.421875
+motor: 0, gyro: 153.546631, encoder: 0.000000, motor: 153546.625000
+motor: 0, gyro: 154.408020, encoder: 0.000000, motor: 154408.015625
+motor: 0, gyro: 154.974731, encoder: 0.000000, motor: 154974.734375
+motor: 0, gyro: 155.799316, encoder: 0.000000, motor: 155799.312500
+motor: 0, gyro: 156.346924, encoder: 0.000000, motor: 156346.921875
+motor: 0, gyro: 157.129150, encoder: 0.000000, motor: 157129.156250
+motor: 0, gyro: 157.626587, encoder: 0.000000, motor: 157626.593750
+motor: 0, gyro: 158.352844, encoder: 0.000000, motor: 158352.843750
+motor: 0, gyro: 158.826355, encoder: 0.000000, motor: 158826.359375
+motor: 0, gyro: 159.532104, encoder: 0.000000, motor: 159532.109375
+motor: 0, gyro: 159.978699, encoder: 0.000000, motor: 159978.703125
+motor: 0, gyro: 160.621826, encoder: 0.000000, motor: 160621.828125
+motor: 0, gyro: 161.038025, encoder: 0.000000, motor: 161038.031250
+motor: 0, gyro: 161.655518, encoder: 0.000000, motor: 161655.515625
+motor: 0, gyro: 162.050842, encoder: 0.000000, motor: 162050.843750
+motor: 0, gyro: 162.606689, encoder: 0.000000, motor: 162606.687500
+motor: 0, gyro: 162.979431, encoder: 0.000000, motor: 162979.437500
+motor: 0, gyro: 163.488647, encoder: 0.000000, motor: 163488.640625
+motor: 0, gyro: 163.824707, encoder: 0.000000, motor: 163824.703125
+motor: 0, gyro: 164.273438, encoder: 0.000000, motor: 164273.437500
+motor: 0, gyro: 164.522827, encoder: 0.000000, motor: 164522.828125
+motor: 0, gyro: 164.885681, encoder: 0.000000, motor: 164885.687500
+motor: 0, gyro: 165.098816, encoder: 0.000000, motor: 165098.812500
+motor: 0, gyro: 165.406250, encoder: 0.000000, motor: 165406.250000
+motor: 0, gyro: 165.612915, encoder: 0.000000, motor: 165612.921875
+motor: 0, gyro: 165.891296, encoder: 0.000000, motor: 165891.296875
+motor: 0, gyro: 166.059753, encoder: 0.000000, motor: 166059.750000
+motor: 0, gyro: 166.297485, encoder: 0.000000, motor: 166297.484375
+motor: 0, gyro: 166.408508, encoder: 0.000000, motor: 166408.515625
+motor: 0, gyro: 166.592834, encoder: 0.000000, motor: 166592.828125
+motor: 0, gyro: 166.705688, encoder: 0.000000, motor: 166705.687500
+motor: 0, gyro: 166.879272, encoder: 0.000000, motor: 166879.265625
+motor: 0, gyro: 166.978394, encoder: 0.000000, motor: 166978.390625
+motor: 0, gyro: 167.124146, encoder: 0.000000, motor: 167124.140625
+motor: 0, gyro: 167.197571, encoder: 0.000000, motor: 167197.578125
+motor: 0, gyro: 167.305481, encoder: 0.000000, motor: 167305.484375
+motor: 0, gyro: 167.404663, encoder: 0.000000, motor: 167404.656250
+motor: 0, gyro: 167.460815, encoder: 0.000000, motor: 167460.812500
+motor: 0, gyro: 167.535828, encoder: 0.000000, motor: 167535.828125
+motor: 0, gyro: 167.575256, encoder: 0.000000, motor: 167575.250000
+motor: 0, gyro: 167.622803, encoder: 0.000000, motor: 167622.796875
+motor: 0, gyro: 167.654053, encoder: 0.000000, motor: 167654.046875
+motor: 0, gyro: 167.706543, encoder: 0.000000, motor: 167706.546875
+motor: 0, gyro: 167.719299, encoder: 0.000000, motor: 167719.296875
+motor: 0, gyro: 167.770508, encoder: 0.000000, motor: 167770.500000
+motor: 0, gyro: 167.808350, encoder: 0.000000, motor: 167808.343750
+motor: 0, gyro: 167.873047, encoder: 0.000000, motor: 167873.046875
+motor: 0, gyro: 167.890503, encoder: 0.000000, motor: 167890.500000
+motor: 0, gyro: 167.903076, encoder: 0.000000, motor: 167903.078125
+motor: 0, gyro: 167.914673, encoder: 0.000000, motor: 167914.671875
+motor: 0, gyro: 167.926575, encoder: 0.000000, motor: 167926.578125
+motor: 0, gyro: 167.914307, encoder: 0.000000, motor: 167914.312500
+motor: 0, gyro: 167.927124, encoder: 0.000000, motor: 167927.125000
+motor: 0, gyro: 167.920227, encoder: 0.000000, motor: 167920.234375
+motor: 0, gyro: 167.912476, encoder: 0.000000, motor: 167912.468750
+motor: 0, gyro: 167.902832, encoder: 0.000000, motor: 167902.828125
+motor: 0, gyro: 167.923340, encoder: 0.000000, motor: 167923.343750
+motor: 0, gyro: 167.946655, encoder: 0.000000, motor: 167946.656250
+motor: 0, gyro: 167.956726, encoder: 0.000000, motor: 167956.718750
+motor: 0, gyro: 167.963135, encoder: 0.000000, motor: 167963.140625
+motor: 0, gyro: 167.983704, encoder: 0.000000, motor: 167983.703125
+motor: 0, gyro: 168.007385, encoder: 0.000000, motor: 168007.390625
+motor: 0, gyro: 168.043945, encoder: 0.000000, motor: 168043.937500
+motor: 0, gyro: 168.036011, encoder: 0.000000, motor: 168036.015625
+motor: 0, gyro: 168.054443, encoder: 0.000000, motor: 168054.437500
+motor: 0, gyro: 168.048950, encoder: 0.000000, motor: 168048.953125
+motor: 0, gyro: 168.050293, encoder: 0.000000, motor: 168050.296875
+motor: 0, gyro: 168.071838, encoder: 0.000000, motor: 168071.843750
+motor: 0, gyro: 168.085571, encoder: 0.000000, motor: 168085.578125
+motor: 0, gyro: 168.090576, encoder: 0.000000, motor: 168090.578125
+motor: 0, gyro: 168.084900, encoder: 0.000000, motor: 168084.906250
+motor: 0, gyro: 168.082703, encoder: 0.000000, motor: 168082.703125
+motor: 0, gyro: 168.079468, encoder: 0.000000, motor: 168079.468750
+motor: 0, gyro: 168.086426, encoder: 0.000000, motor: 168086.421875
+motor: 0, gyro: 168.077393, encoder: 0.000000, motor: 168077.390625
+motor: 0, gyro: 168.082886, encoder: 0.000000, motor: 168082.890625
+motor: 0, gyro: 168.103638, encoder: 0.000000, motor: 168103.640625
+motor: 0, gyro: 168.104675, encoder: 0.000000, motor: 168104.671875
+motor: 0, gyro: 168.123474, encoder: 0.000000, motor: 168123.468750
+motor: 0, gyro: 168.143921, encoder: 0.000000, motor: 168143.921875
+motor: 0, gyro: 168.145630, encoder: 0.000000, motor: 168145.625000
+motor: 0, gyro: 168.156189, encoder: 0.000000, motor: 168156.187500
+motor: 0, gyro: 168.161377, encoder: 0.000000, motor: 168161.375000
+motor: 0, gyro: 168.151367, encoder: 0.000000, motor: 168151.375000
+motor: 0, gyro: 168.150208, encoder: 0.000000, motor: 168150.203125
+motor: 0, gyro: 168.139648, encoder: 0.000000, motor: 168139.656250
+motor: 0, gyro: 168.127258, encoder: 0.000000, motor: 168127.265625
+motor: 0, gyro: 168.116516, encoder: 0.000000, motor: 168116.515625
+motor: 0, gyro: 168.114868, encoder: 0.000000, motor: 168114.875000
+motor: 0, gyro: 168.124756, encoder: 0.000000, motor: 168124.750000
+motor: 0, gyro: 168.116455, encoder: 0.000000, motor: 168116.453125
+motor: 0, gyro: 168.105103, encoder: 0.000000, motor: 168105.109375
+motor: 0, gyro: 168.107666, encoder: 0.000000, motor: 168107.671875
+motor: 0, gyro: 168.112183, encoder: 0.000000, motor: 168112.187500
+motor: 0, gyro: 168.123169, encoder: 0.000000, motor: 168123.171875
+motor: 0, gyro: 168.142090, encoder: 0.000000, motor: 168142.093750
+motor: 0, gyro: 168.156738, encoder: 0.000000, motor: 168156.734375
+motor: 0, gyro: 168.163635, encoder: 0.000000, motor: 168163.640625
+motor: 0, gyro: 168.171387, encoder: 0.000000, motor: 168171.390625
+motor: 0, gyro: 168.156433, encoder: 0.000000, motor: 168156.437500
+motor: 0, gyro: 168.147949, encoder: 0.000000, motor: 168147.953125
+motor: 0, gyro: 168.136719, encoder: 0.000000, motor: 168136.718750
+motor: 0, gyro: 168.116333, encoder: 0.000000, motor: 168116.328125
+motor: 0, gyro: 168.114380, encoder: 0.000000, motor: 168114.375000
+motor: 0, gyro: 168.105835, encoder: 0.000000, motor: 168105.828125
+motor: 0, gyro: 168.103271, encoder: 0.000000, motor: 168103.265625
+motor: 0, gyro: 168.109558, encoder: 0.000000, motor: 168109.562500
+motor: 0, gyro: 168.106812, encoder: 0.000000, motor: 168106.812500
+motor: 0, gyro: 168.077271, encoder: 0.000000, motor: 168077.265625
+motor: 0, gyro: 168.106689, encoder: 0.000000, motor: 168106.687500
+motor: 0, gyro: 168.130249, encoder: 0.000000, motor: 168130.250000
+motor: 0, gyro: 168.129517, encoder: 0.000000, motor: 168129.515625
+motor: 0, gyro: 168.135254, encoder: 0.000000, motor: 168135.250000
+motor: 0, gyro: 168.141907, encoder: 0.000000, motor: 168141.906250
+motor: 0, gyro: 168.140686, encoder: 0.000000, motor: 168140.687500
+motor: 0, gyro: 168.130249, encoder: 0.000000, motor: 168130.250000
+motor: 0, gyro: 168.129639, encoder: 0.000000, motor: 168129.640625
+motor: 0, gyro: 168.135986, encoder: 0.000000, motor: 168135.984375
+motor: 0, gyro: 168.139709, encoder: 0.000000, motor: 168139.703125
+motor: 0, gyro: 168.127686, encoder: 0.000000, motor: 168127.687500
+motor: 0, gyro: 168.139160, encoder: 0.000000, motor: 168139.156250
+motor: 0, gyro: 168.140442, encoder: 0.000000, motor: 168140.437500
+motor: 0, gyro: 168.138062, encoder: 0.000000, motor: 168138.062500
+motor: 0, gyro: 168.144409, encoder: 0.000000, motor: 168144.406250
+motor: 0, gyro: 168.148132, encoder: 0.000000, motor: 168148.125000
+motor: 0, gyro: 168.166565, encoder: 0.000000, motor: 168166.562500
+motor: 0, gyro: 168.180786, encoder: 0.000000, motor: 168180.781250
+motor: 0, gyro: 168.180054, encoder: 0.000000, motor: 168180.046875
+motor: 0, gyro: 168.201416, encoder: 0.000000, motor: 168201.421875
+motor: 0, gyro: 168.196655, encoder: 0.000000, motor: 168196.656250
+motor: 0, gyro: 168.191040, encoder: 0.000000, motor: 168191.046875
+motor: 0, gyro: 168.195557, encoder: 0.000000, motor: 168195.562500
+motor: 0, gyro: 168.190308, encoder: 0.000000, motor: 168190.312500
+motor: 0, gyro: 168.194031, encoder: 0.000000, motor: 168194.031250
+motor: 0, gyro: 168.176392, encoder: 0.000000, motor: 168176.390625
+motor: 0, gyro: 168.190735, encoder: 0.000000, motor: 168190.734375
+motor: 0, gyro: 168.166138, encoder: 0.000000, motor: 168166.140625
+motor: 0, gyro: 168.158020, encoder: 0.000000, motor: 168158.015625
+motor: 0, gyro: 168.145081, encoder: 0.000000, motor: 168145.078125
+motor: 0, gyro: 168.134705, encoder: 0.000000, motor: 168134.703125
+motor: 0, gyro: 168.129211, encoder: 0.000000, motor: 168129.218750
+motor: 0, gyro: 168.141846, encoder: 0.000000, motor: 168141.843750
+motor: 0, gyro: 168.153259, encoder: 0.000000, motor: 168153.265625
+motor: 0, gyro: 168.176514, encoder: 0.000000, motor: 168176.515625
+motor: 0, gyro: 168.168579, encoder: 0.000000, motor: 168168.578125
+motor: 0, gyro: 168.172485, encoder: 0.000000, motor: 168172.484375
+motor: 0, gyro: 168.172485, encoder: 0.000000, motor: 168172.484375
+motor: 0, gyro: 168.155151, encoder: 0.000000, motor: 168155.156250
+motor: 0, gyro: 168.156982, encoder: 0.000000, motor: 168156.984375
+motor: 0, gyro: 168.139343, encoder: 0.000000, motor: 168139.343750
+motor: 0, gyro: 168.132202, encoder: 0.000000, motor: 168132.203125
+motor: 0, gyro: 168.134399, encoder: 0.000000, motor: 168134.406250
+motor: 0, gyro: 168.131104, encoder: 0.000000, motor: 168131.109375
+motor: 0, gyro: 168.138306, encoder: 0.000000, motor: 168138.312500
+motor: 0, gyro: 168.127014, encoder: 0.000000, motor: 168127.015625
+motor: 0, gyro: 168.119324, encoder: 0.000000, motor: 168119.328125
+motor: 0, gyro: 168.119141, encoder: 0.000000, motor: 168119.140625
+motor: 0, gyro: 168.107544, encoder: 0.000000, motor: 168107.546875
+motor: 0, gyro: 168.112976, encoder: 0.000000, motor: 168112.968750
+motor: 0, gyro: 168.117554, encoder: 0.000000, motor: 168117.546875
+motor: 0, gyro: 168.127380, encoder: 0.000000, motor: 168127.375000
+motor: 0, gyro: 168.130859, encoder: 0.000000, motor: 168130.859375
+motor: 0, gyro: 168.141479, encoder: 0.000000, motor: 168141.484375
+motor: 0, gyro: 168.154968, encoder: 0.000000, motor: 168154.968750
+motor: 0, gyro: 168.176697, encoder: 0.000000, motor: 168176.703125
+motor: 0, gyro: 168.169678, encoder: 0.000000, motor: 168169.671875
+motor: 0, gyro: 168.185120, encoder: 0.000000, motor: 168185.125000
+motor: 0, gyro: 168.160767, encoder: 0.000000, motor: 168160.765625
+motor: 0, gyro: 168.153198, encoder: 0.000000, motor: 168153.203125
+motor: 0, gyro: 168.131836, encoder: 0.000000, motor: 168131.843750
+motor: 0, gyro: 168.119141, encoder: 0.000000, motor: 168119.140625
+motor: 0, gyro: 168.127563, encoder: 0.000000, motor: 168127.562500
+motor: 0, gyro: 168.149231, encoder: 0.000000, motor: 168149.234375
+motor: 0, gyro: 168.168213, encoder: 0.000000, motor: 168168.218750
+motor: 0, gyro: 168.167175, encoder: 0.000000, motor: 168167.171875
+motor: 0, gyro: 168.169556, encoder: 0.000000, motor: 168169.562500
+motor: 0, gyro: 168.174316, encoder: 0.000000, motor: 168174.312500
+motor: 0, gyro: 168.172974, encoder: 0.000000, motor: 168172.968750
+motor: 0, gyro: 168.188354, encoder: 0.000000, motor: 168188.359375
+motor: 0, gyro: 168.199036, encoder: 0.000000, motor: 168199.031250
+motor: 0, gyro: 168.207642, encoder: 0.000000, motor: 168207.640625
+motor: 0, gyro: 168.202271, encoder: 0.000000, motor: 168202.265625
+motor: 0, gyro: 168.192505, encoder: 0.000000, motor: 168192.500000
+motor: 0, gyro: 168.170227, encoder: 0.000000, motor: 168170.234375
+motor: 0, gyro: 168.162598, encoder: 0.000000, motor: 168162.593750
+motor: 0, gyro: 168.161011, encoder: 0.000000, motor: 168161.015625
+motor: 0, gyro: 168.150757, encoder: 0.000000, motor: 168150.750000
+motor: 0, gyro: 168.167053, encoder: 0.000000, motor: 168167.046875
+motor: 0, gyro: 168.164795, encoder: 0.000000, motor: 168164.796875
+motor: 0, gyro: 168.165649, encoder: 0.000000, motor: 168165.656250
+motor: 0, gyro: 168.151062, encoder: 0.000000, motor: 168151.062500
+motor: 0, gyro: 168.166870, encoder: 0.000000, motor: 168166.875000
+motor: 0, gyro: 168.180603, encoder: 0.000000, motor: 168180.609375
+motor: 0, gyro: 168.157471, encoder: 0.000000, motor: 168157.468750
+motor: 0, gyro: 168.156494, encoder: 0.000000, motor: 168156.500000
+motor: 0, gyro: 168.144043, encoder: 0.000000, motor: 168144.046875
+motor: 0, gyro: 168.124268, encoder: 0.000000, motor: 168124.265625
+motor: 0, gyro: 168.106567, encoder: 0.000000, motor: 168106.562500
+motor: 0, gyro: 168.120300, encoder: 0.000000, motor: 168120.296875
+motor: 0, gyro: 168.129456, encoder: 0.000000, motor: 168129.453125
+motor: 0, gyro: 168.140503, encoder: 0.000000, motor: 168140.500000
+motor: 0, gyro: 168.149902, encoder: 0.000000, motor: 168149.906250
+motor: 0, gyro: 168.153625, encoder: 0.000000, motor: 168153.625000
+motor: 0, gyro: 168.149658, encoder: 0.000000, motor: 168149.656250
+motor: 0, gyro: 168.144592, encoder: 0.000000, motor: 168144.593750
+motor: 0, gyro: 168.140808, encoder: 0.000000, motor: 168140.812500
+motor: 0, gyro: 168.145386, encoder: 0.000000, motor: 168145.390625
+motor: 0, gyro: 168.155151, encoder: 0.000000, motor: 168155.156250
+motor: 0, gyro: 168.177368, encoder: 0.000000, motor: 168177.375000
+motor: 0, gyro: 168.175903, encoder: 0.000000, motor: 168175.906250
+motor: 0, gyro: 168.178711, encoder: 0.000000, motor: 168178.718750
+motor: 0, gyro: 168.184875, encoder: 0.000000, motor: 168184.875000
+motor: 0, gyro: 168.207764, encoder: 0.000000, motor: 168207.765625
+motor: 0, gyro: 168.213013, encoder: 0.000000, motor: 168213.015625
+motor: 0, gyro: 168.207092, encoder: 0.000000, motor: 168207.093750
+motor: 0, gyro: 168.244080, encoder: 0.000000, motor: 168244.078125
+motor: 0, gyro: 168.241089, encoder: 0.000000, motor: 168241.093750
+motor: 0, gyro: 168.198242, encoder: 0.000000, motor: 168198.250000
+motor: 0, gyro: 168.174194, encoder: 0.000000, motor: 168174.187500
+motor: 0, gyro: 168.160522, encoder: 0.000000, motor: 168160.515625
+motor: 0, gyro: 168.149170, encoder: 0.000000, motor: 168149.171875
+motor: 0, gyro: 168.133240, encoder: 0.000000, motor: 168133.234375
+motor: 0, gyro: 168.119751, encoder: 0.000000, motor: 168119.750000
+motor: 0, gyro: 168.082520, encoder: 0.000000, motor: 168082.515625
+motor: 0, gyro: 168.095520, encoder: 0.000000, motor: 168095.515625
+motor: 0, gyro: 168.101440, encoder: 0.000000, motor: 168101.437500
+motor: 0, gyro: 168.109131, encoder: 0.000000, motor: 168109.125000
+motor: 0, gyro: 168.119812, encoder: 0.000000, motor: 168119.812500
+motor: 0, gyro: 168.138428, encoder: 0.000000, motor: 168138.421875
+motor: 0, gyro: 168.152771, encoder: 0.000000, motor: 168152.765625
+motor: 0, gyro: 168.141052, encoder: 0.000000, motor: 168141.046875
+motor: 0, gyro: 168.146729, encoder: 0.000000, motor: 168146.734375
+motor: 0, gyro: 168.152588, encoder: 0.000000, motor: 168152.593750
+motor: 0, gyro: 168.163269, encoder: 0.000000, motor: 168163.265625
+motor: 0, gyro: 168.152100, encoder: 0.000000, motor: 168152.093750
+motor: 0, gyro: 168.150208, encoder: 0.000000, motor: 168150.203125
+motor: 0, gyro: 168.154053, encoder: 0.000000, motor: 168154.046875
+motor: 0, gyro: 168.162048, encoder: 0.000000, motor: 168162.046875
+motor: 0, gyro: 168.154480, encoder: 0.000000, motor: 168154.484375
+motor: 0, gyro: 168.127319, encoder: 0.000000, motor: 168127.312500
+motor: 0, gyro: 168.125122, encoder: 0.000000, motor: 168125.125000
+motor: 0, gyro: 168.145142, encoder: 0.000000, motor: 168145.140625
+motor: 0, gyro: 168.157227, encoder: 0.000000, motor: 168157.218750
+motor: 0, gyro: 168.133423, encoder: 0.000000, motor: 168133.421875
+motor: 0, gyro: 168.137695, encoder: 0.000000, motor: 168137.687500
+motor: 0, gyro: 168.125793, encoder: 0.000000, motor: 168125.796875
+motor: 0, gyro: 168.144958, encoder: 0.000000, motor: 168144.953125
+motor: 0, gyro: 168.154846, encoder: 0.000000, motor: 168154.843750
+motor: 0, gyro: 168.157471, encoder: 0.000000, motor: 168157.468750
+motor: 0, gyro: 168.152405, encoder: 0.000000, motor: 168152.406250
+motor: 0, gyro: 168.139282, encoder: 0.000000, motor: 168139.281250
+motor: 0, gyro: 168.133911, encoder: 0.000000, motor: 168133.906250
+motor: 0, gyro: 168.136230, encoder: 0.000000, motor: 168136.234375
+motor: 0, gyro: 168.134277, encoder: 0.000000, motor: 168134.281250
+motor: 0, gyro: 168.147217, encoder: 0.000000, motor: 168147.218750
+motor: 0, gyro: 168.153076, encoder: 0.000000, motor: 168153.078125
+motor: 0, gyro: 168.171997, encoder: 0.000000, motor: 168172.000000
+motor: 0, gyro: 168.176941, encoder: 0.000000, motor: 168176.937500
+motor: 0, gyro: 168.207153, encoder: 0.000000, motor: 168207.156250
+motor: 0, gyro: 168.211609, encoder: 0.000000, motor: 168211.609375
+motor: 0, gyro: 168.217285, encoder: 0.000000, motor: 168217.281250
+motor: 0, gyro: 168.210327, encoder: 0.000000, motor: 168210.328125
+motor: 0, gyro: 168.240173, encoder: 0.000000, motor: 168240.171875
+motor: 0, gyro: 168.240417, encoder: 0.000000, motor: 168240.421875
+motor: 0, gyro: 168.273682, encoder: 0.000000, motor: 168273.687500
+motor: 0, gyro: 168.250854, encoder: 0.000000, motor: 168250.859375
+motor: 0, gyro: 168.233154, encoder: 0.000000, motor: 168233.156250
+motor: 0, gyro: 168.216431, encoder: 0.000000, motor: 168216.437500
+motor: 0, gyro: 168.207886, encoder: 0.000000, motor: 168207.890625
+motor: 0, gyro: 168.203003, encoder: 0.000000, motor: 168203.000000
+motor: 0, gyro: 168.162842, encoder: 0.000000, motor: 168162.843750
+motor: 0, gyro: 168.172974, encoder: 0.000000, motor: 168172.968750
+motor: 0, gyro: 168.143555, encoder: 0.000000, motor: 168143.562500
+motor: 0, gyro: 168.144531, encoder: 0.000000, motor: 168144.531250
+motor: 0, gyro: 168.128906, encoder: 0.000000, motor: 168128.906250
+motor: 0, gyro: 168.108521, encoder: 0.000000, motor: 168108.515625
+motor: 0, gyro: 168.117615, encoder: 0.000000, motor: 168117.609375
+motor: 0, gyro: 168.114807, encoder: 0.000000, motor: 168114.812500
+motor: 0, gyro: 168.117004, encoder: 0.000000, motor: 168117.000000
+motor: 0, gyro: 168.114197, encoder: 0.000000, motor: 168114.203125
+motor: 0, gyro: 168.126648, encoder: 0.000000, motor: 168126.640625
+motor: 0, gyro: 168.130005, encoder: 0.000000, motor: 168130.000000
+motor: 0, gyro: 168.126282, encoder: 0.000000, motor: 168126.281250
+motor: 0, gyro: 168.139221, encoder: 0.000000, motor: 168139.218750
+motor: 0, gyro: 168.157288, encoder: 0.000000, motor: 168157.281250
+motor: 0, gyro: 168.176758, encoder: 0.000000, motor: 168176.750000
+motor: 0, gyro: 168.201111, encoder: 0.000000, motor: 168201.109375
+motor: 0, gyro: 168.188721, encoder: 0.000000, motor: 168188.718750
+motor: 0, gyro: 168.190063, encoder: 0.000000, motor: 168190.062500
+motor: 0, gyro: 168.209595, encoder: 0.000000, motor: 168209.593750
+motor: 0, gyro: 168.207153, encoder: 0.000000, motor: 168207.156250
+motor: 0, gyro: 168.200684, encoder: 0.000000, motor: 168200.687500
+motor: 0, gyro: 168.192749, encoder: 0.000000, motor: 168192.750000
+motor: 0, gyro: 168.196777, encoder: 0.000000, motor: 168196.781250
+motor: 0, gyro: 168.202759, encoder: 0.000000, motor: 168202.765625
+motor: 0, gyro: 168.214722, encoder: 0.000000, motor: 168214.718750
+motor: 0, gyro: 168.203735, encoder: 0.000000, motor: 168203.734375
+motor: 0, gyro: 168.198608, encoder: 0.000000, motor: 168198.609375
+motor: 0, gyro: 168.211243, encoder: 0.000000, motor: 168211.250000
+motor: 0, gyro: 168.212341, encoder: 0.000000, motor: 168212.343750
+motor: 0, gyro: 168.203613, encoder: 0.000000, motor: 168203.609375
+motor: 0, gyro: 168.192444, encoder: 0.000000, motor: 168192.437500
+motor: 0, gyro: 168.180725, encoder: 0.000000, motor: 168180.718750
+motor: 0, gyro: 168.185059, encoder: 0.000000, motor: 168185.062500
+motor: 0, gyro: 168.184814, encoder: 0.000000, motor: 168184.812500
+motor: 0, gyro: 168.191162, encoder: 0.000000, motor: 168191.156250
+motor: 0, gyro: 168.190796, encoder: 0.000000, motor: 168190.796875
+motor: 0, gyro: 168.190552, encoder: 0.000000, motor: 168190.546875
+motor: 0, gyro: 168.188232, encoder: 0.000000, motor: 168188.234375
+motor: 0, gyro: 168.188721, encoder: 0.000000, motor: 168188.718750
+motor: 0, gyro: 168.164062, encoder: 0.000000, motor: 168164.062500
+motor: 0, gyro: 168.186035, encoder: 0.000000, motor: 168186.031250
+motor: 0, gyro: 168.182739, encoder: 0.000000, motor: 168182.734375
+motor: 0, gyro: 168.188843, encoder: 0.000000, motor: 168188.843750
+motor: 0, gyro: 168.192322, encoder: 0.000000, motor: 168192.328125
+motor: 0, gyro: 168.195068, encoder: 0.000000, motor: 168195.062500
+motor: 0, gyro: 168.199829, encoder: 0.000000, motor: 168199.828125
+motor: 0, gyro: 168.170654, encoder: 0.000000, motor: 168170.656250
+motor: 0, gyro: 168.152466, encoder: 0.000000, motor: 168152.468750
+motor: 0, gyro: 168.166870, encoder: 0.000000, motor: 168166.875000
+motor: 0, gyro: 168.158813, encoder: 0.000000, motor: 168158.812500
+motor: 0, gyro: 168.159302, encoder: 0.000000, motor: 168159.296875
+motor: 0, gyro: 168.152283, encoder: 0.000000, motor: 168152.281250
+motor: 0, gyro: 168.159729, encoder: 0.000000, motor: 168159.734375
+motor: 0, gyro: 168.181396, encoder: 0.000000, motor: 168181.390625
+motor: 0, gyro: 168.166382, encoder: 0.000000, motor: 168166.375000
+motor: 0, gyro: 168.164917, encoder: 0.000000, motor: 168164.921875
+motor: 0, gyro: 168.180359, encoder: 0.000000, motor: 168180.359375
+motor: 0, gyro: 168.169678, encoder: 0.000000, motor: 168169.671875
+motor: 0, gyro: 168.173523, encoder: 0.000000, motor: 168173.515625
+motor: 0, gyro: 168.154541, encoder: 0.000000, motor: 168154.546875
+motor: 0, gyro: 168.162170, encoder: 0.000000, motor: 168162.171875
+motor: 0, gyro: 168.167419, encoder: 0.000000, motor: 168167.421875
+motor: 0, gyro: 168.169434, encoder: 0.000000, motor: 168169.437500
+motor: 0, gyro: 168.152344, encoder: 0.000000, motor: 168152.343750

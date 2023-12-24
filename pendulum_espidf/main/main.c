@@ -36,9 +36,9 @@ void change_motorstate();
 void update_state();
 
 void app_main(void) {
-    esp_task_wdt_config_t cfg = {0};
-    cfg.timeout_ms = 20000;
-    esp_task_wdt_init(&cfg);
+    // esp_task_wdt_config_t cfg = {0};
+    // cfg.timeout_ms = 20000;
+    // esp_task_wdt_init(&cfg);
 
     // Use interrupts for sensor reset and motor enable
     gpio_reset_pin(ACCEL_RST);
@@ -57,9 +57,9 @@ void app_main(void) {
     gpio_isr_handler_add(ACCEL_RST, reset_gyro, (void *)ACCEL_RST);
     gpio_isr_handler_add(MOTOR_TOGGLE, change_motorstate, (void *)MOTOR_TOGGLE);
 
-    // motor_init();
+    motor_init();
     accel_init();
-    // encoder_init();
+    encoder_init();
 
     vTaskDelay(100 / portTICK_PERIOD_MS);
 
@@ -73,29 +73,33 @@ void app_main(void) {
 
     printf("Starting main loop\n");
     while(1) {
-        
-            // // accel_update();
-            
-        
+        update_state();
 
+        float motor_speed = curr_x * 6000;
 
+        if ((curr_theta < 45 && curr_theta > -45)) {
 
-        // vTaskDelay(100 / portTICK_PERIOD_MS);
-        // set_motor(80);
-        // vTaskDelay(1000 / portTICK_PERIOD_MS);
-        // set_motor(-80);
-        // set_motor(Kp * curr_theta);
-        // vTaskDelay(1 / portTICK_PERIOD_MS);
-
-        printf("motor: %d, gyro: %f\n", RUN_MOTOR, curr_theta);
+            if (motor_speed > 0) {
+                set_motor(100000);
+            }
+            else if (motor_speed < 0) {
+                set_motor(-100000);
+            } else {
+                set_motor(0);
+            }
+                
+        } else {
+            set_motor(0);
         }
+        printf("motor:%d, gyro:%f, encoder:%f, motor:%f, pain:45, suffering:-45\n", RUN_MOTOR, curr_theta, curr_x, motor_speed);
+    }
 
     printf("done\n");
     
 }
 
 void update_state() {
-    curr_x = get_dist();
+    curr_x = get_angle();
     curr_theta = gyro_x();
     curr_time = esp_timer_get_time();
 
@@ -111,6 +115,7 @@ void update_state() {
 
 void reset_gyro() {
     set_gyro_ref();
+    reset_encoder();
     // printf("Resetting gyro\n");
 }
 

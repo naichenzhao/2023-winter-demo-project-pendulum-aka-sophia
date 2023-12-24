@@ -83,7 +83,7 @@ static void imu_task(void *arg) {
 void accel_init() {
     i2c_mpu9250_init(&cal);
     ahrs_init(SAMPLE_FREQ_Hz, 0.8);
-    xTaskCreatePinnedToCore(imu_task, "imu_task", 4096, NULL, 2 | portPRIVILEGE_BIT, NULL, 0);
+    xTaskCreatePinnedToCore(imu_task, "imu_task", 4096, NULL, 2 | portPRIVILEGE_BIT, NULL, 1);
 }
 
 void accel_update() {
@@ -96,9 +96,8 @@ void accel_update() {
     transform_mag(&vm);
 
     // Apply the AHRS algorithm
-    ahrs_update(DEG2RAD(vg.x), DEG2RAD(vg.y), DEG2RAD(vg.z),
-                va.x, va.y, va.z,
-                vm.x, vm.y, vm.z);
+    ahrs_update_imu(DEG2RAD(vg.x), DEG2RAD(vg.y), DEG2RAD(vg.z),
+                va.x, va.y, va.z);
 
     ahrs_get_euler_in_degrees(&heading, &pitch, &roll);
 }

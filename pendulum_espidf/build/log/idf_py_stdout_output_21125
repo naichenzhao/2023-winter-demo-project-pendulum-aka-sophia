@@ -1,6 +1,0 @@
-[0/1] Re-running CMake...
--- Component directory /Users/naichenzhao/esp/esp-idf/components/led_strip does not contain a CMakeLists.txt file. No component will be added
--- Building ESP-IDF components for target esp32
--- Configuring incomplete, errors occurred!
-FAILED: build.ninja 
-/usr/local/Cellar/cmake/3.28.1/bin/cmake --regenerate-during-build -S/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf -B/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build

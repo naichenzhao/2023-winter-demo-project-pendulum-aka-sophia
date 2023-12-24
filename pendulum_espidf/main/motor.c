@@ -6,13 +6,14 @@
 #define LEDC_MODE LEDC_LOW_SPEED_MODE
 #define LEDC_OUTPUT_IO (5) // Define the output GPIO
 #define LEDC_CHANNEL LEDC_CHANNEL_0
-#define LEDC_DUTY_RES LEDC_TIMER_11_BIT // Set duty resolution to 13 bits
+#define LEDC_DUTY_RES LEDC_TIMER_11_BIT 
 #define LEDC_DUTY (1024)                 // Set duty to 50%. (2 ** 13) * 50% = 4096
 #define LEDC_FREQUENCY (4000)           // Frequency in Hertz. Set frequency at 4 kHz
 
-#define DIR_PIN GPIO_NUM_4
-#define STEPS_REV 3200
-#define PWM_LIMIT 20
+#define DIR_PIN GPIO_NUM_17
+#define STEPS_REV 6400
+#define PWM_LIMIT 40
+#define MAX_FREQ 38000
 
 void motor_init(void)
 {
@@ -55,13 +56,14 @@ void set_freq(int freq)
 // Get speed input in radians per second, convert that to frequency
 void set_motor(float speed) {
 
-    int converted_speed = (int)(speed * (STEPS_REV / (2 * 3.14159)))/10;
-    printf("%d\n", converted_speed);
+    speed = speed > MAX_FREQ? MAX_FREQ:speed;
+    speed = speed < -MAX_FREQ ? -MAX_FREQ : speed;
+
     if (speed > 0) {
         gpio_set_level(DIR_PIN, 1);
-        set_freq(converted_speed);
+        set_freq((int) speed);
     } else {
         gpio_set_level(DIR_PIN, 0);
-        set_freq(-converted_speed);
+        set_freq((int) -speed);
     }
 }

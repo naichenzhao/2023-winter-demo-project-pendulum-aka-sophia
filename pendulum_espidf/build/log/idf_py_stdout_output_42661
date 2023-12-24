@@ -1,0 +1,728 @@
+:0x00,wp_dr0
+mode:DIO, clock div:2
+load:0x3fff�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (225) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (225) cpu_start: Application information:[0m
+[0;32mI (228) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  f4b7b2930...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (311) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: f4b7b2930
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  f4b7b2930...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: f4b7b2930
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  f4b7b2930...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: f4b7b2930
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (224) cpu_start: Application information:[0m
+[0;32mI (227) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  f4b7b2930...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (310) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (317) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+ESP_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x400d85e7
+file: "./components/mpu9250/mpu9250.c" line 64
+func: i2c_mpu9250_init
+expression: i2c_write_bit(I2C_MASTER_NUM, MPU9250_I2C_ADDR, MPU9250_RA_PWR_MGMT_1, MPU9250_PWR1_DEVICE_RESET_BIT, 1)
+
+abort() was called at PC 0x40086c67 on core 0
+
+
+Backtrace: 0x4008197e:0x3ffb4ee0 0x40086c71:0x3ffb4f00 0x4008cb41:0x3ffb4f20 0x40086c67:0x3ffb4f90 0x400d85e7:0x3ffb4fc0 0x400d6982:0x3ffb4fe0 0x400d6795:0x3ffb5010 0x400eb1f8:0x3ffb5050 0x40087719:0x3ffb5080
+
+
+
+
+ELF file SHA256: f4b7b2930
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e2���bb���3904
+entry 0x40080640
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1043-g8c9e29898f 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Dec 23 2023 16:25:19[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ceb4h ( 52916) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001cedc vaddr=3ffb0000 size=02370h (  9072) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f254 vaddr=40080000 size=00dc4h (  3524) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1ba48h (113224) map[0m
+[0;32mI (175) esp_image: segment 4: paddr=0003ba70 vaddr=40080dc4 size=0d40ch ( 54284) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (215) cpu_start: Multicore app[0m
+[0;32mI (224) cpu_start: Pro cpu start user code[0m
+[0;32mI (224) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (225) cpu_start: Application information:[0m
+[0;32mI (228) cpu_start: Project name:     demo_sophia[0m
+[0;32mI (233) cpu_start: App version:      e213c6e-dirty[0m
+[0;32mI (238) cpu_start: Compile time:     Dec 23 2023 16:25:04[0m
+[0;32mI (244) cpu_start: ELF file SHA256:  f4b7b2930...[0m
+[0;32mI (250) cpu_start: ESP-IDF:          v5.3-dev-1043-g8c9e29898f[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (284) heap_init: At 3FFB2D50 len 0002D2B0 (180 KiB): DRAM[0m
+[0;32mI (290) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (303) heap_init: At 4008E1D0 len 00011E30 (71 KiB): IRAM[0m
+[0;32mI (311) spi_flash: detected chip: generic[0m
+[0;32mI (314) spi_flash: flash io: dio[0m
+[0;33mW (318) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (331) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) gpio: GPIO[32]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (352) gpio: GPIO[35]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (362) gpio: GPIO[17]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (372) mpu9250: Initializating MPU9250[0m
+[0;32mI (532) mpu9250: Enabling magnetometer[0m
+[0;32mI (762) mpu9250: Magnetometer enabled[0m
+[0;32mI (762) mpu9250: MPU9250:[0m
+[0;32mI (762) mpu9250: --> i2c bus: 0x00[0m
+[0;32mI (762) mpu9250: --> Device address: 0x69[0m
+[0;32mI (762) mpu9250: --> Device ID: 0x71[0m
+[0;32mI (762) mpu9250: --> initialised: Yes[0m
+[0;32mI (772) mpu9250: --> BYPASS enabled: Yes[0m
+[0;32mI (772) mpu9250: --> SleepEnabled Mode: Off[0m
+[0;32mI (782) mpu9250: --> i2c Master Mode: Disabled[0m
+[0;32mI (782) mpu9250: --> Power Management (0x6B, 0x6C):[0m
+[0;32mI (792) mpu9250:   --> Clock Source: 1 1 (Auto selects the best available clock source)[0m
+[0;32mI (802) mpu9250:   --> Accel enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (802) mpu9250:   --> Gyro enabled (x, y, z): (Yes, Yes, Yes)[0m
+[0;32mI (812) mpu9250: Accelerometer:[0m
+[0;32mI (822) mpu9250: --> Full Scale Range (0x1C): ±4g (1)[0m
+[0;32mI (822) mpu9250: --> Scalar: 1/8192.000000[0m
+[0;32mI (832) mpu9250: --> Calibration:[0m
+[0;32mI (832) mpu9250:   --> Offset: [0m
+[0;32mI (832) mpu9250:     --> x: 0.020900[0m
+[0;32mI (842) mpu9250:     --> y: 0.014688[0m
+[0;32mI (842) mpu9250:     --> z: -0.002580[0m
+[0;32mI (852) mpu9250:   --> Scale: [0m
+[0;32mI (852) mpu9250:     --> x: (-0.992052, 1.013558)[0m
+[0;32mI (862) mpu9250:     --> y: (-0.990010, 1.011903)[0m
+[0;32mI (862) mpu9250:     --> z: (-1.011147, 1.019645)[0m
+[0;32mI (872) mpu9250: Gyroscope:[0m
+[0;32mI (872) mpu9250: --> Full Scale Range (0x1B): +250 dps (0)[0m
+[0;32mI (882) mpu9250: --> Scalar: 1/131.000000[0m
+[0;32mI (882) mpu9250: --> Bias Offset:[0m
+[0;32mI (882) mpu9250:   --> x: 0.303956[0m
+[0;32mI (892) mpu9250:   --> y: -1.049768[0m
+[0;32mI (892) mpu9250:   --> z: -0.403782[0m
+[0;32mI (902) ak8963: Magnetometer (Compass):[0m
+[0;32mI (902) ak8963: --> i2c address: 0x00[0m
+[0;32mI (912) ak8963: --> initialised: true[0m
+[0;32mI (912) ak8963: --> Device ID: 0x48[0m
+[0;32mI (912) ak8963: --> Mode: 0x06 (Continuous measurement mode 2: 100Hz)[0m
+[0;32mI (922) ak8963: --> ASA Scalars:[0m
+[0;32mI (932) ak8963:   --> x: 1.175781[0m
+[0;32mI (932) ak8963:   --> y: 1.187500[0m
+[0;32mI (932) ak8963:   --> z: 1.136719[0m
+[0;32mI (942) ak8963: --> Offset:[0m
+[0;32mI (942) ak8963:   --> x: 25.183594[0m
+[0;32mI (942) ak8963:   --> y: 57.519531[0m
+[0;32mI (952) ak8963:   --> z: -62.648438[0m
+[0;32mI (952) ak8963: --> Scale:[0m
+[0;32mI (962) ak8963:   --> x: 1.513449[0m
+[0;32mI (962) ak8963:   --> y: 1.557811[0m
+[0;32mI (962) ak8963:   --> z: 1.434039[0m
+Starting main loop
+motor: 0, gyro: 0.000000, encoder: 0.000000, motor: 0.000000
+motor: 0, gyro: 0.000000, encoder: 0.000000, motor: 0.000000
+motor: 0, gyro: 0.266052, encoder: 0.000000, motor: 266.052246
+motor: 0, gyro: 0.807312, encoder: 0.000000, motor: 807.312012
+motor: 0, gyro: 1.350861, encoder: 0.000000, motor: 1350.860596
+motor: 0, gyro: 2.168365, encoder: 0.000000, motor: 2168.365479
+motor: 0, gyro: 2.746735, encoder: 0.000000, motor: 2746.734619
+motor: 0, gyro: 3.325592, encoder: 0.000000, motor: 3325.592041
+motor: 0, gyro: 4.187347, encoder: 0.000000, motor: 4187.347656
+motor: 0, gyro: 4.771149, encoder: 0.000000, motor: 4771.148438
+motor: 0, gyro: 5.363037, encoder: 0.000000, motor: 5363.037109
+motor: 0, gyro: 6.258362, encoder: 0.000000, motor: 6258.361816
+motor: 0, gyro: 6.865936, encoder: 0.000000, motor: 6865.936523
+motor: 0, gyro: 7.480865, encoder: 0.000000, motor: 7480.865234
+motor: 0, gyro: 8.413574, encoder: 0.000000, motor: 8413.574219
+motor: 0, gyro: 9.041260, encoder: 0.000000, motor: 9041.259766
+motor: 0, gyro: 9.672363, encoder: 0.000000, motor: 9672.363281
+motor: 0, gyro: 10.631897, encoder: 0.000000, motor: 10631.896484
+motor: 0, gyro: 11.282135, encoder: 0.000000, motor: 11282.134766
+motor: 0, gyro: 12.266174, encoder: 0.000000, motor: 12266.173828
+motor: 0, gyro: 12.930573, encoder: 0.000000, motor: 12930.572266
+motor: 0, gyro: 13.942047, encoder: 0.000000, motor: 13942.046875
+motor: 0, gyro: 14.624268, encoder: 0.000000, motor: 14624.267578
+motor: 0, gyro: 15.308838, encoder: 0.000000, motor: 15308.837891
+motor: 0, gyro: 16.355560, encoder: 0.000000, motor: 16355.560547
+motor: 0, gyro: 17.064728, encoder: 0.000000, motor: 17064.728516
+motor: 0, gyro: 18.142853, encoder: 0.000000, motor: 18142.853516
+motor: 0, gyro: 18.874512, encoder: 0.000000, motor: 18874.511719
+motor: 0, gyro: 19.612091, encoder: 0.000000, motor: 19612.091797
+motor: 0, gyro: 20.727600, encoder: 0.000000, motor: 20727.599609
+motor: 0, gyro: 21.484985, encoder: 0.000000, motor: 21484.984375
+motor: 0, gyro: 22.635590, encoder: 0.000000, motor: 22635.589844
+motor: 0, gyro: 23.413147, encoder: 0.000000, motor: 23413.146484
+motor: 0, gyro: 24.601349, encoder: 0.000000, motor: 24601.349609
+motor: 0, gyro: 25.396484, encoder: 0.000000, motor: 25396.484375
+motor: 0, gyro: 26.202271, encoder: 0.000000, motor: 26202.269531
+motor: 0, gyro: 27.430847, encoder: 0.000000, motor: 27430.847656
+motor: 0, gyro: 28.263000, encoder: 0.000000, motor: 28263.000000
+motor: 0, gyro: 29.521790, encoder: 0.000000, motor: 29521.789062
+motor: 0, gyro: 30.376831, encoder: 0.000000, motor: 30376.832031
+motor: 0, gyro: 31.677063, encoder: 0.000000, motor: 31677.062500
+motor: 0, gyro: 32.557037, encoder: 0.000000, motor: 32557.037109
+motor: 0, gyro: 33.449280, encoder: 0.000000, motor: 33449.281250
+motor: 0, gyro: 34.809540, encoder: 0.000000, motor: 34809.539062
+motor: 0, gyro: 35.727722, encoder: 0.000000, motor: 35727.722656
+motor: 0, gyro: 37.129761, encoder: 0.000000, motor: 37129.761719
+motor: 0, gyro: 38.076660, encoder: 0.000000, motor: 38076.660156
+motor: 0, gyro: 39.518829, encoder: 0.000000, motor: 39518.828125
+motor: 0, gyro: 40.496216, encoder: 0.000000, motor: 40496.214844
+motor: 0, gyro: 41.481689, encoder: 0.000000, motor: 41481.687500
+motor: 0, gyro: 42.981354, encoder: 0.000000, motor: 42981.355469
+motor: 0, gyro: 43.999268, encoder: 0.000000, motor: 43999.265625
+motor: 0, gyro: 45.545685, encoder: 0.000000, motor: 45545.683594
+motor: 0, gyro: 46.588776, encoder: 0.000000, motor: 46588.777344
+motor: 0, gyro: 48.181549, encoder: 0.000000, motor: 48181.550781
+motor: 0, gyro: 49.257202, encoder: 0.000000, motor: 49257.203125
+motor: 0, gyro: 50.343384, encoder: 0.000000, motor: 50343.382812
+motor: 0, gyro: 51.993347, encoder: 0.000000, motor: 51993.347656
+motor: 0, gyro: 53.105530, encoder: 0.000000, motor: 53105.531250
+motor: 0, gyro: 54.798401, encoder: 0.000000, motor: 54798.402344
+motor: 0, gyro: 55.940857, encoder: 0.000000, motor: 55940.855469
+motor: 0, gyro: 57.096893, encoder: 0.000000, motor: 57096.894531
+motor: 0, gyro: 58.847656, encoder: 0.000000, motor: 58847.656250
+motor: 0, gyro: 60.029907, encoder: 0.000000, motor: 60029.906250
+motor: 0, gyro: 61.817383, encoder: 0.000000, motor: 61817.382812
+motor: 0, gyro: 63.016876, encoder: 0.000000, motor: 63016.875000
+motor: 0, gyro: 64.839050, encoder: 0.000000, motor: 64839.050781
+motor: 0, gyro: 66.063049, encoder: 0.000000, motor: 66063.046875
+motor: 0, gyro: 67.296509, encoder: 0.000000, motor: 67296.507812
+motor: 0, gyro: 69.158997, encoder: 0.000000, motor: 69159.000000
+motor: 0, gyro: 70.407684, encoder: 0.000000, motor: 70407.687500
+motor: 0, gyro: 72.296631, encoder: 0.000000, motor: 72296.632812
+motor: 0, gyro: 73.561279, encoder: 0.000000, motor: 73561.281250
+motor: 0, gyro: 75.467682, encoder: 0.000000, motor: 75467.679688
+motor: 0, gyro: 76.743164, encoder: 0.000000, motor: 76743.164062
+motor: 0, gyro: 78.023682, encoder: 0.000000, motor: 78023.679688
+motor: 0, gyro: 79.946411, encoder: 0.000000, motor: 79946.414062
+motor: 0, gyro: 81.229919, encoder: 0.000000, motor: 81229.921875
+motor: 0, gyro: 83.154480, encoder: 0.000000, motor: 83154.476562
+motor: 0, gyro: 84.437378, encoder: 0.000000, motor: 84437.375000
+motor: 0, gyro: 86.360107, encoder: 0.000000, motor: 86360.109375
+motor: 0, gyro: 87.640991, encoder: 0.000000, motor: 87640.992188
+motor: 0, gyro: 88.921387, encoder: 0.000000, motor: 88921.390625
+motor: 0, gyro: 90.829956, encoder: 0.000000, motor: 90829.953125
+motor: 0, gyro: 92.098938, encoder: 0.000000, motor: 92098.937500
+motor: 0, gyro: 93.994232, encoder: 0.000000, motor: 93994.234375
+motor: 0, gyro: 95.250061, encoder: 0.000000, motor: 95250.062500
+motor: 0, gyro: 97.123810, encoder: 0.000000, motor: 97123.812500
+motor: 0, gyro: 98.362457, encoder: 0.000000, motor: 98362.460938
+motor: 0, gyro: 99.593353, encoder: 0.000000, motor: 99593.351562
+motor: 0, gyro: 101.430817, encoder: 0.000000, motor: 101430.820312
+motor: 0, gyro: 102.640930, encoder: 0.000000, motor: 102640.929688
+motor: 0, gyro: 104.442017, encoder: 0.000000, motor: 104442.015625
+motor: 0, gyro: 105.623474, encoder: 0.000000, motor: 105623.476562
+motor: 0, gyro: 107.383362, encoder: 0.000000, motor: 107383.359375
+motor: 0, gyro: 108.539551, encoder: 0.000000, motor: 108539.546875
+motor: 0, gyro: 110.253967, encoder: 0.000000, motor: 110253.968750
+motor: 0, gyro: 111.384521, encoder: 0.000000, motor: 111384.523438
+motor: 0, gyro: 113.053772, encoder: 0.000000, motor: 113053.773438
+motor: 0, gyro: 114.154602, encoder: 0.000000, motor: 114154.601562
+motor: 0, gyro: 115.779663, encoder: 0.000000, motor: 115779.664062
+motor: 0, gyro: 116.848572, encoder: 0.000000, motor: 116848.570312
+motor: 0, gyro: 118.430420, encoder: 0.000000, motor: 118430.421875
+motor: 0, gyro: 119.465546, encoder: 0.000000, motor: 119465.546875
+motor: 0, gyro: 120.998627, encoder: 0.000000, motor: 120998.625000
+motor: 0, gyro: 122.006714, encoder: 0.000000, motor: 122006.710938
+motor: 0, gyro: 123.491760, encoder: 0.000000, motor: 123491.757812
+motor: 0, gyro: 124.466248, encoder: 0.000000, motor: 124466.250000
+motor: 0, gyro: 125.900269, encoder: 0.000000, motor: 125900.265625
+motor: 0, gyro: 126.839600, encoder: 0.000000, motor: 126839.601562
+motor: 0, gyro: 128.231812, encoder: 0.000000, motor: 128231.812500
+motor: 0, gyro: 129.143677, encoder: 0.000000, motor: 129143.679688
+motor: 0, gyro: 130.486877, encoder: 0.000000, motor: 130486.875000
+motor: 0, gyro: 131.369629, encoder: 0.000000, motor: 131369.625000
+motor: 0, gyro: 132.675171, encoder: 0.000000, motor: 132675.171875
+motor: 0, gyro: 133.531128, encoder: 0.000000, motor: 133531.125000
+motor: 0, gyro: 134.795074, encoder: 0.000000, motor: 134795.078125
+motor: 0, gyro: 135.628082, encoder: 0.000000, motor: 135628.078125
+motor: 0, gyro: 136.842316, encoder: 0.000000, motor: 136842.312500
+motor: 0, gyro: 137.638672, encoder: 0.000000, motor: 137638.671875
+motor: 0, gyro: 138.811218, encoder: 0.000000, motor: 138811.218750
+motor: 0, gyro: 139.582153, encoder: 0.000000, motor: 139582.156250
+motor: 0, gyro: 140.717865, encoder: 0.000000, motor: 140717.859375
+motor: 0, gyro: 141.459198, encoder: 0.000000, motor: 141459.203125
+motor: 0, gyro: 142.558014, encoder: 0.000000, motor: 142558.015625
+motor: 0, gyro: 143.286255, encoder: 0.000000, motor: 143286.250000
+motor: 0, gyro: 144.346039, encoder: 0.000000, motor: 144346.031250
+motor: 0, gyro: 145.042358, encoder: 0.000000, motor: 145042.359375
+motor: 0, gyro: 146.074829, encoder: 0.000000, motor: 146074.828125
+motor: 0, gyro: 146.747162, encoder: 0.000000, motor: 146747.156250
+motor: 0, gyro: 147.733795, encoder: 0.000000, motor: 147733.796875
+motor: 0, gyro: 148.381958, encoder: 0.000000, motor: 148381.953125
+motor: 0, gyro: 149.332336, encoder: 0.000000, motor: 149332.343750
+motor: 0, gyro: 149.943420, encoder: 0.000000, motor: 149943.421875
+motor: 0, gyro: 150.842224, encoder: 0.000000, motor: 150842.218750
+motor: 0, gyro: 151.458160, encoder: 0.000000, motor: 151458.156250
+motor: 0, gyro: 152.359009, encoder: 0.000000, motor: 152359.015625
+motor: 0, gyro: 152.951172, encoder: 0.000000, motor: 152951.171875
+motor: 0, gyro: 153.837158, encoder: 0.000000, motor: 153837.156250
+motor: 0, gyro: 154.416565, encoder: 0.000000, motor: 154416.562500
+motor: 0, gyro: 155.280701, encoder: 0.000000, motor: 155280.703125
+motor: 0, gyro: 155.836609, encoder: 0.000000, motor: 155836.609375
+motor: 0, gyro: 156.625854, encoder: 0.000000, motor: 156625.859375
+motor: 0, gyro: 157.132446, encoder: 0.000000, motor: 157132.453125
+motor: 0, gyro: 157.885254, encoder: 0.000000, motor: 157885.250000
+motor: 0, gyro: 158.374207, encoder: 0.000000, motor: 158374.203125
+motor: 0, gyro: 159.071289, encoder: 0.000000, motor: 159071.281250
+motor: 0, gyro: 159.528076, encoder: 0.000000, motor: 159528.078125
+motor: 0, gyro: 160.184631, encoder: 0.000000, motor: 160184.625000
+motor: 0, gyro: 160.595581, encoder: 0.000000, motor: 160595.578125
+motor: 0, gyro: 161.209167, encoder: 0.000000, motor: 161209.171875
+motor: 0, gyro: 161.609619, encoder: 0.000000, motor: 161609.625000
+motor: 0, gyro: 162.160034, encoder: 0.000000, motor: 162160.031250
+motor: 0, gyro: 162.501343, encoder: 0.000000, motor: 162501.343750
+motor: 0, gyro: 162.997375, encoder: 0.000000, motor: 162997.375000
+motor: 0, gyro: 163.299927, encoder: 0.000000, motor: 163299.921875
+motor: 0, gyro: 163.720215, encoder: 0.000000, motor: 163720.218750
+motor: 0, gyro: 163.973694, encoder: 0.000000, motor: 163973.687500
+motor: 0, gyro: 164.366821, encoder: 0.000000, motor: 164366.828125
+motor: 0, gyro: 164.604553, encoder: 0.000000, motor: 164604.546875
+motor: 0, gyro: 164.919800, encoder: 0.000000, motor: 164919.796875
+motor: 0, gyro: 165.111389, encoder: 0.000000, motor: 165111.390625
+motor: 0, gyro: 165.380798, encoder: 0.000000, motor: 165380.796875
+motor: 0, gyro: 165.569214, encoder: 0.000000, motor: 165569.218750
+motor: 0, gyro: 165.780029, encoder: 0.000000, motor: 165780.031250
+motor: 0, gyro: 165.905457, encoder: 0.000000, motor: 165905.453125
+motor: 0, gyro: 166.122192, encoder: 0.000000, motor: 166122.187500
+motor: 0, gyro: 166.233643, encoder: 0.000000, motor: 166233.640625
+motor: 0, gyro: 166.372620, encoder: 0.000000, motor: 166372.625000
+motor: 0, gyro: 166.477356, encoder: 0.000000, motor: 166477.359375
+motor: 0, gyro: 166.574036, encoder: 0.000000, motor: 166574.031250
+motor: 0, gyro: 166.647034, encoder: 0.000000, motor: 166647.031250
+motor: 0, gyro: 166.754700, encoder: 0.000000, motor: 166754.703125
+motor: 0, gyro: 166.839111, encoder: 0.000000, motor: 166839.109375
+motor: 0, gyro: 166.895630, encoder: 0.000000, motor: 166895.625000
+motor: 0, gyro: 166.989990, encoder: 0.000000, motor: 166989.984375
+motor: 0, gyro: 167.034424, encoder: 0.000000, motor: 167034.421875
+motor: 0, gyro: 167.098083, encoder: 0.000000, motor: 167098.078125
+motor: 0, gyro: 167.146118, encoder: 0.000000, motor: 167146.125000
+motor: 0, gyro: 167.206299, encoder: 0.000000, motor: 167206.296875
+motor: 0, gyro: 167.231689, encoder: 0.000000, motor: 167231.687500
+motor: 0, gyro: 167.263977, encoder: 0.000000, motor: 167263.984375
+motor: 0, gyro: 167.280518, encoder: 0.000000, motor: 167280.515625
+motor: 0, gyro: 167.320374, encoder: 0.000000, motor: 167320.375000
+motor: 0, gyro: 167.322144, encoder: 0.000000, motor: 167322.140625
+motor: 0, gyro: 167.342102, encoder: 0.000000, motor: 167342.109375
+motor: 0, gyro: 167.344116, encoder: 0.000000, motor: 167344.109375
+motor: 0, gyro: 167.355469, encoder: 0.000000, motor: 167355.468750
+motor: 0, gyro: 167.388916, encoder: 0.000000, motor: 167388.921875
+motor: 0, gyro: 167.398315, encoder: 0.000000, motor: 167398.312500
+motor: 0, gyro: 167.395874, encoder: 0.000000, motor: 167395.875000
+motor: 0, gyro: 167.427490, encoder: 0.000000, motor: 167427.484375
+motor: 0, gyro: 167.417358, encoder: 0.000000, motor: 167417.359375
+motor: 0, gyro: 167.436157, encoder: 0.000000, motor: 167436.156250
+motor: 0, gyro: 167.450684, encoder: 0.000000, motor: 167450.687500
+motor: 0, gyro: 167.449158, encoder: 0.000000, motor: 167449.156250
+motor: 0, gyro: 167.449219, encoder: 0.000000, motor: 167449.218750
+motor: 0, gyro: 167.427734, encoder: 0.000000, motor: 167427.734375
+motor: 0, gyro: 167.422363, encoder: 0.000000, motor: 167422.359375
+motor: 0, gyro: 167.442627, encoder: 0.000000, motor: 167442.625000
+motor: 0, gyro: 167.445679, encoder: 0.000000, motor: 167445.671875
+motor: 0, gyro: 167.455078, encoder: 0.000000, motor: 167455.078125
+motor: 0, gyro: 167.459717, encoder: 0.000000, motor: 167459.718750
+motor: 0, gyro: 167.471924, encoder: 0.000000, motor: 167471.921875
+motor: 0, gyro: 167.469482, encoder: 0.000000, motor: 167469.484375
+motor: 0, gyro: 167.496582, encoder: 0.000000, motor: 167496.578125
+motor: 0, gyro: 167.499023, encoder: 0.000000, motor: 167499.031250
+motor: 0, gyro: 167.496582, encoder: 0.000000, motor: 167496.578125
+motor: 0, gyro: 167.497192, encoder: 0.000000, motor: 167497.187500
+motor: 0, gyro: 167.519287, encoder: 0.000000, motor: 167519.281250
+motor: 0, gyro: 167.528503, encoder: 0.000000, motor: 167528.500000
+motor: 0, gyro: 167.559753, encoder: 0.000000, motor: 167559.750000
+motor: 0, gyro: 167.556152, encoder: 0.000000, motor: 167556.156250
+motor: 0, gyro: 167.558960, encoder: 0.000000, motor: 167558.953125
+motor: 0, gyro: 167.560669, encoder: 0.000000, motor: 167560.671875
+motor: 0, gyro: 167.547180, encoder: 0.000000, motor: 167547.187500
+motor: 0, gyro: 167.557434, encoder: 0.000000, motor: 167557.437500
+motor: 0, gyro: 167.567566, encoder: 0.000000, motor: 167567.562500
+motor: 0, gyro: 167.564880, encoder: 0.000000, motor: 167564.875000
+motor: 0, gyro: 167.575073, encoder: 0.000000, motor: 167575.078125
+motor: 0, gyro: 167.575623, encoder: 0.000000, motor: 167575.625000
+motor: 0, gyro: 167.579956, encoder: 0.000000, motor: 167579.953125
+motor: 0, gyro: 167.590027, encoder: 0.000000, motor: 167590.031250
+motor: 0, gyro: 167.584839, encoder: 0.000000, motor: 167584.843750
+motor: 0, gyro: 167.592529, encoder: 0.000000, motor: 167592.531250
+motor: 0, gyro: 167.610413, encoder: 0.000000, motor: 167610.406250
+motor: 0, gyro: 167.626587, encoder: 0.000000, motor: 167626.593750
+motor: 0, gyro: 167.607849, encoder: 0.000000, motor: 167607.843750
+motor: 0, gyro: 167.605225, encoder: 0.000000, motor: 167605.218750
+motor: 0, gyro: 167.620728, encoder: 0.000000, motor: 167620.734375
+motor: 0, gyro: 167.601196, encoder: 0.000000, motor: 167601.203125
+motor: 0, gyro: 167.597534, encoder: 0.000000, motor: 167597.531250
+motor: 0, gyro: 167.583984, encoder: 0.000000, motor: 167583.984375
+motor: 0, gyro: 167.568604, encoder: 0.000000, motor: 167568.609375
+motor: 0, gyro: 167.563110, encoder: 0.000000, motor: 167563.109375
+motor: 0, gyro: 167.563721, encoder: 0.000000, motor: 167563.718750
+motor: 0, gyro: 167.532166, encoder: 0.000000, motor: 167532.171875
+motor: 0, gyro: 167.544006, encoder: 0.000000, motor: 167544.000000
+motor: 0, gyro: 167.551636, encoder: 0.000000, motor: 167551.640625
+motor: 0, gyro: 167.539124, encoder: 0.000000, motor: 167539.125000
+motor: 0, gyro: 167.525452, encoder: 0.000000, motor: 167525.453125
+motor: 0, gyro: 167.531433, encoder: 0.000000, motor: 167531.437500
+motor: 0, gyro: 167.552368, encoder: 0.000000, motor: 167552.375000
+motor: 0, gyro: 167.542175, encoder: 0.000000, motor: 167542.171875
+motor: 0, gyro: 167.529541, encoder: 0.000000, motor: 167529.546875
+motor: 0, gyro: 167.517212, encoder: 0.000000, motor: 167517.218750
+motor: 0, gyro: 167.534485, encoder: 0.000000, motor: 167534.484375
+motor: 0, gyro: 167.541565, encoder: 0.000000, motor: 167541.562500
+motor: 0, gyro: 167.540161, encoder: 0.000000, motor: 167540.156250
+motor: 0, gyro: 167.553955, encoder: 0.000000, motor: 167553.953125
+motor: 0, gyro: 167.547607, encoder: 0.000000, motor: 167547.609375
+motor: 0, gyro: 167.553467, encoder: 0.000000, motor: 167553.468750
+motor: 0, gyro: 167.568359, encoder: 0.000000, motor: 167568.359375
+motor: 0, gyro: 167.564697, encoder: 0.000000, motor: 167564.703125
+motor: 0, gyro: 167.561462, encoder: 0.000000, motor: 167561.468750
+motor: 0, gyro: 167.555786, encoder: 0.000000, motor: 167555.781250
+motor: 0, gyro: 167.549072, encoder: 0.000000, motor: 167549.078125
+motor: 0, gyro: 167.546875, encoder: 0.000000, motor: 167546.875000
+motor: 0, gyro: 167.552490, encoder: 0.000000, motor: 167552.484375
+motor: 0, gyro: 167.550171, encoder: 0.000000, motor: 167550.171875
+motor: 0, gyro: 167.543213, encoder: 0.000000, motor: 167543.218750
+motor: 0, gyro: 167.553955, encoder: 0.000000, motor: 167553.953125
+motor: 0, gyro: 167.549133, encoder: 0.000000, motor: 167549.140625
+motor: 0, gyro: 167.542236, encoder: 0.000000, motor: 167542.234375
+motor: 0, gyro: 167.557373, encoder: 0.000000, motor: 167557.375000
+motor: 0, gyro: 167.562195, encoder: 0.000000, motor: 167562.187500
+motor: 0, gyro: 167.571899, encoder: 0.000000, motor: 167571.906250
+motor: 0, gyro: 167.578796, encoder: 0.000000, motor: 167578.796875
+motor: 0, gyro: 167.587036, encoder: 0.000000, motor: 167587.031250
+motor: 0, gyro: 167.574463, encoder: 0.000000, motor: 167574.468750
+motor: 0, gyro: 167.589111, encoder: 0.000000, motor: 167589.109375
+motor: 0, gyro: 167.579285, encoder: 0.000000, motor: 167579.281250
+motor: 0, gyro: 167.580261, encoder: 0.000000, motor: 167580.265625
+motor: 0, gyro: 167.569763, encoder: 0.000000, motor: 167569.765625
+motor: 0, gyro: 167.571350, encoder: 0.000000, motor: 167571.343750
+motor: 0, gyro: 167.552979, encoder: 0.000000, motor: 167552.984375
+motor: 0, gyro: 167.547119, encoder: 0.000000, motor: 167547.125000
+motor: 0, gyro: 167.536133, encoder: 0.000000, motor: 167536.125000
+motor: 0, gyro: 167.514648, encoder: 0.000000, motor: 167514.656250
+motor: 0, gyro: 167.513062, encoder: 0.000000, motor: 167513.062500
+motor: 0, gyro: 167.509766, encoder: 0.000000, motor: 167509.765625
+motor: 0, gyro: 167.516357, encoder: 0.000000, motor: 167516.359375
+motor: 0, gyro: 167.503906, encoder: 0.000000, motor: 167503.906250
+motor: 0, gyro: 167.506409, encoder: 0.000000, motor: 167506.406250
+motor: 0, gyro: 167.525391, encoder: 0.000000, motor: 167525.390625
+motor: 0, gyro: 167.516479, encoder: 0.000000, motor: 167516.484375
+motor: 0, gyro: 167.507202, encoder: 0.000000, motor: 167507.203125
+motor: 0, gyro: 167.518860, encoder: 0.000000, motor: 167518.859375
+motor: 0, gyro: 167.523010, encoder: 0.000000, motor: 167523.015625
+motor: 0, gyro: 167.501404, encoder: 0.000000, motor: 167501.406250
+motor: 0, gyro: 167.472839, encoder: 0.000000, motor: 167472.843750
+motor: 0, gyro: 167.472839, encoder: 0.000000, motor: 167472.843750
+motor: 0, gyro: 167.494873, encoder: 0.000000, motor: 167494.875000
+motor: 0, gyro: 167.498169, encoder: 0.000000, motor: 167498.171875
+motor: 0, gyro: 167.523682, encoder: 0.000000, motor: 167523.687500
+motor: 0, gyro: 167.532471, encoder: 0.000000, motor: 167532.468750
+motor: 0, gyro: 167.536255, encoder: 0.000000, motor: 167536.250000
+motor: 0, gyro: 167.541016, encoder: 0.000000, motor: 167541.015625
