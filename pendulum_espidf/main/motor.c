@@ -13,7 +13,7 @@
 #define DIR_PIN GPIO_NUM_17
 #define STEPS_REV 6400
 #define PWM_LIMIT 40
-#define MAX_FREQ 38000
+#define MAX_FREQ 30000
 
 void motor_init(void)
 {

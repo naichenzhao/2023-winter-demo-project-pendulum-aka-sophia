@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "demo_sophia",
-    "project_version":    "e213c6e-dirty",
+    "project_version":    "22d1584-dirty",
     "project_path":       "/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf",
     "idf_path":           "/Users/naichenzhao/esp/esp-idf",
     "build_dir":          "/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build",

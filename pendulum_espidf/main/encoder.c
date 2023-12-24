@@ -33,8 +33,10 @@
 
 #define TAG "app"
 
-#define ROT_ENC_A_GPIO GPIO_NUM_12
-#define ROT_ENC_B_GPIO GPIO_NUM_14
+#define ROT_ENC1_A GPIO_NUM_12
+#define ROT_ENC1_B GPIO_NUM_14
+#define ROT_ENC2_A GPIO_NUM_27
+#define ROT_ENC2_B GPIO_NUM_26
 
 #define ENABLE_HALF_STEPS false
 #define RESET_AT 0
@@ -42,43 +44,55 @@
 
 #define MAX_VAL  28155
 #define TOTAL_DIST  55
+#define ENCODER_TICKS 2048
 
-rotary_encoder_info_t info = {0};
+// Encoder 1 is to get the angluar displacement
+// Encoder 2 is for linear displcement
+
+rotary_encoder_info_t encoder_1 = {0};
+rotary_encoder_info_t encoder_2 = {0};
 void encoder_init() {
-    // esp32-rotary-encoder requires that the GPIO ISR service is installed before calling rotary_encoder_register()
-    // ESP_ERROR_CHECK(gpio_install_isr_service(1));
-
     // Initialise the rotary encoder device with the GPIOs for A and B signals
-    ESP_ERROR_CHECK(rotary_encoder_init(&info, ROT_ENC_A_GPIO, ROT_ENC_B_GPIO));
-    ESP_ERROR_CHECK(rotary_encoder_enable_half_steps(&info, ENABLE_HALF_STEPS));
+    ESP_ERROR_CHECK(rotary_encoder_init(&encoder_1, ROT_ENC1_A, ROT_ENC1_B));
+    ESP_ERROR_CHECK(rotary_encoder_init(&encoder_2, ROT_ENC2_A, ROT_ENC2_B));
+    ESP_ERROR_CHECK(rotary_encoder_enable_half_steps(&encoder_1, ENABLE_HALF_STEPS));
+    ESP_ERROR_CHECK(rotary_encoder_enable_half_steps(&encoder_2, ENABLE_HALF_STEPS));
 
     // Create a queue for events from the rotary encoder driver.
     // Tasks can read from this queue to receive up to date position information.
-    QueueHandle_t event_queue = rotary_encoder_create_queue();
-    ESP_ERROR_CHECK(rotary_encoder_set_queue(&info, event_queue));
+    QueueHandle_t event_queue1 = rotary_encoder_create_queue();
+    ESP_ERROR_CHECK(rotary_encoder_set_queue(&encoder_1, event_queue1));
+
+    QueueHandle_t event_queue2 = rotary_encoder_create_queue();
+    ESP_ERROR_CHECK(rotary_encoder_set_queue(&encoder_2, event_queue2));
 }
 
-void reset_encoder() {
-    rotary_encoder_reset(&info);
+void reset_encoder1() {
+    rotary_encoder_reset(&encoder_1);
 }
 
-int get_count() {
-    rotary_encoder_state_t state = {0};
-    ESP_ERROR_CHECK(rotary_encoder_get_state(&info, &state));
+void reset_encoder2() {
+    rotary_encoder_reset(&encoder_2);
+}
 
-    return state.position;
+int get_count1() {
+    rotary_encoder_state_t state1 = {0};
+    ESP_ERROR_CHECK(rotary_encoder_get_state(&encoder_1, &state1));
+
+    return state1.position;
+}
+
+int get_count2() {
+    rotary_encoder_state_t state2 = {0};
+    ESP_ERROR_CHECK(rotary_encoder_get_state(&encoder_2, &state2));
+
+    return state2.position;
 }
 
 float get_dist() {
-    rotary_encoder_state_t state = {0};
-    ESP_ERROR_CHECK(rotary_encoder_get_state(&info, &state));
-
-    return ((float)state.position * TOTAL_DIST) / MAX_VAL;
+    return ((float)get_count2() * TOTAL_DIST) / MAX_VAL;
 }
 
 float get_angle() {
-    rotary_encoder_state_t state = {0};
-    ESP_ERROR_CHECK(rotary_encoder_get_state(&info, &state));
-
-    return ((float)state.position * 360) / 2048;
+    return ((float)get_count1() * 360) / ENCODER_TICKS;
 }

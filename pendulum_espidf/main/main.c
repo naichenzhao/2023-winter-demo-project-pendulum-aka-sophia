@@ -30,10 +30,16 @@ float x_dot = 0;
 float theta_dot = 0;
 int64_t dt;
 
-void reset_gyro();
+void reset_state();
 void change_motorstate();
 
 void update_state();
+
+// Controller functions
+
+float bang_bang_controller(float curr_theta, float curr_x, float curr_dx, float curr_dtheta);
+
+//
 
 void app_main(void) {
     // esp_task_wdt_config_t cfg = {0};
@@ -54,7 +60,7 @@ void app_main(void) {
     gpio_pullup_dis(MOTOR_TOGGLE);
 
     gpio_install_isr_service(0);
-    gpio_isr_handler_add(ACCEL_RST, reset_gyro, (void *)ACCEL_RST);
+    gpio_isr_handler_add(ACCEL_RST, reset_state, (void *)ACCEL_RST);
     gpio_isr_handler_add(MOTOR_TOGGLE, change_motorstate, (void *)MOTOR_TOGGLE);
 
     motor_init();
@@ -74,33 +80,38 @@ void app_main(void) {
     printf("Starting main loop\n");
     while(1) {
         update_state();
+        float motor_Speed = bang_bang_controller(curr_theta, curr_x, theta_dot, x_dot);
+        
 
-        float motor_speed = curr_x * 6000;
-
-        if ((curr_theta < 45 && curr_theta > -45)) {
-
-            if (motor_speed > 0) {
-                set_motor(100000);
-            }
-            else if (motor_speed < 0) {
-                set_motor(-100000);
-            } else {
-                set_motor(0);
-            }
-                
+        if ((curr_theta < 45 && curr_theta > -45) && (curr_x < 20 && curr_x > -20)) {
+            set_motor(motor_Speed);
         } else {
             set_motor(0);
         }
-        printf("motor:%d, gyro:%f, encoder:%f, motor:%f, pain:45, suffering:-45\n", RUN_MOTOR, curr_theta, curr_x, motor_speed);
-    }
 
-    printf("done\n");
+        // print the current state
+        printf("x:%f, theta:%f, dx:%f, dtheta:%f, gyro:%f\n", curr_x, curr_theta, x_dot, theta_dot, gyro_x());
+        // printf("gyro:%d, angle:%f, dist:%f, motor:%f, pain:45, suffering:-45\n", gyro_x(), curr_theta, curr_x, motor_speed);
+    }
     
 }
 
+float bang_bang_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx) {
+    if (curr_theta > 0) {
+        return 100000;
+    } else if (curr_theta < 0) {
+        return -100000;
+    } else {
+        return 0;
+    }
+}
+
+
+
+
 void update_state() {
-    curr_x = get_angle();
-    curr_theta = gyro_x();
+    curr_x = get_dist();
+    curr_theta = get_angle();
     curr_time = esp_timer_get_time();
 
     dt = curr_time - last_time;
@@ -113,9 +124,10 @@ void update_state() {
     last_time = curr_time;
 }
 
-void reset_gyro() {
+void reset_state() {
     set_gyro_ref();
-    reset_encoder();
+    reset_encoder1();
+    reset_encoder2();
     // printf("Resetting gyro\n");
 }
 
