@@ -3,7 +3,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_err.h"
-#include "driver/i2c_master.h"
+// #include "driver/i2c_master.h"
 #include "driver/gpio.h"
 #include "esp_timer.h"
 #include "esp_task_wdt.h"
@@ -30,6 +30,8 @@ float x_dot = 0;
 float theta_dot = 0;
 int64_t dt;
 
+float motor_Speed = 0;
+
 void reset_state();
 void change_motorstate();
 
@@ -38,7 +40,7 @@ void update_state();
 // Controller functions
 
 float bang_bang_controller(float curr_theta, float curr_x, float curr_dx, float curr_dtheta);
-
+float pd_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx);
 //
 
 void app_main(void) {
@@ -80,7 +82,8 @@ void app_main(void) {
     printf("Starting main loop\n");
     while(1) {
         update_state();
-        float motor_Speed = bang_bang_controller(curr_theta, curr_x, theta_dot, x_dot);
+        // float motor_Speed = bang_bang_controller(curr_theta, curr_x, theta_dot, x_dot);
+        motor_Speed = motor_Speed + (dt) * pd_controller(curr_theta, curr_x, theta_dot, x_dot);
         
 
         if ((curr_theta < 45 && curr_theta > -45) && (curr_x < 20 && curr_x > -20)) {
@@ -90,8 +93,9 @@ void app_main(void) {
         }
 
         // print the current state
-        printf("x:%f, theta:%f, dx:%f, dtheta:%f, gyro:%f\n", curr_x, curr_theta, x_dot, theta_dot, gyro_x());
-        // printf("gyro:%d, angle:%f, dist:%f, motor:%f, pain:45, suffering:-45\n", gyro_x(), curr_theta, curr_x, motor_speed);
+        // printf("x:%f, theta:%f, dx:%f, dtheta:%f, gyro:%f\n", curr_x, curr_theta, x_dot, theta_dot, gyro_x());
+        printf("x:%f, theta:%f, dx:%f, dtheta:%f, gyro:%f, motor:%f\n", curr_x, curr_theta, x_dot, theta_dot, gyro_x(), motor_Speed);
+        // printf("gyro:%d, angle:%f, dist:%f, motor:%f, pain:45, suffering:-45\n", gyro_x(), curr_theta, curr_x, motor_Speed);
     }
     
 }
@@ -104,6 +108,24 @@ float bang_bang_controller(float curr_theta, float curr_x, float curr_dtheta, fl
     } else {
         return 0;
     }
+}
+
+float pd_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx) {
+    const float kp_theta = 0.1; 
+    const float kd_theta = 0.0; 
+    const float kp_x = 0.0;     
+    const float kd_x = 0.0;     
+
+    float p_term_theta = kp_theta * (curr_theta); 
+    float d_term_theta = kd_theta * curr_dtheta;
+
+    float p_term_x = kp_x * (-curr_x); 
+    float d_term_x = kd_x * curr_dx;
+
+    float control_output_theta = p_term_theta - d_term_theta;
+    float control_output_x = p_term_x - d_term_x;
+
+    return control_output_theta + control_output_x;
 }
 
 
@@ -128,6 +150,7 @@ void reset_state() {
     set_gyro_ref();
     reset_encoder1();
     reset_encoder2();
+    motor_Speed = 0;
     // printf("Resetting gyro\n");
 }
 
