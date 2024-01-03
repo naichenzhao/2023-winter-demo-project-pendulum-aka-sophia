@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="pendulum_model">
+  <link
+    name="pendulum_rail">
+    <inertial>
+      <origin
+        xyz="0.0180843841419525 0.273978384739283 -0.00420217381661675"
+        rpy="0 0 0" />
+      <mass
+        value="0.37048529354219" />
+      <inertia
+        ixx="0.00548733542334145"
+        ixy="-3.75612596167172E-06"
+        ixz="-3.5023304587495E-06"
+        iyy="0.000104633994928134"
+        iyz="3.24569798016515E-06"
+        izz="0.00548116463609628" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pendulum_model/meshes/pendulum_rail.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pendulum_model/meshes/pendulum_rail.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="pendulum_slider_link">
+    <inertial>
+      <origin
+        xyz="0.001619869574778 0.00108185796497699 -0.0269998749142826"
+        rpy="0 0 0" />
+      <mass
+        value="0.0582658571037464" />
+      <inertia
+        ixx="8.68382644405515E-06"
+        ixy="1.55313204721478E-07"
+        ixz="5.45082856706509E-11"
+        iyy="2.23593308110749E-05"
+        iyz="-4.00718232646675E-09"
+        izz="1.76301108715888E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pendulum_model/meshes/pendulum_slider_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pendulum_model/meshes/pendulum_slider_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pendulum_slider"
+    type="prismatic">
+    <origin
+      xyz="0.0385 0.01 0.27703"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="pendulum_rail" />
+    <child
+      link="pendulum_slider_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="pendulum_arm_link">
+    <inertial>
+      <origin
+        xyz="0 0.137569522780703 0.00584792549375092"
+        rpy="0 0 0" />
+      <mass
+        value="0.0357759270156992" />
+      <inertia
+        ixx="0.000197057978214731"
+        ixy="-4.12891215436228E-20"
+        ixz="-1.26266065267032E-21"
+        iyy="1.12877603101033E-06"
+        iyz="2.45118160750407E-07"
+        izz="0.00019772831649183" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pendulum_model/meshes/pendulum_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://pendulum_model/meshes/pendulum_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pendulum_arm"
+    type="continuous">
+    <origin
+      xyz="0 -0.0240000000000017 -0.0270000000000006"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="pendulum_slider_link" />
+    <child
+      link="pendulum_arm_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
