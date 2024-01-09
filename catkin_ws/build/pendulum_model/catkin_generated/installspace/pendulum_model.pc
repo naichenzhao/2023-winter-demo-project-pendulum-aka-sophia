@@ -1,0 +1,8 @@
+prefix=/home/naichenzhao/Desktop/winter_demo_sophia/catkin_ws/install
+
+Name: pendulum_model
+Description: Description of pendulum_model
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
