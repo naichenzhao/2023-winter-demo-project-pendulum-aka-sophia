@@ -4,16 +4,17 @@
 
 #define LEDC_TIMER LEDC_TIMER_0
 #define LEDC_MODE LEDC_LOW_SPEED_MODE
-#define LEDC_OUTPUT_IO (5) // Define the output GPIO
+#define LEDC_OUTPUT_IO (23) // Define the output GPIO
 #define LEDC_CHANNEL LEDC_CHANNEL_0
 #define LEDC_DUTY_RES LEDC_TIMER_11_BIT 
 #define LEDC_DUTY (1024)                 // Set duty to 50%. (2 ** 13) * 50% = 4096
-#define LEDC_FREQUENCY (4000)           // Frequency in Hertz. Set frequency at 4 kHz
+#define LEDC_FREQUENCY (10000)           // Frequency in Hertz. Set frequency at 4 kHz
 
-#define DIR_PIN GPIO_NUM_17
+#define DIR_PIN 22
 #define STEPS_REV 6400
 #define PWM_LIMIT 40
 #define MAX_FREQ 30000
+#define MAX_SPEED 2048
 
 void motor_init(void)
 {
@@ -53,17 +54,36 @@ void set_freq(int freq)
     ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
 }
 
-// Get speed input in radians per second, convert that to frequency
+void set_speed(int speed) {
+    ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, speed);
+    ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
+}
+
+// // Get speed input in radians per second, convert that to frequency
+// void set_motor(float speed) {
+
+//     speed = speed > MAX_FREQ? MAX_FREQ:speed;
+//     speed = speed < -MAX_FREQ ? -MAX_FREQ : speed;
+
+//     if (speed > 0) {
+//         gpio_set_level(DIR_PIN, 1);
+//         set_freq((int) speed);
+//     } else {
+//         gpio_set_level(DIR_PIN, 0);
+//         set_freq((int) -speed);
+//     }
+// }
+
 void set_motor(float speed) {
 
-    speed = speed > MAX_FREQ? MAX_FREQ:speed;
-    speed = speed < -MAX_FREQ ? -MAX_FREQ : speed;
+    speed = speed > MAX_SPEED ? MAX_SPEED : speed;
+    speed = speed < -MAX_SPEED ? -MAX_SPEED : speed;
 
     if (speed > 0) {
         gpio_set_level(DIR_PIN, 1);
-        set_freq((int) speed);
+        set_speed((int)speed);
     } else {
         gpio_set_level(DIR_PIN, 0);
-        set_freq((int) -speed);
+        set_speed((int) -speed);
     }
 }

@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "demo_sophia",
-    "project_version":    "22d1584-dirty",
+    "project_version":    "293bd16-dirty",
     "project_path":       "/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf",
     "idf_path":           "/Users/naichenzhao/esp/esp-idf",
     "build_dir":          "/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build",
@@ -11,7 +11,7 @@
     "app_elf":            "demo_sophia.elf",
     "app_bin":            "demo_sophia.bin",
     "build_type":         "flash_app",
-    "git_revision":       "v5.3-dev-1043-g8c9e29898f",
+    "git_revision":       "v5.3-dev-1043-g8c9e29898f-dirty",
     "target":             "esp32",
     "rev":                "0",
     "min_rev":            "0",

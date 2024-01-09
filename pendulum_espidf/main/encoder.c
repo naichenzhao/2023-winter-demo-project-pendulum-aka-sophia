@@ -38,13 +38,13 @@
 #define ROT_ENC2_A GPIO_NUM_27
 #define ROT_ENC2_B GPIO_NUM_26
 
-#define ENABLE_HALF_STEPS false
+#define ENABLE_HALF_STEPS true
 #define RESET_AT 0
 #define FLIP_DIRECTION false
 
-#define MAX_VAL  28155
+#define MAX_VAL 56310
 #define TOTAL_DIST  55
-#define ENCODER_TICKS 2048
+#define ENCODER_TICKS 1024
 
 // Encoder 1 is to get the angluar displacement
 // Encoder 2 is for linear displcement

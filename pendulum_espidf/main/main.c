@@ -66,7 +66,6 @@ void app_main(void) {
     gpio_isr_handler_add(MOTOR_TOGGLE, change_motorstate, (void *)MOTOR_TOGGLE);
 
     motor_init();
-    accel_init();
     encoder_init();
 
     vTaskDelay(100 / portTICK_PERIOD_MS);
@@ -82,11 +81,18 @@ void app_main(void) {
     printf("Starting main loop\n");
     while(1) {
         update_state();
-        // float motor_Speed = bang_bang_controller(curr_theta, curr_x, theta_dot, x_dot);
-        motor_Speed = motor_Speed + (dt) * pd_controller(curr_theta, curr_x, theta_dot, x_dot);
+
+        // motor_Speed = bang_bang_controller(curr_theta, curr_x, theta_dot, x_dot);
+        motor_Speed = (motor_Speed + (dt) * pd_controller(curr_theta, curr_x, theta_dot, x_dot));
+        if (motor_Speed > 2048) {
+            motor_Speed = 2048;
+        } else if (motor_Speed < -2048) {
+            motor_Speed = -2048;
+        }
+        // motor_Speed = 2000;
         
 
-        if ((curr_theta < 45 && curr_theta > -45) && (curr_x < 20 && curr_x > -20)) {
+        if ((curr_theta < 45 && curr_theta > -45) && (curr_x < 23 && curr_x > -23)) {
             set_motor(motor_Speed);
         } else {
             set_motor(0);
@@ -94,7 +100,7 @@ void app_main(void) {
 
         // print the current state
         // printf("x:%f, theta:%f, dx:%f, dtheta:%f, gyro:%f\n", curr_x, curr_theta, x_dot, theta_dot, gyro_x());
-        printf("x:%f, theta:%f, dx:%f, dtheta:%f, gyro:%f, motor:%f\n", curr_x, curr_theta, x_dot, theta_dot, gyro_x(), motor_Speed);
+        printf("x:%f, theta:%f, dx:%f, dtheta:%f, motor:%f\n", curr_x, curr_theta, x_dot, theta_dot, motor_Speed);
         // printf("gyro:%d, angle:%f, dist:%f, motor:%f, pain:45, suffering:-45\n", gyro_x(), curr_theta, curr_x, motor_Speed);
     }
     
@@ -102,19 +108,21 @@ void app_main(void) {
 
 float bang_bang_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx) {
     if (curr_theta > 0) {
-        return 100000;
+        return 2000;
     } else if (curr_theta < 0) {
-        return -100000;
+        return -2000;
     } else {
         return 0;
     }
 }
 
 float pd_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx) {
-    const float kp_theta = -0.15; 
-    const float kd_theta = -0.015; 
-    const float kp_x = -0.03;     
-    const float kd_x = -0.01;     
+    const float kp_theta = -0.012; 
+    // const float kd_theta = -0.015;
+    const float kd_theta = -0.0012;
+    const float kp_x = 0.0024;
+    // const float kd_x = -0.01;
+    const float kd_x = 0.0008;
 
     float p_term_theta = kp_theta * (-curr_theta); 
     float d_term_theta = kd_theta * curr_dtheta;
