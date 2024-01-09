@@ -111,9 +111,9 @@ float bang_bang_controller(float curr_theta, float curr_x, float curr_dtheta, fl
 }
 
 float pd_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx) {
-    const float kp_theta = -0.1; 
-    const float kd_theta = -0.01; 
-    const float kp_x = -0.01;     
+    const float kp_theta = -0.15; 
+    const float kd_theta = -0.015; 
+    const float kp_x = -0.03;     
     const float kd_x = -0.01;     
 
     float p_term_theta = kp_theta * (-curr_theta); 
