@@ -19,6 +19,7 @@
 
 #define UART_TX_GPIO_NUM GPIO_NUM_33
 #define UART_RX_GPIO_NUM GPIO_NUM_25
+#define BEARLY_RESET_GPIO GPIO_NUM_2
 
 
 #define ACCEL_RST GPIO_NUM_32 // GPIO to reset the Accelerometer
@@ -39,6 +40,7 @@ float theta_dot = 0;
 int64_t dt;
 
 float motor_Speed = 0;
+bool bearly_ready = false;
 
 
 void reset_state();
@@ -79,6 +81,11 @@ void app_main(void) {
     // cfg.timeout_ms = 20000;
     // esp_task_wdt_init(&cfg);
 
+    // Set BEARLY_RESET_GPIO as an output, and set it to 1
+    gpio_reset_pin(BEARLY_RESET_GPIO);
+    gpio_set_direction(BEARLY_RESET_GPIO, GPIO_MODE_OUTPUT);
+    gpio_set_level(BEARLY_RESET_GPIO, 1);
+
     // Use interrupts for sensor reset and motor enable
     gpio_reset_pin(ACCEL_RST);
     gpio_set_direction(ACCEL_RST, GPIO_MODE_INPUT);
@@ -115,6 +122,9 @@ void app_main(void) {
         update_state();
 
         // motor_Speed = bang_bang_controller(curr_theta, curr_x, theta_dot, x_dot);
+        // while (!bearly_ready) {
+        //     vTaskDelay(100 / portTICK_PERIOD_MS);
+        // }
         float target = remote_controller(curr_theta, curr_x, theta_dot, x_dot);
         motor_Speed = (motor_Speed + (dt) * target);
         if (motor_Speed > 2048) {
@@ -200,7 +210,16 @@ float pd_controller(float curr_theta, float curr_x, float curr_dtheta, float cur
     return control_output_theta + control_output_x;
 }
 
-
+// Reset bearly by holding the reset pin low for 1 second, then high for 1 second
+void reset_bearly() {
+    if(bearly_ready) {
+        gpio_set_level(BEARLY_RESET_GPIO, 0);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        gpio_set_level(BEARLY_RESET_GPIO, 1);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        bearly_ready = true;
+    }
+}
 
 
 void update_state() {
@@ -219,10 +238,17 @@ void update_state() {
 }
 
 void reset_state() {
+    bearly_ready = false;
     set_gyro_ref();
     reset_encoder1();
     reset_encoder2();
+    x_dot = 0;
+    theta_dot = 0;
+    curr_x = 0;
+    curr_theta = 0;
     motor_Speed = 0;
+    reset_bearly();
+    
     // printf("Resetting gyro\n");
 }
 
