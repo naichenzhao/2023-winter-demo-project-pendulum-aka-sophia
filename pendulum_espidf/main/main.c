@@ -47,6 +47,15 @@ void reset_state();
 void change_motorstate();
 
 void update_state();
+// Reset bearly by holding the reset pin low for 1 second, then high for 1 second
+void reset_bearly() {
+        gpio_set_level(BEARLY_RESET_GPIO, 0);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        gpio_set_level(BEARLY_RESET_GPIO, 1);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        bearly_ready = true;
+}
+
 
 void initialize_uart() {
     // Configure parameters of an UART driver
@@ -85,6 +94,8 @@ void app_main(void) {
     gpio_reset_pin(BEARLY_RESET_GPIO);
     gpio_set_direction(BEARLY_RESET_GPIO, GPIO_MODE_OUTPUT);
     gpio_set_level(BEARLY_RESET_GPIO, 1);
+
+    reset_bearly();
 
     // Use interrupts for sensor reset and motor enable
     gpio_reset_pin(ACCEL_RST);
@@ -126,6 +137,7 @@ void app_main(void) {
         //     vTaskDelay(100 / portTICK_PERIOD_MS);
         // }
         float target = remote_controller(curr_theta, curr_x, theta_dot, x_dot);
+        // float target = pd_controller(curr_theta, curr_x, theta_dot, x_dot);
         motor_Speed = (motor_Speed + (dt) * target);
         if (motor_Speed > 2048) {
             motor_Speed = 2048;
@@ -143,7 +155,7 @@ void app_main(void) {
 
         // print the current state
         // printf("x:%f, theta:%f, dx:%f, dtheta:%f, gyro:%f\n", curr_x, curr_theta, x_dot, theta_dot, gyro_x());
-        printf("x:%f, theta:%f, dx:%f, dtheta:%f, motor:%f\n", curr_x, curr_theta, x_dot, theta_dot, motor_Speed);
+        printf("x:%f, theta:%f, dx:%f, dtheta:%f, motor:%f, target:%f\n", curr_x, curr_theta, x_dot, theta_dot, motor_Speed, target);
         // printf("gyro:%d, angle:%f, dist:%f, motor:%f, pain:45, suffering:-45\n", gyro_x(), curr_theta, curr_x, motor_Speed);
     }
     
@@ -208,17 +220,6 @@ float pd_controller(float curr_theta, float curr_x, float curr_dtheta, float cur
     float control_output_x = p_term_x - d_term_x;
 
     return control_output_theta + control_output_x;
-}
-
-// Reset bearly by holding the reset pin low for 1 second, then high for 1 second
-void reset_bearly() {
-    if(bearly_ready) {
-        gpio_set_level(BEARLY_RESET_GPIO, 0);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        gpio_set_level(BEARLY_RESET_GPIO, 1);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        bearly_ready = true;
-    }
 }
 
 
