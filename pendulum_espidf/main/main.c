@@ -11,6 +11,14 @@
 #include "motor.h"
 #include "accel.h"
 #include "encoder.h"
+#include "driver/uart.h"
+#include <string.h>
+
+// Define the UART port number to be used for remote controlling
+#define UART_NUM UART_NUM_2
+
+#define UART_TX_GPIO_NUM GPIO_NUM_33
+#define UART_RX_GPIO_NUM GPIO_NUM_25
 
 
 #define ACCEL_RST GPIO_NUM_32 // GPIO to reset the Accelerometer
@@ -32,15 +40,38 @@ int64_t dt;
 
 float motor_Speed = 0;
 
+
 void reset_state();
 void change_motorstate();
 
 void update_state();
 
+void initialize_uart() {
+    // Configure parameters of an UART driver
+    uart_config_t uart_config = {
+        .baud_rate = 115200, // Set your desired baud rate
+        .data_bits = UART_DATA_8_BITS,
+        .parity = UART_PARITY_DISABLE,
+        .stop_bits = UART_STOP_BITS_1,
+        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE
+    };
+
+    // Install UART driver (we don't need an event queue here)
+    // Note: Ensure the UART buffer sizes are large enough for the data you're sending/receiving
+    uart_driver_install(UART_NUM, 1024 * 2, 0, 0, NULL, 0);
+
+    // Set UART parameters
+    uart_param_config(UART_NUM, &uart_config);
+
+    // Set UART pins
+    uart_set_pin(UART_NUM, UART_TX_GPIO_NUM, UART_RX_GPIO_NUM, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+}
+
 // Controller functions
 
 float bang_bang_controller(float curr_theta, float curr_x, float curr_dx, float curr_dtheta);
 float pd_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx);
+float remote_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx);
 //
 
 void app_main(void) {
@@ -67,6 +98,7 @@ void app_main(void) {
 
     motor_init();
     encoder_init();
+    initialize_uart();
 
     vTaskDelay(100 / portTICK_PERIOD_MS);
 
@@ -83,7 +115,8 @@ void app_main(void) {
         update_state();
 
         // motor_Speed = bang_bang_controller(curr_theta, curr_x, theta_dot, x_dot);
-        motor_Speed = (motor_Speed + (dt) * pd_controller(curr_theta, curr_x, theta_dot, x_dot));
+        float target = remote_controller(curr_theta, curr_x, theta_dot, x_dot);
+        motor_Speed = (motor_Speed + (dt) * target);
         if (motor_Speed > 2048) {
             motor_Speed = 2048;
         } else if (motor_Speed < -2048) {
@@ -105,6 +138,37 @@ void app_main(void) {
     }
     
 }
+
+
+float remote_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx) {
+    // Buffer for sending data
+    uint8_t data_to_send[16]; // Adjust the size based on your data format
+
+    // Copy the float values into the byte array (assuming little-endian format)
+    memcpy(data_to_send, &curr_theta, sizeof(float));
+    memcpy(data_to_send + 4, &curr_x, sizeof(float));
+    memcpy(data_to_send + 8, &curr_dtheta, sizeof(float));
+    memcpy(data_to_send + 12, &curr_dx, sizeof(float));
+
+    // Transmit the data over UART
+    uart_write_bytes(UART_NUM, (const char *)data_to_send, sizeof(data_to_send));
+
+    // Buffer for receiving data
+    uint8_t data_received[4];
+    int length = 0;
+
+    // Wait for the float value to be received
+    while (length != sizeof(float)) {
+        length += uart_read_bytes(UART_NUM, data_received + length, sizeof(float) - length, portMAX_DELAY);
+    }
+
+    // Convert the received bytes back into a float (assuming little-endian format)
+    float received_value;
+    memcpy(&received_value, data_received, sizeof(float));
+
+    return received_value;
+}
+
 
 float bang_bang_controller(float curr_theta, float curr_x, float curr_dtheta, float curr_dx) {
     if (curr_theta > 0) {
