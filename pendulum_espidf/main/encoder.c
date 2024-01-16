@@ -33,10 +33,10 @@
 
 #define TAG "app"
 
-#define ROT_ENC1_A GPIO_NUM_12
-#define ROT_ENC1_B GPIO_NUM_14
-#define ROT_ENC2_A GPIO_NUM_27
-#define ROT_ENC2_B GPIO_NUM_26
+#define ROT_ENC1_A GPIO_NUM_1
+#define ROT_ENC1_B GPIO_NUM_0
+#define ROT_ENC2_A GPIO_NUM_3
+#define ROT_ENC2_B GPIO_NUM_2
 
 #define ENABLE_HALF_STEPS true
 #define RESET_AT 0

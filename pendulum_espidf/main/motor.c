@@ -4,13 +4,13 @@
 
 #define LEDC_TIMER LEDC_TIMER_0
 #define LEDC_MODE LEDC_LOW_SPEED_MODE
-#define LEDC_OUTPUT_IO (23) // Define the output GPIO
+#define LEDC_OUTPUT_IO (18) // Define the output GPIO
 #define LEDC_CHANNEL LEDC_CHANNEL_0
 #define LEDC_DUTY_RES LEDC_TIMER_11_BIT 
 #define LEDC_DUTY (1024)                 // Set duty to 50%. (2 ** 13) * 50% = 4096
 #define LEDC_FREQUENCY (10000)           // Frequency in Hertz. Set frequency at 4 kHz
 
-#define DIR_PIN 22
+#define DIR_PIN 19
 #define STEPS_REV 6400
 #define PWM_LIMIT 40
 #define MAX_FREQ 30000

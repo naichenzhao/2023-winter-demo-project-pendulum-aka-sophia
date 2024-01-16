@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Users/naichenzhao/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-objdump")
+  set(CMAKE_OBJDUMP "/Users/naichenzhao/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin/riscv32-esp-elf-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build/esp-idf/xtensa/cmake_install.cmake")
+  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build/esp-idf/riscv/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -469,11 +469,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build/esp-idf/perfmon/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build/esp-idf/spiffs/cmake_install.cmake")
 endif()
 
@@ -490,16 +485,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build/esp-idf/wifi_provisioning/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build/esp-idf/ahrs/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/Users/naichenzhao/Desktop/SLICE/winter_demo_sophia/pendulum_espidf/build/esp-idf/mpu9250/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
